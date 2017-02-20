@@ -1,0 +1,106 @@
+@mixin svg-icon($url, $width:'', $height:'') {
+  display: inline-block;
+  background: url($url) no-repeat center;
+  background-size: contain;
+  vertical-align: middle;
+  @if ($width != '') {
+    width: $width + px;
+  }
+  @if ($height != '') {
+    height: $height + px;
+  }
+}
+
+@mixin svg-icon-class($iconName, $width:'', $height:'') {
+  .#{'i-' + $iconName} {
+    @include svg-icon($images-root + $iconName + '.svg', $width, $height);
+  }
+}
+
+@include svg-icon-class('face', 80, 80);
+@include svg-icon-class('money', 80, 80);
+@include svg-icon-class('person', 80, 80);
+@include svg-icon-class('refresh', 80, 80);
+
+@mixin png-icon($url, $width, $height) {
+  display: inline-block;
+  width: $width + px;
+  height: $height + px;
+  background: url($url) no-repeat center center;
+  background-size: $width + px $height + px;
+}
+
+@mixin png-icon-class($iconName, $width, $height) {
+  .#{'i-' + $iconName} {
+    @include png-icon($images-root + $iconName + '.png', $width, $height);
+  }
+}
+
+//@include icon-png-class('arrival-icon', 11, 11);
+
+/////////////////
+// Icon with page turn effect on hover
+//////////////////
+
+.icon1 {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background-color: #AE56C4;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: 0 0 5px rgba(0, 0, 0, 0.5);
+  color: #e6e6e6;
+  display: inline-block;
+  font-size: 30px;
+  height: 60px;
+  line-height: 60px;
+  margin: 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 60px;
+}
+
+.icon1:before {
+  color: #fff;
+  text-shadow: 1px 1px 5px #000000;
+  opacity: 0.75;
+}
+
+.icon1:after {
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  content: '';
+  background-color: rebeccapurple;
+  border-radius: 5px 0 0 5px;
+  z-index: -1;
+}
+
+.icon1:hover,
+.icon1:active,
+.icon1.hover {
+  color: black;
+  background-color: rebeccapurple;
+}
+
+.icon1:hover:after,
+.icon1:active:after,
+.icon1.hover:after {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: #AE56C4;
+}
+
+//////////////////////

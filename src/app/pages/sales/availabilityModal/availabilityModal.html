@@ -1,0 +1,33 @@
+<!--Modal Dialog-->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="myModalLabel"><i class="fa fa-home"></i> Select Property Availability</h3>
+            </div>
+            <div class="modal-body">
+                <ba-card>
+                    <form class="form-inline" role="form" (submit)="updateAvailability()">
+                        <section id="first" class="section">
+                            <div class="containerRadio">
+                                <input type="radio" name="availRadio" id="radio-1">
+                                <label for="radio-1"><span class="radio">Available</span></label>
+                            </div>
+                            <div class="containerRadio">
+                                <input type="radio" name="availRadio" id="radio-2">
+                                <label for="radio-2"><span class="radio">Deal Pending</span></label>
+                            </div>
+                            <div class="containerRadio">
+                                <input type="radio" name="availRadio" id="radio-3">
+                                <label for="radio-3"><span class="radio">Sold</span></label>
+                            </div>
+                        </section>
+                        <input type="submit" class="btn btn-primary center-block">
+                    </form>
+                </ba-card>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
