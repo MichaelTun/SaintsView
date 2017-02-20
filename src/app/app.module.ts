@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { ENV_PROVIDERS } from './environment';
 import { routing } from './app.routing';
 import { AuthService } from './shared/services/auth.service';
+import { FireAuthService } from './shared/services/fireauth.service';
 
 // App is our top level component
 import { App } from './app.component';
@@ -75,7 +76,8 @@ export const APPCONFIG: AppConfig = {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     AuthService,
-    {provide:'APP_CONFIG_TOKEN', useValue:APPCONFIG}
+    {provide:'APP_CONFIG_TOKEN', useValue:APPCONFIG},
+    FireAuthService
     // Auth
   ]
 })

@@ -884,15 +884,8 @@ export class PropertyComponent implements OnInit {
             ]
         };
 
-        // this.propertyService.addProperty(newProperty)
-        // .subscribe(property => {
-        //     this.properties.push(property);
-        // });
-        //JSON.stringify(newProperty);
-        //console.log(newProperty);
         console.log(newProperty);
         this._firebaseService.addProperty(newProperty);
-        //this.propertyService.addProperty(newProperty);
         this.changeState('default', '');
     }
 

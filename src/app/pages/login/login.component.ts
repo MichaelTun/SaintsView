@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../../shared/services/auth.service';
+import { FireAuthService } from '../../shared/services/fireauth.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'login',
@@ -17,7 +17,7 @@ export class Login {
   public error: boolean = false;
   public errorMessage: string = '';
 
-  constructor(fb: FormBuilder, private auth: AuthService, private router: Router) {
+  constructor(fb: FormBuilder, private afService: FireAuthService, private router: Router) {
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
@@ -32,16 +32,29 @@ export class Login {
     if (this.form.valid) {
       // your code goes here
       // console.log(values);
-      this.auth.login({ email: values.email, password: values.password }).subscribe(res => {
-        console.log(res);
-        if (res.status === 200) {
-          this.router.navigate(['pages']);
+      event.preventDefault();
+    this.afService.loginWithEmail(values.email, values.password).then(() => {
+      this.router.navigate(['pages']);
+    })
+      .catch((error: any) => {
+        if (error) {
+          this.error = error;
+          console.log(this.error);
         }
-      }, err => {
-        //do something with error
-        this.error = true;
-        this.errorMessage = err.json().message;
-      })
+      });
     }
   }
+
+  // loginWithEmail(event, email, password){
+  //   event.preventDefault();
+  //   this.afService.loginWithEmail(email, password).then(() => {
+  //     this.router.navigate(['']);
+  //   })
+  //     .catch((error: any) => {
+  //       if (error) {
+  //         this.error = error;
+  //         console.log(this.error);
+  //       }
+  //     });
+  // }
 }
