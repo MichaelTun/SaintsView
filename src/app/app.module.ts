@@ -11,7 +11,6 @@ import { AngularFireModule } from 'angularfire2';
  */
 import { ENV_PROVIDERS } from './environment';
 import { routing } from './app.routing';
-import { AuthService } from './shared/services/auth.service';
 import { FireAuthService } from './shared/services/fireauth.service';
 
 // App is our top level component
@@ -41,18 +40,6 @@ export const firebaseConfig = {
     storageBucket: 'saintsview-7a0f4.appspot.com'
 }
 
-export interface AppConfig {
-  BASE_URL: string;
-  APP_ID: string;
-  APP_SECRET: string;
-}
-
-export const APPCONFIG: AppConfig = {
-    BASE_URL: 'https://saintsview-api.selfbits.io',
-    APP_ID: 'fe1759e548819ff2ec7e45ec5070ff95',
-    APP_SECRET: '4a8c8392b01995a2976d074066ad49c2',
-};
-
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -75,8 +62,6 @@ export const APPCONFIG: AppConfig = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    AuthService,
-    {provide:'APP_CONFIG_TOKEN', useValue:APPCONFIG},
     FireAuthService
     // Auth
   ]

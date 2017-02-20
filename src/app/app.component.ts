@@ -34,7 +34,7 @@ export class App {
               private viewContainerRef: ViewContainerRef) {
 
     this._menuService.updateMenuByRoutes(<Routes>MENU);
-
+    
     this._loadImages();
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
