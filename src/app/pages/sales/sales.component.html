@@ -30,7 +30,7 @@
 <div class="row" *ngIf="appState == 'selected'">
     <ba-card title="Timeshare 52 Week Plan" baCardClass="with-scroll">
         <h3 id="selectedPropertyName"></h3>
-        <table class="table table-bordered">
+        <table #summaryTable class="table table-bordered">
             <thead>
                 <tr>
                     <th>Week</th>

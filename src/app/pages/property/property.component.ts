@@ -29,7 +29,7 @@ export class PropertyComponent implements OnInit {
     activeKey: string;
     properties: Property[];
     availability: Availability[];
-    showPrice: String;
+    showWeekValues: String;
     activePropertyName: String;
     activePropertySize: String;
     activeAvailability: String;
@@ -159,9 +159,9 @@ export class PropertyComponent implements OnInit {
         this.appState = state;
     }
 
-    showPrices(show) {
+    showWeeks(show) {
         if (show === 'true')
-            this.showPrice = 'true';
+            this.showWeekValues = 'true';
     }
 
     addProperty(
@@ -196,7 +196,6 @@ export class PropertyComponent implements OnInit {
         season51: String, module51: String, price51: Number, season52: String, module52: String, price52: Number
 
     ) {
-        console.log(propertyName, propertySize, extraInfo, season1, season2, season3);
         let createdAt = new Date().toString();
 
         let newProperty = {

@@ -26,14 +26,9 @@ export class SalesComponent {
 
   ngOnInit() {
     // Retrieve posts from the API
-    // this.propertyService.getAllProperties()
-    //   .subscribe(properties => { this.properties = properties; });
-
-    // this.propertyService.getAvailability()
-    //   .subscribe(availability => { this.availability = availability; });
-
-      this.firebaseService.getProperties()
+    this.firebaseService.getProperties()
       .subscribe(properties => { this.properties = properties; });
+
   }
 
 
@@ -41,11 +36,15 @@ export class SalesComponent {
     this.changeState('selected', property.id);
     let selectedPropertyN: string = property.property_name;
     this.firebaseService.getProperty(property.$key)
-    .subscribe(selectedProperty => {this.selectedProperty = selectedProperty; });
+      .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
     setTimeout(() => {
-        this.weeksArray = this.selectedProperty.weeks;
-        $('#selectedPropertyName').html(selectedPropertyN);
-         }, 1700);
+      this.weeksArray = this.selectedProperty.weeks;
+      $('#selectedPropertyName').html(selectedPropertyN);
+    }, 1700);
+
+    // setTimeout(() => {
+    //   $("#summaryTable td.availCss:contains('Sold')").addClass('btn btn-success');
+    // }, 2000);
   }
 
 
