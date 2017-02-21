@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { ENV_PROVIDERS } from './environment';
 import { routing } from './app.routing';
 import { FireAuthService } from './shared/services/fireauth.service';
+import { UserAuthGuardService } from './shared/services/gaurd.service';
 
 // App is our top level component
 import { App } from './app.component';
@@ -40,6 +41,11 @@ export const firebaseConfig = {
     storageBucket: 'saintsview-7a0f4.appspot.com'
 }
 
+export const firebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+}
+
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -54,7 +60,7 @@ export const firebaseConfig = {
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     NgaModule.forRoot(),
     PagesModule,
     routing
@@ -62,7 +68,8 @@ export const firebaseConfig = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    FireAuthService
+    FireAuthService,
+    UserAuthGuardService
     // Auth
   ]
 })
