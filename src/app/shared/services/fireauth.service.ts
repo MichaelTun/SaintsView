@@ -24,11 +24,10 @@ export class FireAuthService {
     isAuthenticated() {
         return this.af.auth.map((auth) => {
             if (auth == null) {
-                this.router.navigate(['/login']);
                 return false;
             } else {
                 return true;
             }
-        }).first();
+        });
     }
 }

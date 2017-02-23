@@ -18,13 +18,6 @@ export class PropertyComponent implements OnInit {
 
     }
 
-    ngOnInit() {
-        // firebase
-        this._firebaseService.getProperties().subscribe(properties => {
-            this.properties = properties;
-        });
-    }
-
     appState: string;
     activeKey: string;
     properties: Property[];
@@ -150,6 +143,13 @@ export class PropertyComponent implements OnInit {
     activeSoldPrice41: Number; activeSoldPrice42: Number; activeSoldPrice43: Number; activeSoldPrice44: Number;
     activeSoldPrice45: Number; activeSoldPrice46: Number; activeSoldPrice47: Number; activeSoldPrice48: Number;
     activeSoldPrice49: Number; activeSoldPrice50: Number; activeSoldPrice51: Number; activeSoldPrice52: Number;
+
+        ngOnInit() {
+        // firebase
+        this._firebaseService.getProperties().subscribe(properties => {
+            this.properties = properties;
+        });
+    }
 
     changeState(state, key) {
         console.log('changing state to ' + state);
