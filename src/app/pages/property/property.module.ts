@@ -5,10 +5,9 @@ import { CommonModule }  from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PropertyComponent }   from './property.component';
-//import { WeekValuesAddComponent } from './components/weekValuesAdd/weekValuesAdd.component';
+import { WeekValuesAddComponent } from './components/weekValuesAdd/weekValuesAdd.component';
 // import { WeekValuesEditComponent } from './components/weekValuesEdit/weekValuesEdit.component';
 
-import { PropertyService } from '../../services/property.service';
 import { FirebaseService } from '../../services/firebase.service';
 
 @NgModule({
@@ -17,8 +16,8 @@ import { FirebaseService } from '../../services/firebase.service';
         FormsModule, ReactiveFormsModule
         ],
     exports: [],
-    declarations: [PropertyComponent],
-    providers: [PropertyService, FirebaseService]
+    declarations: [PropertyComponent, WeekValuesAddComponent],
+    providers: [ FirebaseService]
 })
 export default class PropertyModule {
 

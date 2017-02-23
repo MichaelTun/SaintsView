@@ -1,1040 +1,1102 @@
-<div class="row">
-    <h3><span>Week 1</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+<!-- ADD CUSTOMER -->
+            <div class="col-md-12">
+                    <h2 class="shadow-text">Add Property</h2>
+                    <form (submit)="addProperty(
+                propertyName.value,
+                propertySize.value,
+                extraInfo.value,
+                season1.value, module1.value, price1.value, season2.value, module2.value, price2.value,
+                season3.value, module3.value, price3.value, season4.value, module4.value, price4.value,
+                season5.value, module5.value, price5.value, season6.value, module6.value, price6.value,
+                season7.value, module7.value, price7.value, season8.value, module8.value, price8.value,
+                season9.value, module9.value, price9.value, season10.value, module10.value, price10.value,
+                season11.value, module11.value, price11.value, season12.value, module12.value, price12.value,
+                season13.value, module13.value, price13.value, season14.value, module14.value, price14.value,
+                season15.value, module15.value, price15.value, season16.value, module16.value, price16.value, 
+                season17.value, module17.value, price17.value, season18.value, module18.value, price18.value,
+                season19.value, module19.value, price19.value, season20.value, module20.value, price20.value,
+                season21.value, module21.value, price21.value, season22.value, module22.value, price22.value,
+                season23.value, module23.value, price23.value, season24.value, module24.value, price24.value,
+                season25.value, module25.value, price25.value, season26.value, module26.value, price26.value,
+                season27.value, module27.value, price27.value, season28.value, module28.value, price28.value,
+                season29.value, module29.value, price29.value, season30.value, module30.value, price30.value,
+                season31.value, module31.value, price31.value, season32.value, module32.value, price32.value,
+                season33.value, module33.value, price33.value, season34.value, module34.value, price34.value,
+                season35.value, module35.value, price35.value, season36.value, module36.value, price36.value,
+                season37.value, module37.value, price37.value, season38.value, module38.value, price38.value,
+                season39.value, module39.value, price39.value, season40.value, module40.value, price40.value,
+                season41.value, module41.value, price41.value, season42.value, module42.value, price42.value,
+                season43.value, module43.value, price43.value, season44.value, module44.value, price44.value,
+                season45.value, module45.value, price45.value, season46.value, module46.value, price46.value,
+                season47.value, module47.value, price47.value, season48.value, module48.value, price48.value,
+                season49.value, module49.value, price49.value, season50.value, module50.value, price50.value,
+                season51.value, module51.value, price51.value, season52.value, module52.value, price52.value )">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label> Property Name
+                        <input class="form-control" type="text" placeholder="Property Name eg. Unit 5" #propertyName required>
+                            </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label> Property Size
+                        <input class="form-control" type="" placeholder="Property Size" #propertySize>
+                            </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="textarea01">Extra Information</label>
+                                    <textarea placeholder="Extra Info" class="form-control" name="extraInfo" #extraInfo></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- *ngIf="showPrice == 'true'" -->
+                            <h2>Add Weekly Timeshare Values</h2>
+                            <div class="row">
+                                <h3><span>Week 1</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season1>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module1>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price1>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 2</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 2</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season2>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module2>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price2>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 3</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 3</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season3>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module3>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price3>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 4</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 4</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season4>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module4>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price4>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 5</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 5</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season5>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module5>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price5>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 6</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 6</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season6>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module6>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price6>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 7</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 7</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season7>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module7>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price7>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 8</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 8</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season8>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module8>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price8>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 9</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 9</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season9>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module9>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price9>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 10</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 10</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season10>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module10>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price10>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 11</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 11</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season11>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module11>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price11>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 12</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 12</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season12>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module12>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price12>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 13</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 13</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season13>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module13>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price13>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 14</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 14</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season14>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module14>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price14>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 15</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 15</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season15>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module15>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price15>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 16</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 16</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season16>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module16>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price16>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 17</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 17</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season17>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module17>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price17>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 18</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 18</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season18>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module18>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price18>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 19</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 19</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season19>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module19>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price19>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 20</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 20</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season20>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module20>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price20>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 21</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 21</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season21>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module21>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price21>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 22</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 22</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season22>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module22>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price22>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 23</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 23</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season23>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module23>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price23>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 24</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 24</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season24>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module24>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price24>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 25</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 25</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season25>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module25>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price25>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 26</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 26</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season26>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module26>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price26>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 27</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 27</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season27>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module27>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price27>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 28</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 28</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season28>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module28>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price28>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 29</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 29</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season29>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module29>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price29>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 30</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 30</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season30>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module30>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price30>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 31</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 31</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season31>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module31>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price31>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 32</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 32</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season32>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module32>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price32>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 33</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 33</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season33>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module33>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price33>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 34</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 34</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season34>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module34>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price34>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 35</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 35</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season35>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module35>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price35>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 36</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 36</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season36>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module36>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price36>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 37</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 37</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season37>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module37>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price37>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 38</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 38</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season38>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module38>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price38>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 39</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 39</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season39>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module39>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price39>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 40</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 40</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season40>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module40>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price40>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 41</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 41</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season41>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module41>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price41>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 42</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 42</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season42>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module42>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price42>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 43</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 43</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season43>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module43>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price43>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 44</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 44</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season44>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module44>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price44>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 45</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 45</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season45>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module45>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price45>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 46</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 46</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season46>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module46>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price46>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 47</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 47</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season47>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module47>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price47>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 48</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 48</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season48>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module48>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price48>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 49</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 49</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season49>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module49>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price49>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 50</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 50</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season50>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module50>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price50>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 51</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 51</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season51>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module51>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price51>
                             </label>
-    </div>
-</div>
-<div class="row">
-    <h3><span>Week 52</span></h3>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <label> Season
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3><span>Week 52</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label> Season
                         <input class="form-control" type="text" placeholder="Season" #season52>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Module
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Module
                         <input class="form-control" type="text" placeholder="Module" #module52>
                             </label>
-    </div>
-    <div class="col-md-4">
-        <label> Price
+                                </div>
+                                <div class="col-md-4">
+                                    <label> Price
                         <input class="form-control" value="0" type="number" placeholder="Price" #price52>
                             </label>
-    </div>
-</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="submit" class="btn btn-success btn-lg center-block" value="Submit">
+                        </div>
+                        </form>
+            </div>
