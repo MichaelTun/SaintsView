@@ -16,8 +16,8 @@ const routes: Routes = [
     path: 'pages',
     component: Pages,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module') },
+      { path: '', redirectTo: 'property', pathMatch: 'full' },
+      { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module'), canActivate:[UserAuthGuardService] },
       { path: 'property', loadChildren: () => System.import('./property/property.module'), canActivate:[UserAuthGuardService] },
       { path: 'sales', loadChildren: () => System.import('./sales/sales.module'), canActivate:[UserAuthGuardService] }
     ]

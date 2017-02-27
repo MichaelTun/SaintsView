@@ -26,6 +26,7 @@ export class PropertyComponent implements OnInit {
     activeAvailability: String;
     activeExtraInfo: String;
 
+    // Variables for edit
     activeSeason1: String; activeModule1: String; activePrice1: Number; activeSeason2: String; activeModule2: String;
     activePrice2: Number; activeSeason3: String; activeModule3: String; activePrice3: Number;
     activeSeason4: String; activeModule4: String; activePrice4: Number; activeSeason5: String; activeModule5: String;
