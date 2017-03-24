@@ -6,34 +6,36 @@
         <br>
         <div class="row">
             <div *ngIf="properties">
-                <ba-card baCardClass="with-scroll">
-                    <table class="table table-striped" #propertyTable>
-                        <thead>
-                            <tr>
-                                <th>Property Name</th>
-                                <th>Size</th>
-                                <th>View / Edit</th>
+                <ba-card baCardClass="with-scroll table-panel" title="Properties">
+                    <div class="vertical-scroll">
+                        <table class="table table-striped" #propertyTable>
+                            <thead>
+                                <tr>
+                                    <th>Property Name</th>
+                                    <th>Size</th>
+                                    <th>View / Edit</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let property of properties">
-                                <td>{{property.property_name}}</td>
-                                <td>{{property.property_size}}</td>
-                                <td>
-                                    <button (click)="showEdit(property)" class="btn btn-primary">Edit</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let property of properties">
+                                    <td>{{property.property_name}}</td>
+                                    <td>{{property.property_size}}</td>
+                                    <td>
+                                        <button (click)="showEdit(property)" class="btn btn-primary">Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </ba-card>
             </div>
         </div>
         <!-- ADD START -->
         <div *ngIf="appState == 'add'" class="row">
             <ba-card>
-            <weekValuesAddComponent></weekValuesAddComponent>
-            <button (click)="changeState('default')" class="btn btn-danger btn-lg">Cancel</button>
+                <weekValuesAddComponent></weekValuesAddComponent>
+                <button (click)="changeState('default')" class="btn btn-danger btn-lg">Cancel</button>
             </ba-card>
         </div>
         <!-- ADD END -->

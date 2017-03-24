@@ -1,0 +1,119 @@
+<div class="row">
+    <h3>Select a Property to display its 52 Week Sales Plan</h3>
+    <br>
+    <div *ngIf="properties">
+        <ba-card baCardClass="with-scroll table-panel" title="Properties">
+            <div class="vertical-scroll">
+                <table class="table table-striped" #propertyTable>
+                    <thead>
+                        <tr>
+                            <th>Property Name</th>
+                            <th>Weeks Sold</th>
+                            <th>Weeks Available</th>
+                            <th>View / Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let property of properties">
+                            <td>{{property.property_name}}</td>
+                            <td>Possible Feature</td>
+                            <td>Possible Feature</td>
+                            <td>
+                                <button (click)="selectProperty(property)" class="btn btn-primary">Display Timeshare Sales</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </ba-card>
+    </div>
+</div>
+
+<div class="row" *ngIf="appState == 'selected'">
+    <ba-card title="Timeshare 52 Week Plan" baCardClass="with-scroll">
+        <h3 id="selectedPropertyName"></h3>
+        <table #summaryTable class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Season</th>
+                    <th>Module</th>
+                    <th>Price</th>
+                    <th>Arrival Date</th>
+                    <th>Departure Date</th>
+                    <th>Availability</th>
+                    <th>Select Week</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let week of weeksArray">
+                    <th>{{week.week}}</th>
+                    <td>{{week.season}}</td>
+                    <td>{{week.module}}</td>
+                    <td>R {{week.price}}</td>
+                    <td>{{week.arrival_date}}</td>
+                    <td>{{week.departure_date}}</td>
+                    <td class="availColumn">
+                        <!--<button class="btn btn-success">Availability: {{week.availability}}</button>-->
+                        <button type="" id="availButton" class="btn btn-success" data-id="{{week.week}}" data-toggle="modal" data-target="#myModal">{{week.availability}}</button>
+                    </td>
+                    <td>week {{week.week}} <input type="checkbox" value="{{week.week}}" (click)="addWeek();" name="selectWeek"
+                            id="selectWeek"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="container">
+            <br>
+            <h3>Enquiry Form</h3>
+            <form (submit)="sendMail(name.value, surname.value, email.value, week.value, phonenumber.value, message.value)" id="enquiryform">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label> Name
+                        <input class="form-control" name="name" type="text" placeholder="First Name" #name>
+                            </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label> Surname
+                        <input class="form-control" name="surname" type="text" placeholder="Last Name" #surname>
+                            </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label> Email
+                        <input class="form-control" name="email" type="email" type="email" required placeholder="Price" #email>
+                            </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label> Selected Weeks: 
+                        <input class="form-control" type="text" style="color:white" name="selectedweeks" placeholder="week" id="selectedweeks" readonly>
+                            </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label> Extra week your'e Interested in
+                        <input class="form-control" type="text" name="week" placeholder="week" #week>
+                            </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Contact Number
+                        <input class="form-control" name="phonenumber" type="number" placeholder="cell" #phonenumber>
+                    </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label> Message
+                        <textarea class="form-control" type="textarea" name="message" placeholder="Last Name" style="width:560px;" #message></textarea>
+                            </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="submit" class="btn btn-success btn-lg" value="Contact Us">
+                        <br>
+                        <br>
+                        <h5>You may also email us personally at saintsview@just.property</h5>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </ba-card>
+</div>

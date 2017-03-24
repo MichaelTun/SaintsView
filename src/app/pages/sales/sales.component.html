@@ -2,27 +2,29 @@
     <h3>Select a Property to display its 52 Week Sales Plan</h3>
     <br>
     <div *ngIf="properties">
-        <ba-card baCardClass="with-scroll">
-            <table class="table table-striped" #propertyTable>
-                <thead>
-                    <tr>
-                        <th>Property Name</th>
-                        <th>Weeks Sold</th>
-                        <th>Weeks Available</th>
-                        <th>View / Edit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let property of properties">
-                        <td>{{property.property_name}}</td>
-                        <td>Possible Feature</td>
-                        <td>Possible Feature</td>
-                        <td>
-                            <button (click)="selectProperty(property)" class="btn btn-primary">Display Timeshare Sales</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <ba-card baCardClass="with-scroll table-panel" title="Properties">
+            <div class="vertical-scroll">
+                <table class="table table-striped" #propertyTable>
+                    <thead>
+                        <tr>
+                            <th>Property Name</th>
+                            <th>Weeks Sold</th>
+                            <th>Weeks Available</th>
+                            <th>View / Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let property of properties">
+                            <td>{{property.property_name}}</td>
+                            <td>Possible Feature</td>
+                            <td>Possible Feature</td>
+                            <td>
+                                <button (click)="selectProperty(property)" class="btn btn-primary">Display Timeshare Sales</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </ba-card>
     </div>
 </div>

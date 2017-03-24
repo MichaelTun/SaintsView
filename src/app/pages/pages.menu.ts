@@ -39,16 +39,19 @@ export const PAGES_MENU = [
             order: 200,
           }
         }
-        // children: [
-        //   {
-        //     path: 'ckeditor',
-        //     data: {
-        //       menu: {
-        //         title: 'CKEditor',
-        //       }
-        //     }
-        //   }
-        //]
+      },
+      {
+        path: 'enquiry',
+        data: {
+          menu: {
+            title: 'Enquiry',
+            icon: 'ion-document-text',
+            pathMatch: 'prefix',
+            selected: false,
+            expanded: false,
+            order: 300,
+          }
+        }
       }
     ]
   }
