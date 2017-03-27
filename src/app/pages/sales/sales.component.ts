@@ -55,7 +55,4 @@ export class SalesComponent {
     }
     this.appState = state;
   }
-
-
-
 }

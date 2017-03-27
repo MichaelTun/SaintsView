@@ -3507,18 +3507,6 @@
                             </div>
                         </div>
                     </ba-card>
-                    <!--
-                            <div class="col-md-4">
-                                <label for=""> Availability
-                            <div class="styled-select blue semi-square">
-                        <select #availability class="form-control" name="activeAvailability" [(ngModel)]="activeAvailability" name="activeAvailability">
-                        <option value="0">Select</option>
-                        <option *ngFor="let type of availability" value="{{type.type}}">{{type.type}}</option>
-                        </select>
-                        </div>
-                    </label>
-                            </div>
-                        </div>-->
                 </form>
             </div>
         </div>
@@ -3559,38 +3547,3 @@
         </div>
     </div>
 </div>
-
-
-<!-- INFO -->
-<!--<div *ngIf="appState =='extend'">
-            <div class="row">
-                <div>
-                    <button (click)="changeState('default')" class="btn btn-outline-info">Close Info</button>
-                </div>
-            </div>
-            <br>
-            <div *ngFor="let property of properties">
-                <div *ngIf="property.$key == activeKey">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-1">
-                            <h3>{{property.property_name}}</h3>
-                            <p>Owner First Name : {{property.owner_first_name}}</p>
-                            <p>Owner Last Name : {{property.owner_last_name}}</p>
-                            <p>Phone Number : {{property.phone_number}}</p>
-                            <p>Email : {{property.email}}</p>
-                        </div>
-                        <div class="col-md-6 col-md-offset-1">
-                            <h3></h3>
-                            <p>Property Size : {{property.size}}</p>
-                            <p>Price : {{property.price}}</p>
-                            <p>Availability: {{property.availability}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h3>Extra Information</h3>
-                        <p>{{property.extra_info}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-<!-- INFO END -->

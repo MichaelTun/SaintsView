@@ -55,7 +55,6 @@
                     <td>{{week.arrival_date}}</td>
                     <td>{{week.departure_date}}</td>
                     <td class="availColumn">
-                        <!--<button class="btn btn-success">Availability: {{week.availability}}</button>-->
                         <button type="" id="availButton" class="btn btn-success" data-id="{{week.week}}" data-toggle="modal" data-target="#myModal">{{week.availability}}</button>
                     </td>
                     <td><button class="btn btn-primary" data-toggle="modal" data-id="{{week.week}}" data-target="#ownerModal">Owner Details</button></td>
@@ -65,6 +64,5 @@
         </table>
     </ba-card>
 </div>
-
 <availabilityModal></availabilityModal>
 <ownerModal></ownerModal>

@@ -74,8 +74,7 @@ export class EnquiryComponent {
   // Mail
   public sendMail(name: string, surname: string, email: string, week: string, phonenumber: number, message: string) {
     console.log(name, surname, email, week, phonenumber, message);
-    // if (email && week) {
-    event.stopPropagation();
+    if (email && week) {
     let authHeaders = new Headers(
       {
         'Authorization': 'Basic ' + btoa('api:' + this.apiKey)
@@ -93,7 +92,7 @@ export class EnquiryComponent {
       }, error => {
         console.log(error);
       });
-    // }
+   }
 
     //       let headers = new Headers(
     //       {

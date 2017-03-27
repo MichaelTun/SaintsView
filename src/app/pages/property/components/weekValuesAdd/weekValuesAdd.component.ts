@@ -15,7 +15,7 @@ export class WeekValuesAddComponent implements OnInit {
     ngOnInit() { }
 
         changeState(state, key) {
-        console.log('changing state to ' + state);
+        //console.log('changing state to ' + state);
         if (key) {
             this.activeKey = key;
         }

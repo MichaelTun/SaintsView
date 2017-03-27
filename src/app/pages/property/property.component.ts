@@ -27,41 +27,49 @@ export class PropertyComponent implements OnInit {
     activeExtraInfo: String;
 
     // Variables for edit
-    activeSeason1: String; activeModule1: String; activePrice1: Number; activeSeason2: String; activeModule2: String;
-    activePrice2: Number; activeSeason3: String; activeModule3: String; activePrice3: Number;
-    activeSeason4: String; activeModule4: String; activePrice4: Number; activeSeason5: String; activeModule5: String;
-    activePrice5: Number; activeSeason6: String; activeModule6: String; activePrice6: Number;
-    activeSeason7: String; activeModule7: String; activePrice7: Number; activeSeason8: String; activeModule8: String;
-    activePrice8: Number; activeSeason9: String; activeModule9: String; activePrice9: Number;
-    activeSeason10: String; activeModule10: String; activePrice10: Number; activeSeason11: String; activeModule11: String;
-    activePrice11: Number; activeSeason12: String; activeModule12: String; activePrice12: Number;
-    activeSeason13: String; activeModule13: String; activePrice13: Number; activeSeason14: String; activeModule14: String;
-    activePrice14: Number; activeSeason15: String; activeModule15: String; activePrice15: Number;
-    activeSeason16: String; activeModule16: String; activePrice16: Number; activeSeason17: String; activeModule17: String;
-    activePrice17: Number; activeSeason18: String; activeModule18: String; activePrice18: Number;
-    activeSeason19: String; activeModule19: String; activePrice19: Number; activeSeason20: String; activeModule20: String;
-    activePrice20: Number; activeSeason21: String; activeModule21: String; activePrice21: Number;
-    activeSeason22: String; activeModule22: String; activePrice22: Number; activeSeason23: String; activeModule23: String;
-    activePrice23: Number; activeSeason24: String; activeModule24: String; activePrice24: Number;
-    activeSeason25: String; activeModule25: String; activePrice25: Number; activeSeason26: String; activeModule26: String;
-    activePrice26: Number; activeSeason27: String; activeModule27: String; activePrice27: Number;
-    activeSeason28: String; activeModule28: String; activePrice28: Number; activeSeason29: String; activeModule29: String;
-    activePrice29: Number; activeSeason30: String; activeModule30: String; activePrice30: Number;
-    activeSeason31: String; activeModule31: String; activePrice31: Number; activeSeason32: String; activeModule32: String;
-    activePrice32: Number; activeSeason33: String; activeModule33: String; activePrice33: Number;
-    activeSeason34: String; activeModule34: String; activePrice34: Number; activeSeason35: String; activeModule35: String;
-    activePrice35: Number; activeSeason36: String; activeModule36: String; activePrice36: Number;
-    activeSeason37: String; activeModule37: String; activePrice37: Number; activeSeason38: String; activeModule38: String;
-    activePrice38: Number; activeSeason39: String; activeModule39: String; activePrice39: Number;
-    activeSeason40: String; activeModule40: String; activePrice40: Number; activeSeason41: String; activeModule41: String;
-    activePrice41: Number; activeSeason42: String; activeModule42: String; activePrice42: Number;
-    activeSeason43: String; activeModule43: String; activePrice43: Number; activeSeason44: String; activeModule44: String;
-    activePrice44: Number; activeSeason45: String; activeModule45: String; activePrice45: Number;
-    activeSeason46: String; activeModule46: String; activePrice46: Number; activeSeason47: String; activeModule47: String;
-    activePrice47: Number; activeSeason48: String; activeModule48: String; activePrice48: Number;
-    activeSeason49: String; activeModule49: String; activePrice49: Number; activeSeason50: String; activeModule50: String;
-    activePrice50: Number; activeSeason51: String; activeModule51: String; activePrice51: Number;
-    activeSeason52: String; activeModule52: String; activePrice52: Number;
+
+    // Active Season 
+    activeSeason1: String; activeSeason2: String; activeSeason3: String; activeSeason4: String; activeSeason5: String;
+    activeSeason6: String; activeSeason7: String; activeSeason8: String; activeSeason9: String; activeSeason10: String;
+    activeSeason11: String; activeSeason12: String; activeSeason13: String; activeSeason14: String;
+    activeSeason15: String; activeSeason16: String; activeSeason17: String; activeSeason18: String;
+    activeSeason19: String; activeSeason20: String; activeSeason21: String; activeSeason22: String;
+    activeSeason23: String; activeSeason24: String; activeSeason25: String; activeSeason26: String;
+    activeSeason27: String; activeSeason28: String; activeSeason29: String; activeSeason30: String;
+    activeSeason31: String; activeSeason32: String; activeSeason33: String; activeSeason34: String;
+    activeSeason35: String; activeSeason36: String; activeSeason37: String; activeSeason38: String;
+    activeSeason39: String; activeSeason40: String; activeSeason41: String; activeSeason42: String;
+    activeSeason43: String; activeSeason44: String; activeSeason45: String; activeSeason46: String;
+    activeSeason47: String; activeSeason48;
+    activeSeason49: String; activeSeason50: String; activeSeason51: String; activeSeason52: String;
+    // Active module
+    activeModule1: String; activeModule2: String; activeModule3: String; activeModule4: String; activeModule5: String;
+    activeModule6: String; activeModule7: String; activeModule8: String; activeModule9: String; activeModule10: String;
+    activeModule11: String; activeModule12: String; activeModule13: String; activeModule14: String;
+    activeModule15: String; activeModule16: String; activeModule17: String; activeModule18: String;
+    activeModule19: String; activeModule20: String; activeModule21: String; activeModule22: String;
+    activeModule23: String; activeModule24: String; activeModule25: String; activeModule26: String;
+    activeModule27: String; activeModule28: String; activeModule29: String; activeModule30: String;
+    activeModule31: String; activeModule32: String; activeModule33: String; activeModule34: String;
+    activeModule35: String; activeModule36: String; activeModule37: String; activeModule38: String;
+    activeModule39: String; activeModule40: String; activeModule41: String; activeModule42: String;
+    activeModule43: String; activeModule44: String; activeModule45: String; activeModule46: String;
+    activeModule47: String; activeModule48: String; activeModule49: String; activeModule50: String;
+    activeModule51: String; activeModule52: String;
+    // Active Price
+    activePrice1: Number; activePrice2: Number;  activePrice3: Number; activePrice4: Number;
+    activePrice5: Number; activePrice6: Number; activePrice7: Number; activePrice8: Number;
+    activePrice9: Number; activePrice10: Number; activePrice11: Number;  activePrice12: Number;
+    activePrice13: Number; activePrice14: Number; activePrice15: Number; activePrice16: Number;
+    activePrice17: Number; activePrice18: Number; activePrice19: Number; activePrice20: Number;
+    activePrice21: Number; activePrice22: Number; activePrice23: Number; activePrice24: Number;
+    activePrice25: Number; activePrice26: Number; activePrice27: Number; activePrice28: Number;
+    activePrice29: Number;  activePrice30: Number; activePrice31: Number; activePrice32: Number;
+    activePrice33: Number; activePrice34: Number; activePrice35: Number; activePrice36: Number;
+    activePrice37: Number; activePrice38: Number; activePrice39: Number; activePrice40: Number;
+    activePrice41: Number; activePrice42: Number; activePrice43: Number; activePrice44: Number;
+    activePrice45: Number; activePrice46: Number; activePrice47: Number; activePrice48: Number;
+    activePrice49: Number; activePrice50: Number; activePrice51: Number; activePrice52: Number;
     // Edit values: Availability
     activeAvail1: String; activeAvail2: String; activeAvail3: String; activeAvail4: String; activeAvail5: String;
     activeAvail6: String; activeAvail7: String; activeAvail8: String; activeAvail9: String; activeAvail10: String;
