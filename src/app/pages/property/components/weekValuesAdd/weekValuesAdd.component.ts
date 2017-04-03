@@ -73,7 +73,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week2
                     week: 2,
                     season: season2,
@@ -86,7 +87,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week3
                     week: 3,
                     season: season3,
@@ -99,7 +101,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week4
                     week: 4,
                     season: season4,
@@ -112,7 +115,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week5
                     week: 5,
                     season: season5,
@@ -125,7 +129,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week6
                     week: 6,
                     season: season6,
@@ -138,7 +143,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week7
                     week: 7,
                     season: season7,
@@ -151,7 +157,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week8
                     week: 8,
                     season: season8,
@@ -177,7 +184,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week10
                     week: 10,
                     season: season10,
@@ -190,7 +198,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week11
                     week: 11,
                     season: season11,
@@ -203,7 +212,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week12
                     week: 12,
                     season: season12,
@@ -216,7 +226,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week13
                     week: 13,
                     season: season13,
@@ -229,7 +240,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week14
                     week: 14,
                     season: season14,
@@ -242,7 +254,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week15
                     week: 15,
                     season: season15,
@@ -255,7 +268,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week16
                     week: 16,
                     season: season16,
@@ -268,7 +282,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week17
                     week: 17,
                     season: season17,
@@ -281,7 +296,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week18
                     week: 18,
                     season: season18,
@@ -294,7 +310,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week19
                     week: 19,
                     season: season19,
@@ -307,7 +324,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week20
                     week: 20,
                     season: season20,
@@ -320,7 +338,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week21
                     week: 21,
                     season: season21,
@@ -333,7 +352,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week22
                     week: 22,
                     season: season22,
@@ -346,7 +366,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week23
                     week: 23,
                     season: season23,
@@ -359,7 +380,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week24
                     week: 24,
                     season: season24,
@@ -372,7 +394,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week25
                     week: 25,
                     season: season25,
@@ -385,7 +408,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week26
                     week: 26,
                     season: season26,
@@ -398,7 +422,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week27
                     week: 27,
                     season: season27,
@@ -411,7 +436,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week28
                     week: 28,
                     season: season28,
@@ -424,7 +450,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week29
                     week: 29,
                     season: season29,
@@ -437,7 +464,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week30
                     week: 30,
                     season: season30,
@@ -450,7 +478,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week31
                     week: 31,
                     season: season31,
@@ -463,7 +492,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week32
                     week: 32,
                     season: season32,
@@ -476,7 +506,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week33
                     week: 33,
                     season: season33,
@@ -489,7 +520,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week34
                     week: 34,
                     season: season34,
@@ -502,7 +534,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week35
                     week: 35,
                     season: season35,
@@ -515,7 +548,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week36
                     week: 36,
                     season: season36,
@@ -528,7 +562,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week37
                     week: 37,
                     season: season37,
@@ -541,7 +576,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week38
                     week: 38,
                     season: season38,
@@ -554,7 +590,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week39
                     week: 39,
                     season: season39,
@@ -567,7 +604,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week40
                     week: 40,
                     season: season40,
@@ -580,7 +618,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week41
                     week: 41,
                     season: season41,
@@ -593,7 +632,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week42
                     week: 42,
                     season: season42,
@@ -606,7 +646,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week43
                     week: 43,
                     season: season43,
@@ -619,7 +660,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week44
                     week: 44,
                     season: season44,
@@ -632,7 +674,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week45
                     week: 45,
                     season: season45,
@@ -645,7 +688,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week46
                     week: 46,
                     season: season46,
@@ -658,7 +702,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week47
                     week: 47,
                     season: season47,
@@ -671,7 +716,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week48
                     week: 48,
                     season: season48,
@@ -684,7 +730,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week49
                     week: 49,
                     season: season49,
@@ -697,7 +744,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week50
                     week: 50,
                     season: season50,
@@ -710,7 +758,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week51
                     week: 51,
                     season: season51,
@@ -723,7 +772,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }, { // week52
                     week: 52,
                     season: season52,
@@ -736,7 +786,8 @@ export class WeekValuesAddComponent implements OnInit {
                     owner_last_name: '',
                     phone_number: 0,
                     email: '',
-                    sold_price: 0
+                    sold_price: 0,
+                    payment_type: 'cash'
                 }
             ]
         };

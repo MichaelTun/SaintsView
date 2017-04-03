@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Property } from '../../shared/property';
 import { Availability } from '../../shared/availability';
+import { Enquiry } from '../../shared/enquiry';
 
 @Component({
   selector: 'enquiry',
@@ -15,14 +16,12 @@ import { Availability } from '../../shared/availability';
 export class EnquiryComponent {
 
   properties: Property[];
+  enquiries: Enquiry[];
   availability: Availability[];
   selectedProperty: any;
   weeksArray: JSON; // populates grid
   appState: string;
   activeKey: string;
-
-  private mailgunUrl: string = 'sandbox53b7154283734184830169d63178fb5b.mailgun.org';
-  private apiKey: string = 'key-936ccc9783abec1579df038efc7fbeeb';
 
   constructor(private firebaseService: FirebaseService, private http: Http) {
 
@@ -33,6 +32,8 @@ export class EnquiryComponent {
     this.firebaseService.getProperties()
       .subscribe(properties => { this.properties = properties; });
 
+      this.firebaseService.getEnquiries()
+      .subscribe(enquiries => { this.enquiries = enquiries; });
   }
 
 
@@ -46,9 +47,9 @@ export class EnquiryComponent {
       $('#selectedPropertyName').html(selectedPropertyN);
     }, 1700);
 
-    setTimeout(() => {
-      $("#summaryTable td#availButton:contains('Sold')").addClass('btn btn-primary');
-    }, 2000);
+    // setTimeout(() => {
+    //   $("#summaryTable td#availButton:contains('Sold')").addClass('btn btn-primary');
+    // }, 2000);
   }
 
 
@@ -72,41 +73,19 @@ export class EnquiryComponent {
   }
 
   // Mail
-  public sendMail(name: string, surname: string, email: string, week: string, phonenumber: number, message: string) {
-    console.log(name, surname, email, week, phonenumber, message);
+  public sendMail(name: string, surname: string, email: string, selectedweeks: string,
+                  week: string, phonenumber: number, message: string) {
+    let selectedProperty = document.getElementById('selectedPropertyName');
+    console.log(selectedProperty.innerText);
     if (email && week) {
-    let authHeaders = new Headers(
-      {
-        'Authorization': 'Basic ' + btoa('api:' + this.apiKey)
-      }
-    );
-
-    let body = 'from=' + email + '&to=' + 'michaeltunmer@gmail.com' + '&subject=' + name
-      + ' ' + surname + ' - ' + week + '&text=' + message;
-
-    this.http.post('https://api.mailgun.net/v3/' + this.mailgunUrl + '/messages', body, { headers: authHeaders })
-      .map(result => result.json())
-      .do(result => console.log('RESULT: ', JSON.stringify(result)))
-      .subscribe(result => {
-        console.log('SENT!');
-      }, error => {
-        console.log(error);
-      });
-   }
-
-    //       let headers = new Headers(
-    //       {
-    //                   'Content-Type': 'application/x-www-form-urlencoded',
-    //                   'Authorization': 'Basic ' +btoa("api:key-936ccc9783abec1579df038efc7fbeeb")
-    //       }
-    //       );
-    //     let url="https://api.mailgun.net/v3/sandbox53b7154283734184830169d63178fb5b.mailgun.org/messages";
-    //     let mail = {
-    //     from : "mike",
-    //     to : "michaeltunmer@gmail.com",
-    //     subject : "text",
-    //     text : "text"
-    //   };
-    //  this.http.post(url, mail, {headers:headers});
+      let newEnquiry = {
+        to: 'michaelt@just.property',
+        from: email,
+        subject: name + ' ' + surname + '. Property: ' + selectedProperty.innerText,
+        body: 'Selected Weeks: ' + selectedweeks + ', ' + week + '.' + ' Phone Number: ' + phonenumber + '.' +
+        'Message: ' + message
+      };
+      this.firebaseService.addEnquiry(newEnquiry);
+    }
   }
 }

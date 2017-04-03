@@ -4,10 +4,12 @@ import { AngularFire, FirebaseListObservable, AngularFireDatabase } from 'angula
 import 'rxjs/add/operator/map';
 
 import { Property } from '../shared/property';
+import { Enquiry } from '../shared/enquiry';
 
 @Injectable()
 export class FirebaseService {
   properties: FirebaseListObservable<Property[]>;
+  enquiries: FirebaseListObservable<Enquiry[]>;
 
   constructor(private _af: AngularFire, private db: AngularFireDatabase) {
 
@@ -33,6 +35,19 @@ export class FirebaseService {
 
   deleteProperty(key) {
     return this.properties.remove(key);
+  }
+
+  getEnquiries() {
+      this.enquiries = this._af.database.list('/enquiries') as
+        FirebaseListObservable<Enquiry[]>;
+    return this.enquiries;
+  }
+
+  addEnquiry(newEnquiry) {
+    console.log('hello from addEnquiry()');
+    console.log(newEnquiry);
+    console.log(this.enquiries);
+    return this.enquiries.push(newEnquiry);
   }
 }
 

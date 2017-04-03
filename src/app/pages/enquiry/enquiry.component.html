@@ -65,7 +65,8 @@
         <div class="container">
             <br>
             <h3>Enquiry Form</h3>
-            <form (submit)="sendMail(name.value, surname.value, email.value, week.value, phonenumber.value, message.value)" id="enquiryform">
+            <form (submit)="sendMail(name.value, surname.value, email.value, selectedweeks.value, week.value, phonenumber.value, message.value)"
+                id="enquiryform">
                 <div class="row">
                     <div class="col-md-4">
                         <label> Name
@@ -79,14 +80,14 @@
                     </div>
                     <div class="col-md-4">
                         <label> Email
-                        <input class="form-control" name="email" type="email" type="email" required placeholder="Price" #email>
+                        <input class="form-control" name="email" type="email" type="email" required placeholder="email" #email>
                             </label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <label> Selected Weeks: 
-                        <input class="form-control" type="text" style="color:white" name="selectedweeks" placeholder="week" id="selectedweeks" readonly>
+                        <input class="form-control" type="text" style="color:white" name="selectedweeks" placeholder="week" #selectedweeks id="selectedweeks" readonly>
                             </label>
                     </div>
                     <div class="col-md-4">
@@ -102,9 +103,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-8">
-                        <label> Message
-                        <textarea class="form-control" type="textarea" name="message" placeholder="Last Name" style="width:560px;" #message></textarea>
-                            </label>
+                        <div class="form-group">
+                            <label for="textarea01">Message</label>
+                            <textarea placeholder="extra info" name="message" class="form-control" #message></textarea>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <input type="submit" class="btn btn-success btn-lg" value="Contact Us">
