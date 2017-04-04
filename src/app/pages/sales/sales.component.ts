@@ -56,13 +56,13 @@ export class SalesComponent {
     this.appState = state;
   }
 
-    updateRepayment(amount, interest, period) {
+  updateRepayment(amount, interest, period) {
     if (amount) {
-      let repaymentAmount = (amount / period);
-      let interestAmount = ((amount / 100) * interest) / period;
-      repaymentAmount = repaymentAmount + interestAmount;
-      console.log(interestAmount, repaymentAmount);
-      $('#repayAmount').val(repaymentAmount.toPrecision(4));
+      let repaymentAmount: any;
+      interest = interest / 1200;
+      repaymentAmount = interest * -amount * Math.pow((1 + interest), period) / (1 - Math.pow((1 + interest), period));
+
+      $('#repayAmount').val(repaymentAmount.toFixed(2));
     }
   }
 }
