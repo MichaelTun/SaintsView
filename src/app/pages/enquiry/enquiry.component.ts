@@ -72,6 +72,16 @@ export class EnquiryComponent {
     $('#selectedweeks').val(selectedweeks.toString());
   }
 
+  updateRepayment(amount, interest, period) {
+    if (amount) {
+      let repaymentAmount = (amount / period);
+      let interestAmount = ((amount / 100) * interest) / period;
+      repaymentAmount = repaymentAmount + interestAmount;
+      console.log(interestAmount, repaymentAmount);
+      $('#repayAmount').val(repaymentAmount.toPrecision(4));
+    }
+  }
+
   // Mail
   public sendMail(name: string, surname: string, email: string, selectedweeks: string,
                   week: string, phonenumber: number, message: string) {
@@ -79,7 +89,7 @@ export class EnquiryComponent {
     console.log(selectedProperty.innerText);
     if (email && week) {
       let newEnquiry = {
-        to: 'michaelt@just.property',
+        to: 'saintsview@just.property',
         from: email,
         subject: name + ' ' + surname + '. Property: ' + selectedProperty.innerText,
         body: 'Selected Weeks: ' + selectedweeks + ', ' + week + '.' + ' Phone Number: ' + phonenumber + '.' +

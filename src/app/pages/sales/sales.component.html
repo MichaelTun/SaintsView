@@ -29,6 +29,41 @@
     </div>
 </div>
 
+<!--Loan Calculator-->
+<div class="container">
+    <ba-card>
+        <h3>Loan Calculator</h3>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label> Loan Amount ( ZAR )
+                        <input class="form-control" name="amount" type="number" placeholder="amount" id="loanAmount" #loanAmount>
+                            </label>
+            </div>
+            <div class="col-md-4">
+                <label> Interest Rate %
+                        <input class="form-control" style="color: white" readonly name="rate" type="text" value="18" placeholder="Last Name" id="interestRate" #interestRate>
+                            </label>
+            </div>
+            <div class="col-md-4">
+                <label> Period ( Months )
+                        <input class="form-control" readonly value="60" style="color: white" name="per" type="email" type="number" placeholder="email" id="period" #period>
+                            </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-lg btn-primary" (click)="updateRepayment(loanAmount.value, interestRate.value, period.value )">Calculate</button>
+            </div>
+            <div class="col-md-4">
+                <label> Monthly Repayment
+                        <input class="form-control" name="repayment" readonly type="text" style="color: white" placeholder="amount" id="repayAmount" #repayAmount>
+                            </label>
+            </div>
+        </div>
+    </ba-card>
+</div>
+
 <div class="row" *ngIf="appState == 'selected'">
     <ba-card title="Timeshare 52 Week Plan" baCardClass="with-scroll">
         <h3 id="selectedPropertyName"></h3>
