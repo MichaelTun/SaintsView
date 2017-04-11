@@ -30,6 +30,7 @@ export class FirebaseService {
     }
 
     updateProperty(key, updProperty) {
+      console.log(updProperty);
     return this.properties.update(key, updProperty);
   }
 
