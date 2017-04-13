@@ -15,7 +15,6 @@ export class PropertyService {
     }
 
     getPropertyByID(id) {
-        console.log('getProperty');
         return this.http.get('/api/properties/' + id)
             .map(res => res.json());
     }
@@ -27,7 +26,6 @@ export class PropertyService {
 
     addProperty(newProperty) {
         let headers = new Headers();
-        console.log("addProperty");
         headers.append('Content-Type', 'application/json');
         return this.http.post('/api/properties', newProperty, { headers: headers })
             .map(res => res.json());
@@ -35,9 +33,6 @@ export class PropertyService {
 
     updateProperty(property) {
         let headers = new Headers();
-        console.log(property.id);
-        console.log(property);
-        console.log('update property fired: ' + property);
         headers.append('Content-Type', 'application/json');
         return this.http.put('/api/properties/' + property.id, JSON.stringify(property), { headers: headers })
             .map(res => res.json());

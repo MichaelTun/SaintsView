@@ -36,10 +36,10 @@ export class SalesComponent {
     this.changeState('selected', property.id);
     let selectedPropertyN: string = property.property_name;
     this.firebaseService.getProperty(property.$key)
-      .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
+    .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
     setTimeout(() => {
       this.weeksArray = this.selectedProperty.weeks;
-      $('#selectedPropertyName').html(selectedPropertyN);
+    document.getElementById('selectedPropertyName').innerHTML = selectedPropertyN;
     }, 1700);
 
     // setTimeout(() => {

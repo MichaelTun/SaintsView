@@ -44,7 +44,7 @@ export class EnquiryComponent {
       .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
     setTimeout(() => {
       this.weeksArray = this.selectedProperty.weeks;
-      $('#selectedPropertyName').html(selectedPropertyN);
+      document.getElementById('selectedPropertyName').innerHTML = selectedPropertyN;
     }, 1700);
 
     // setTimeout(() => {

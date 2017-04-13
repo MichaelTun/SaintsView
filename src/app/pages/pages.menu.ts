@@ -40,6 +40,19 @@ export const PAGES_MENU = [
           }
         }
       },
+      // {
+      //   path: 'digidocs',
+      //   data: {
+      //     menu: {
+      //       title: 'Digi Docs',
+      //       icon: 'ion-android-options',
+      //       pathMatch: 'prefix',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 300,
+      //     }
+      //   }
+      // },
       {
         path: 'enquiry',
         data: {
@@ -49,7 +62,7 @@ export const PAGES_MENU = [
             pathMatch: 'prefix',
             selected: false,
             expanded: false,
-            order: 300,
+            order: 400,
           }
         }
       }

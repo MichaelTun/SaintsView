@@ -20,6 +20,7 @@ const routes: Routes = [
       { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module'), canActivate:[UserAuthGuardService] },
       { path: 'property', loadChildren: () => System.import('./property/property.module'), canActivate:[UserAuthGuardService] },
       { path: 'sales', loadChildren: () => System.import('./sales/sales.module'), canActivate:[UserAuthGuardService] },
+      { path: 'digidocs', loadChildren: () => System.import('./digidocs/digidocs.module'), canActivate:[UserAuthGuardService] },
       { path: 'enquiry', loadChildren: () => System.import('./enquiry/enquiry.module')}
     ]
   }

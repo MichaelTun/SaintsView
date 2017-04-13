@@ -26,6 +26,48 @@
         </ba-card>
     </div>
 </div>
+<div class="container">
+    <ba-card>
+    <div class="row">
+        <div class="col-md-3">
+            <figure class="snip1577">
+                <img src="../../../assets/img/lounge.jpg" alt="sample99" />
+            <figcaption>
+                <h3>Furnished Lounge</h3>
+                <!--<h4>Luxery</h4>-->
+            </figcaption>
+            </figure>
+        </div>
+        <div class="col-md-3">
+            <figure class="snip1577">
+                <img src="../../../assets/img/room.jpg" alt="sample99" />
+            <figcaption>
+                <h3>Full Plan View</h3>
+                <!--<h4>Luxery</h4>-->
+            </figcaption>
+            </figure>
+        </div>
+        <div class="col-md-3">
+            <figure class="snip1577">
+                <img src="../../../assets/img/view.jpg" alt="sample99" />
+            <figcaption>
+                <h3>Beach View</h3>
+                <!--<h4>Luxery</h4>-->
+            </figcaption>
+            </figure>
+        </div>
+        <div class="col-md-3">
+            <figure class="snip1577">
+                <img src="../../../assets/img/bedroom.jpg" alt="sample99" />
+            <figcaption>
+                <h3>Bedroom</h3>
+                <!--<h4>Luxery</h4>-->
+            </figcaption>
+            </figure>
+        </div>
+    </div>
+</ba-card>
+</div>
 <!--Loan Calculator-->
 <div class="container">
     <ba-card>
@@ -39,12 +81,12 @@
             </div>
             <div class="col-md-4">
                 <label> Interest Rate %
-                        <input class="form-control" style="color: white" readonly name="rate" type="text" value="18" placeholder="Last Name" id="interestRate" #interestRate>
+                        <input class="form-control" style="color: white" readonly name="rate" maxlength="2" type="text" value="18" placeholder="Last Name" id="interestRate" #interestRate>
                             </label>
             </div>
             <div class="col-md-4">
                 <label> Period ( Months )
-                        <input class="form-control" readonly value="60" style="color: white" name="per" type="email" type="number" placeholder="email" id="period" #period>
+                        <input class="form-control" value="60" style="color: white" name="per" type="email" type="number" placeholder="Number of months" id="period" #period>
                             </label>
             </div>
         </div>
@@ -53,7 +95,7 @@
                 <button class="btn btn-lg btn-primary" (click)="updateRepayment(loanAmount.value, interestRate.value, period.value )">Calculate</button>
             </div>
             <div class="col-md-4">
-                <label> Monthly Repayment
+                <label> Monthly Repayment ( ZAR )
                         <input class="form-control" name="repayment" readonly type="text" style="color: white" placeholder="Set Loan Amount and Calculate" id="repayAmount" #repayAmount>
                             </label>
             </div>
