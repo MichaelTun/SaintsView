@@ -8,12 +8,12 @@ import { Availability } from '../../shared/availability';
 import { Enquiry } from '../../shared/enquiry';
 
 @Component({
-  selector: 'enquiry',
+  selector: 'enquiryFrame',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./enquiry.scss')],
-  template: require('./enquiry.component.html'),
+  styles: [require('./enquiryFrame.scss')],
+  template: require('./enquiryFrame.component.html'),
 })
-export class EnquiryComponent {
+export class EnquiryFrameComponent {
 
   properties: Property[];
   enquiries: Enquiry[];

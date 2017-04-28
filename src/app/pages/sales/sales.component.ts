@@ -40,7 +40,8 @@ export class SalesComponent {
     setTimeout(() => {
       this.weeksArray = this.selectedProperty.weeks;
     document.getElementById('selectedPropertyName').innerHTML = selectedPropertyN;
-    }, 1700);
+  }, 1700);
+  document.getElementById('repayAmount').scrollIntoView();
 
     // setTimeout(() => {
     //   $("#summaryTable td.availCss:contains('Sold')").addClass('btn btn-success');
@@ -56,7 +57,17 @@ export class SalesComponent {
     this.appState = state;
   }
 
-  updateRepayment(amount, interest, period) {
+updateRepayment(price, depositPercentage, interest, period) {
+    if (depositPercentage < 20){
+      depositPercentage = 20;
+      $('#depositPercentage').val(depositPercentage);
+    }
+    let deposit = (price / 100) * depositPercentage;
+    let amount = price - deposit;
+
+    $('#loanAmount').val(amount.toFixed(2));
+
+    console.log(amount);
     if (amount) {
       let repaymentAmount: any;
       interest = interest / 1200;

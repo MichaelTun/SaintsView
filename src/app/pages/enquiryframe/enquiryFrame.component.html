@@ -1,0 +1,210 @@
+<section class="enquiryFrame">
+    <div class="row">
+        <h3>Select a Property to display its 52 Week Sales Plan</h3>
+        <br>
+        <div *ngIf="properties">
+            <ba-card baCardClass="with-scroll table-panel" title="Select a Property to display its 52 Week Sales Plan">
+                <div class="vertical-scroll">
+                    <table class="table table-striped" #propertyTable>
+                        <thead>
+                            <tr>
+                                <th>Property Name</th>
+                                <th>Size</th>
+                                <th>View / Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let property of properties">
+                                <td>{{property.property_name}}</td>
+                                <td>{{property.property_size}}</td>
+                                <td>
+                                    <button (click)="selectProperty(property)" class="btn btn-primary">Display Timeshare Sales</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ba-card>
+        </div>
+    </div>
+    <div class="container">
+        <ba-card>
+            <div class="row">
+                <h3>Demonstration Images</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <figure class="demo-image">
+                        <img src="../../../assets/img/lounge.jpg" alt="sample99" />
+                        <figcaption>
+                            <h3>Furnished Lounge</h3>
+                            <!--<h4>Luxery</h4>-->
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-3">
+                    <figure class="demo-image">
+                        <img src="../../../assets/img/room.jpg" alt="sample99" />
+                        <figcaption>
+                            <h3>Full Plan View</h3>
+                            <!--<h4>Luxery</h4>-->
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-3">
+                    <figure class="demo-image">
+                        <img src="../../../assets/img/view.jpg" alt="sample99" />
+                        <figcaption>
+                            <h3>Beach View</h3>
+                            <!--<h4>Luxery</h4>-->
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-3">
+                    <figure class="demo-image">
+                        <img src="../../../assets/img/bedroom.jpg" alt="sample99" />
+                        <figcaption>
+                            <h3>Bedroom</h3>
+                            <!--<h4>Luxery</h4>-->
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </ba-card>
+    </div>
+    <!--Loan Calculator-->
+    <div class="container">
+        <ba-card>
+            <h3>Loan Calculator</h3>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label> Price ( ZAR )
+                        <input class="form-control" name="amount" type="number" placeholder="price" id="price" #price>
+                            </label>
+                </div>
+                <div class="col-md-3">
+                    <label> Deposit Percentage 20% +
+                        <input class="form-control" value="20" name="amount" type="number" placeholder="amount" id="depositPercentage" #depositPercentage>
+                            </label>
+                </div>
+                <div class="col-md-3">
+                    <label> Interest Rate %
+                        <input class="form-control" style="color: white" readonly name="rate" maxlength="2" type="text" value="18" placeholder="Last Name" id="interestRate" #interestRate>
+                            </label>
+                </div>
+                <div class="col-md-3">
+                    <label> Period ( Months )
+                        <input class="form-control" value="60" style="color: white" name="period" type="email" type="number" placeholder="Number of months" id="period" #period>
+                            </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <button class="btn btn-lg btn-primary" (click)="updateRepayment(price.value, depositPercentage.value, interestRate.value, period.value )">Calculate</button>
+                </div>
+                <div class="col-md-3">
+                    <label> Loan Amount ( ZAR )
+                        <input class="form-control" style="color: white" readonly name="amount" type="number" placeholder="amount" id="loanAmount" #loanAmount>
+                            </label>
+                </div>
+                <div class="col-md-3">
+                    <label> Monthly Repayment ( ZAR )
+                        <input class="form-control" name="repayment" readonly type="text" style="color: white" placeholder="Set Loan Amount and Calculate" id="repayAmount" #repayAmount>
+                            </label>
+                </div>
+            </div>
+        </ba-card>
+    </div>
+
+    <div class="row" *ngIf="appState == 'selected'">
+        <ba-card title="Timeshare 52 Week Plan" baCardClass="with-scroll">
+            <h3 id="selectedPropertyName"></h3>
+            <table #summaryTable class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Season</th>
+                        <th>Module</th>
+                        <th>Price</th>
+                        <th>Arrival Date</th>
+                        <th>Departure Date</th>
+                        <th>Availability</th>
+                        <th>Select Week</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let week of weeksArray">
+                        <th>{{week.week}}</th>
+                        <td>{{week.season}}</td>
+                        <td>{{week.module}}</td>
+                        <td>R {{week.price}}</td>
+                        <td>{{week.arrival_date}}</td>
+                        <td>{{week.departure_date}}</td>
+                        <td class="availColumn">
+                            <!--<button class="btn btn-success">Availability: {{week.availability}}</button>-->
+                            <button type="" id="availButton" class="btn btn-success" data-id="{{week.week}}" data-toggle="modal" data-target="#myModal">{{week.availability}}</button>
+                        </td>
+                        <td>week {{week.week}} <input type="checkbox" value="{{week.week}}" (click)="addWeek();" name="selectWeek"
+                                id="selectWeek"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="container">
+                <br>
+                <h3>Enquiry Form</h3>
+                <form (submit)="sendMail(name.value, surname.value, email.value, selectedweeks.value, week.value, phonenumber.value, message.value)"
+                    id="enquiryform">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label> Name
+                        <input class="form-control" name="name" type="text" placeholder="First Name" #name>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label> Surname
+                        <input class="form-control" name="surname" type="text" placeholder="Last Name" #surname>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label> Email
+                        <input class="form-control" name="email" type="email" type="email" required placeholder="email" #email>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label> Selected Weeks: 
+                        <input class="form-control" type="text" style="color:white" name="selectedweeks" placeholder="week" #selectedweeks id="selectedweeks" readonly>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label> Extra week your'e Interested in
+                        <input class="form-control" type="text" name="week" placeholder="week" #week>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Contact Number
+                        <input class="form-control" name="phonenumber" type="number" placeholder="cell" #phonenumber>
+                    </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="textarea01">Message</label>
+                                <textarea placeholder="extra info" name="message" class="form-control" #message></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="submit" class="btn btn-success btn-lg" value="Contact Us">
+                            <br>
+                            <br>
+                            <h5>You may also email us personally at info@saintsview.co.za</h5>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </ba-card>
+    </div>
+</section>

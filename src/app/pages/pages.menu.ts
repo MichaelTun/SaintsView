@@ -65,6 +65,20 @@ export const PAGES_MENU = [
             order: 400,
           }
         }
+      },
+            {
+        path: 'enquiryframe',
+        data: {
+          menu: {
+            title: 'Enquiry',
+            icon: 'ion-document-text',
+            pathMatch: 'prefix',
+            selected: false,
+            expanded: false,
+            hidden: true,
+            order: 400,
+          }
+        }
       }
     ]
   }

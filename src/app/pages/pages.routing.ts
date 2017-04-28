@@ -21,7 +21,8 @@ const routes: Routes = [
       { path: 'property', loadChildren: () => System.import('./property/property.module'), canActivate:[UserAuthGuardService] },
       { path: 'sales', loadChildren: () => System.import('./sales/sales.module'), canActivate:[UserAuthGuardService] },
       { path: 'digidocs', loadChildren: () => System.import('./digidocs/digidocs.module'), canActivate:[UserAuthGuardService] },
-      { path: 'enquiry', loadChildren: () => System.import('./enquiry/enquiry.module')}
+      { path: 'enquiry', loadChildren: () => System.import('./enquiry/enquiry.module')},
+      { path: 'enquiryframe', loadChildren: () => System.import('./enquiryFrame/enquiryFrame.module')}
     ]
   }
 ];
