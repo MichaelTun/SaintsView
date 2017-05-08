@@ -30,7 +30,6 @@ export class FirebaseService {
     }
 
     updateProperty(key, updProperty) {
-      console.log(updProperty);
     return this.properties.update(key, updProperty);
   }
 
@@ -45,9 +44,6 @@ export class FirebaseService {
   }
 
   addEnquiry(newEnquiry) {
-    console.log('hello from addEnquiry()');
-    console.log(newEnquiry);
-    console.log(this.enquiries);
     return this.enquiries.push(newEnquiry);
   }
 }

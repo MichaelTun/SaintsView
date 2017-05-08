@@ -22,6 +22,10 @@ export class EnquiryFrameComponent {
   weeksArray: JSON; // populates grid
   appState: string;
   activeKey: string;
+  showFirstUnit: Boolean;
+  showImages_thirteen: Boolean = false; showImages_forteen: Boolean = false;
+  showImages_fifteen: Boolean = false; showImages_sixteen: Boolean = false;
+
 
   constructor(private firebaseService: FirebaseService, private http: Http) {
 
@@ -34,27 +38,78 @@ export class EnquiryFrameComponent {
 
       this.firebaseService.getEnquiries()
       .subscribe(enquiries => { this.enquiries = enquiries; });
+
+      this.showPropertyImages('default');
+
+      // $('.carousel').carousel({
+      //   interval: 2500
+      // });
   }
 
 
   selectProperty(property) {
-    this.changeState('selected', property.id);
+    this.changeState('selected', property.$key);
     let selectedPropertyN: string = property.property_name;
     this.firebaseService.getProperty(property.$key)
       .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
+
+    let propertyKey = property.$key;
+    console.log(propertyKey);
+    this.showPropertyImages(propertyKey);
+
     setTimeout(() => {
       this.weeksArray = this.selectedProperty.weeks;
       document.getElementById('selectedPropertyName').innerHTML = selectedPropertyN;
     }, 1700);
-    document.getElementById('repayAmount').scrollIntoView();
+    // document.getElementById('repayAmount').scrollIntoView();
     // setTimeout(() => {
     //   $("#summaryTable td#availButton:contains('Sold')").addClass('btn btn-primary');
     // }, 2000);
   }
 
+  showPropertyImages(key) {
+    switch (key) {
+      case '-Kj7VrceATh2Ane1YX6t': this.showImages_thirteen = true;
+      this.showImages_forteen = false; this.showImages_fifteen = false;
+      this.showImages_sixteen = false;
+        break;
+      case '-Kj7X_pRkkp0b_cXyg4P': this.showImages_thirteen = true;
+      this.showImages_forteen = false; this.showImages_fifteen = false;
+      this.showImages_sixteen = false;
+        break;
+
+      case '-Kj7VwdX8wtrV0XLIZrb': this.showImages_forteen = true;
+      this.showImages_thirteen = false; this.showImages_fifteen = false;
+      this.showImages_sixteen = false;
+      break;
+      case '-Kj7XhAkDDCxYb97Elm1': this.showImages_forteen = true;
+      this.showImages_thirteen = false; this.showImages_fifteen = false;
+      this.showImages_sixteen = false;
+      break;
+
+      case '-Kj7W29HdOMdfqGFItPa': this.showImages_fifteen = true;
+      this.showImages_thirteen = false; this.showImages_forteen = false;
+      this.showImages_sixteen = false;
+      break;
+      case '-Kj7Xnv0QO61nTy9Ht1H': this.showImages_fifteen = true;
+      this.showImages_thirteen = false; this.showImages_forteen = false;
+      this.showImages_sixteen = false;
+      break;
+
+      case '-Kj7WFNiPlGan7b-siwO': this.showImages_sixteen = true;
+      this.showImages_thirteen = false; this.showImages_forteen = false;
+      this.showImages_fifteen = false;
+      break;
+      case '-Kj7XthetAD8MYOofq0O': this.showImages_sixteen = true;
+      this.showImages_thirteen = false; this.showImages_forteen = false;
+      this.showImages_fifteen = false;
+      break;
+        default:
+         break;
+    }
+  }
 
   changeState(state, key) {
-    console.log('changing state to ' + state);
     if (key) {
       this.activeKey = key;
     }
@@ -82,7 +137,6 @@ export class EnquiryFrameComponent {
 
     $('#loanAmount').val(amount.toFixed(2));
 
-    console.log(amount);
     if (amount) {
       let repaymentAmount: any;
       interest = interest / 1200;
@@ -96,7 +150,6 @@ export class EnquiryFrameComponent {
   public sendMail(name: string, surname: string, email: string, selectedweeks: string,
                   week: string, phonenumber: number, message: string) {
     let selectedProperty = document.getElementById('selectedPropertyName');
-    console.log(selectedProperty.innerText);
     if (email && week) {
       let newEnquiry = {
         to: 'info@saintsview.co.za',

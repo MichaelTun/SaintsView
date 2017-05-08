@@ -187,8 +187,11 @@ export class PropertyComponent implements OnInit {
         });
     }
 
+    goToWeek(h){
+    document.getElementById(h).scrollIntoView();
+    }​
+
     changeState(state, key) {
-        console.log('changing state to ' + state);
         if (key) {
             this.activeKey = key;
         }
@@ -196,7 +199,6 @@ export class PropertyComponent implements OnInit {
     }
 
     changeWeekState(week) {
-        console.log('changing week state to ' + week);
         this.weekState = week;
     }
 
@@ -241,7 +243,7 @@ export class PropertyComponent implements OnInit {
         this.activeEmail4 = property.weeks[3].email; this.activeSoldPrice4 = property.weeks[3].sold_price;
         this.activePhoneNumber4 = property.weeks[3].phone_number;
         this.activePaymentT4 = property.weeks[3].payment_type;
-        this.activeTerms3 = property.weeks[3].terms;
+        this.activeTerms4 = property.weeks[3].terms;
 
         this.activeSeason5 = property.weeks[4].season; this.activeModule5 = property.weeks[4].module;
         this.activePrice5 = property.weeks[4].price; this.activeAvail5 = property.weeks[4].availability;
@@ -432,13 +434,13 @@ export class PropertyComponent implements OnInit {
         this.activeEmail26 = property.weeks[25].email; this.activeSoldPrice26 = property.weeks[25].sold_price;
         this.activePhoneNumber26 = property.weeks[25].phone_number;
         this.activePaymentT26 = property.weeks[25].payment_type; 
-        this.activeTerms25 = property.weeks[26].terms;
+        this.activeTerms26 = property.weeks[25].terms;
 
         this.activeSeason27 = property.weeks[26].season; this.activeModule27 = property.weeks[26].module;
         this.activePrice27 = property.weeks[26].price; this.activeAvail27 = property.weeks[26].availability;
         this.activeFirstName27 = property.weeks[26].owner_name;
         this.activeLastName27 = property.weeks[26].owner_last_name;
-        this.activeEmail27 = property.weeks[26].email; this.activeSoldPrice27 = property.weeks[27].sold_price;
+        this.activeEmail27 = property.weeks[26].email; this.activeSoldPrice27 = property.weeks[26].sold_price;
         this.activePhoneNumber27 = property.weeks[26].phone_number;
         this.activePaymentT27 = property.weeks[26].payment_type; 
         this.activeTerms27 = property.weeks[26].terms;
@@ -467,7 +469,7 @@ export class PropertyComponent implements OnInit {
         this.activeLastName30 = property.weeks[29].owner_last_name;
         this.activeEmail30 = property.weeks[29].email; this.activeSoldPrice30 = property.weeks[29].sold_price;
         this.activePhoneNumber30 = property.weeks[29].phone_number;
-        this.activePaymentT30 = property.weeks[29].payment_type; 
+        this.activePaymentT30 = property.weeks[29].payment_type;
         this.activeTerms30 = property.weeks[29].terms;
 
         this.activeSeason31 = property.weeks[30].season; this.activeModule31 = property.weeks[30].module;
@@ -476,7 +478,7 @@ export class PropertyComponent implements OnInit {
         this.activeLastName31 = property.weeks[30].owner_last_name;
         this.activeEmail31 = property.weeks[30].email; this.activeSoldPrice31 = property.weeks[30].sold_price;
         this.activePhoneNumber31 = property.weeks[30].phone_number;
-        this.activePaymentT31 = property.weeks[30].payment_type; 
+        this.activePaymentT31 = property.weeks[30].payment_type;
         this.activeTerms31 = property.weeks[30].terms;
 
         this.activeSeason32 = property.weeks[31].season; this.activeModule32 = property.weeks[31].module;
@@ -485,7 +487,7 @@ export class PropertyComponent implements OnInit {
         this.activeLastName32 = property.weeks[31].owner_last_name;
         this.activeEmail32 = property.weeks[31].email; this.activeSoldPrice32 = property.weeks[31].sold_price;
         this.activePhoneNumber32 = property.weeks[31].phone_number;
-        this.activePaymentT32 = property.weeks[31].payment_type; 
+        this.activePaymentT32 = property.weeks[31].payment_type;
         this.activeTerms32 = property.weeks[31].terms;
 
         this.activeSeason33 = property.weeks[32].season; this.activeModule33 = property.weeks[32].module;
@@ -531,7 +533,7 @@ export class PropertyComponent implements OnInit {
         this.activeEmail37 = property.weeks[36].email; this.activeSoldPrice37 = property.weeks[36].sold_price;
         this.activePhoneNumber37 = property.weeks[36].phone_number;
         this.activePaymentT37 = property.weeks[36].payment_type; 
-        this.activeTerms36 = property.weeks[37].terms;
+        this.activeTerms37 = property.weeks[36].terms;
 
         this.activeSeason38 = property.weeks[37].season; this.activeModule38 = property.weeks[37].module;
         this.activePrice38 = property.weeks[37].price; this.activeAvail38 = property.weeks[37].availability;
@@ -549,7 +551,7 @@ export class PropertyComponent implements OnInit {
         this.activeEmail39 = property.weeks[38].email; this.activeSoldPrice39 = property.weeks[38].sold_price;
         this.activePhoneNumber39 = property.weeks[38].phone_number;
         this.activePaymentT39 = property.weeks[38].payment_type; 
-        this.activeTerms39 = property.weeks[39].terms;
+        this.activeTerms39 = property.weeks[38].terms;
 
         this.activeSeason40 = property.weeks[39].season; this.activeModule40 = property.weeks[39].module;
         this.activePrice40 = property.weeks[39].price; this.activeAvail40 = property.weeks[39].availability;
@@ -620,7 +622,7 @@ export class PropertyComponent implements OnInit {
         this.activeLastName47 = property.weeks[46].owner_last_name;
         this.activeEmail47 = property.weeks[46].email; this.activeSoldPrice47 = property.weeks[46].sold_price;
         this.activePhoneNumber47 = property.weeks[46].phone_number;
-        this.activePaymentT47 = property.weeks[46].payment_type; 
+        this.activePaymentT47 = property.weeks[46].payment_type;
         this.activeTerms47 = property.weeks[46].terms;
 
         this.activeSeason48 = property.weeks[47].season; this.activeModule48 = property.weeks[47].module;

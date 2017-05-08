@@ -1,9 +1,6 @@
 h3, td, th {
     text-align: center;
-}
-
- .enquiryFrame{
-  margin: 25px 50px;
+    color: black;
 }
 
 input[type=checkbox] {
@@ -136,3 +133,149 @@ input[type=checkbox] {
   -webkit-transition-delay: 0.35s;
   transition-delay: 0.35s;
 }
+
+ .enquiry-frame{
+  height: 1000px;
+  padding: 5px 50px;
+  background: none !important;
+  background-color: white !important;
+}
+
+h3 {
+  color: #23237B;
+  text-transform: uppercase;
+}
+
+.card-title {
+  color:#23237B;
+}
+
+.btn-primary {
+  background-color: #0B8DCE !important;
+}
+
+// .btn-success {
+//   background-color: #0B8DCE !important;
+// }
+
+.enquiry-form {
+  color: black;
+}
+
+.form-control {
+  color: black;
+  border: 1px solid grey;
+
+   &:focus {
+    color: black;
+    border-color: #0B8DCE;
+  }
+}
+
+// .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+//    background-color: #F7CE00;
+// }
+
+.carouselExampleIndicators {
+  border-radius: 20px;
+}
+
+// Image Slider START
+tml {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+img {
+  width: 100%;
+  height: auto;
+	padding: 5px;
+}
+
+h2 {
+  text-align:center;
+	padding-bottom: 1em;
+}
+
+.slick-dots {
+	text-align: center;
+  margin: 0 0 10px 0;
+  padding: 0;
+  li {
+    display:inline-block;
+    margin-left: 4px;
+    margin-right: 4px;
+    &.slick-active {
+      button {
+        background-color:black;
+      }
+    }
+    button {
+      font: 0/0 a;
+      text-shadow: none;
+      color: transparent;
+      background-color:#999;
+      border:none;
+      width: 15px;
+      height: 15px;
+      border-radius:50%;
+    }
+		:hover{
+			background-color: black;
+		}
+  }
+}
+
+/* Custom Arrow */
+.prev{
+	color: #999;
+	position: absolute;
+	top: 38%;
+	left: -2em;
+	font-size: 1.5em;
+		:hover{
+			cursor: pointer;
+			color: black;
+		}
+}
+.next{
+	color: #999;
+	position: absolute;
+	top: 38%;
+	right: -2em;
+	font-size: 1.5em;
+	:hover{
+			cursor: pointer;
+			color: black;
+		}
+}
+
+@media screen and (max-width: 800px) {
+    .next {
+        display: none !important;
+    }
+}
+
+.img-fluid {
+  border-radius: 10px;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #8BD22F;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+}
+.carousel-indicators .active {
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: #0B8DCE;
+}
+// Image Slider END

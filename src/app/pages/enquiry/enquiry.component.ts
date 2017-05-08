@@ -38,7 +38,8 @@ export class EnquiryComponent {
 
 
   selectProperty(property) {
-    this.changeState('selected', property.id);
+    this.changeState('selected', property.$key);
+    console.log(property.$key);
     let selectedPropertyN: string = property.property_name;
     this.firebaseService.getProperty(property.$key)
       .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
@@ -54,7 +55,6 @@ export class EnquiryComponent {
 
 
   changeState(state, key) {
-    console.log('changing state to ' + state);
     if (key) {
       this.activeKey = key;
     }
@@ -82,7 +82,6 @@ export class EnquiryComponent {
 
     $('#loanAmount').val(amount.toFixed(2));
 
-    console.log(amount);
     if (amount) {
       let repaymentAmount: any;
       interest = interest / 1200;
