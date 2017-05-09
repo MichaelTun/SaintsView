@@ -57,17 +57,18 @@ export class SalesComponent {
     this.appState = state;
   }
 
-updateRepayment(price, depositPercentage, interest, period) {
+updateRepayment(price, depositPercentage, depositValue, interest, period) {
     if (depositPercentage < 20){
       depositPercentage = 20;
       $('#depositPercentage').val(depositPercentage);
     }
     let deposit = (price / 100) * depositPercentage;
+    if (depositValue !== '') {
+      deposit = depositValue;
+    }
     let amount = price - deposit;
 
     $('#loanAmount').val(amount.toFixed(2));
-
-    console.log(amount);
     if (amount) {
       let repaymentAmount: any;
       interest = interest / 1200;

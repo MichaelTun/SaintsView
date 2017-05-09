@@ -26,51 +26,6 @@
         </ba-card>
     </div>
 </div>
-<div class="container">
-    <ba-card>
-        <div class="row">
-            <h3>Demonstration Images</h3>
-        </div>
-    <div class="row">
-        <div class="col-md-3">
-            <figure class="demo-image">
-                <img src="../../../assets/img/lounge.jpg" alt="sample99" />
-            <figcaption>
-                <h3>Furnished Lounge</h3>
-                <!--<h4>Luxery</h4>-->
-            </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="demo-image">
-                <img src="../../../assets/img/room.jpg" alt="sample99" />
-            <figcaption>
-                <h3>Full Plan View</h3>
-                <!--<h4>Luxery</h4>-->
-            </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="demo-image">
-                <img src="../../../assets/img/view.jpg" alt="sample99" />
-            <figcaption>
-                <h3>Beach View</h3>
-                <!--<h4>Luxery</h4>-->
-            </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="demo-image">
-                <img src="../../../assets/img/bedroom.jpg" alt="sample99" />
-            <figcaption>
-                <h3>Bedroom</h3>
-                <!--<h4>Luxery</h4>-->
-            </figcaption>
-            </figure>
-        </div>
-    </div>
-</ba-card>
-</div>
 <!--Loan Calculator-->
 <div class="container">
     <ba-card>
@@ -117,8 +72,287 @@
 </div>
 
 <div class="row" *ngIf="appState == 'selected'">
+    <ba-card>
+            <div class="row">
+                <h3 id="selectedPropertyName"></h3>
+                <div *ngIf="showImages_thirteen" class="col-md-12"> <!-- Display Images for unit 13 and 26 -->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_1.jpg" target="_blank"><img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_1.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_2.jpg" target="_blank">
+                                        <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_2.jpg" alt="Second slide">
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_4.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_4.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_3.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_3.jpg" alt="Fourth slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_5.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_5.jpg" alt="Sixth slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_6.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_6.jpg" alt="Seventh slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_7.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_7.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_8.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_8.jpg" alt="Second slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_9.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_9.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_10.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_10.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_11.jpg" alt="Second slide">
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit13_12.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit13_12.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div *ngIf="showImages_forteen" class="col-md-12"> <!-- Display Images for unit 14 and 24 -->
+                    <div id="forteenIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#forteenIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#forteenIndicators" data-slide-to="1"></li>
+                            <li data-target="#forteenIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_3.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_3.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_2.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_2.jpg" alt="Second slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_4.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_4.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_1.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_1.jpg" alt="Fourth slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_5.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_5.jpg" alt="Sixth slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_6.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_6.jpg" alt="Seventh slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_7.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_7.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_8.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_8.jpg" alt="Second slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit14_9.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit14_9.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#forteenIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#forteenIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div *ngIf="showImages_fifteen" class="col-md-12"> <!-- Display Images for unit 15 and 25 -->
+                    <div id="fifteenIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#fifteenIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#fifteenIndicators" data-slide-to="1"></li>
+                            <li data-target="#fifteenIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_1.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_1.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_2.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_5.jpg" alt="Second slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_4.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_4.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_3.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_3.jpg" alt="Fourth slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_5.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_2.jpg" alt="Sixth slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_6.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_6.jpg" alt="Seventh slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_7.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_7.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_8.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_8.jpg" alt="Second slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit15_9.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit15_9.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#fifteenIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#fifteenIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div *ngIf="showImages_sixteen" class="col-md-12"> <!-- Display Images for unit 13 and 26 -->
+                    <div id="sixteenIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#sixteenIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#sixteenIndicators" data-slide-to="1"></li>
+                            <li data-target="#sixteenIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_1.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_1.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_1.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_2.jpg" alt="Second slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_4.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_4.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_3.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_3.jpg" alt="Fourth slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_5.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_5.jpg" alt="Sixth slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_6.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_6.jpg" alt="Seventh slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_7.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_7.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_8.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_8.jpg" alt="Second slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_9.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_9.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_10.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_10.jpg" alt="First slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_11.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_11.jpg" alt="Second slide"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="../../../assets/img/app/units/unit16_12.jpg" target="_blank">
+                                    <img class="d-block img-fluid" src="../../../assets/img/app/units/unit16_12.jpg" alt="Third slide"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#sixteenIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#sixteenIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ba-card>
     <ba-card title="Timeshare 52 Week Plan" baCardClass="with-scroll">
-        <h3 id="selectedPropertyName"></h3>
         <table #summaryTable class="table table-bordered">
             <thead>
                 <tr>

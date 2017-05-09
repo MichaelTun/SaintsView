@@ -39,8 +39,6 @@ export class EnquiryFrameComponent {
       this.firebaseService.getEnquiries()
       .subscribe(enquiries => { this.enquiries = enquiries; });
 
-      this.showPropertyImages('default');
-
       // $('.carousel').carousel({
       //   interval: 2500
       // });
@@ -50,16 +48,17 @@ export class EnquiryFrameComponent {
   selectProperty(property) {
     this.changeState('selected', property.$key);
     let selectedPropertyN: string = property.property_name;
+    let propertyInfo: string = property.extra_info;
     this.firebaseService.getProperty(property.$key)
       .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
 
     let propertyKey = property.$key;
-    console.log(propertyKey);
     this.showPropertyImages(propertyKey);
 
     setTimeout(() => {
       this.weeksArray = this.selectedProperty.weeks;
       document.getElementById('selectedPropertyName').innerHTML = selectedPropertyN;
+      document.getElementById('extraInfo').innerHTML = propertyInfo;
     }, 1700);
     // document.getElementById('repayAmount').scrollIntoView();
     // setTimeout(() => {

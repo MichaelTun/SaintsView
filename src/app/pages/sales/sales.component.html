@@ -32,7 +32,7 @@
 <!--Loan Calculator-->
 <div class="container">
     <ba-card>
-        <h3>Loan Calculator</h3>
+        <h3>Admin Loan Calculator</h3>
         <br>
         <div class="row">
             <div class="col-md-3">
@@ -46,10 +46,17 @@
                             </label>
             </div>
             <div class="col-md-3">
-                <label> Interest Rate %
-                        <input class="form-control" style="color: white" readonly name="rate" maxlength="2" type="text" value="18" placeholder="Last Name" id="interestRate" #interestRate>
+                <label> Deposit Amount
+                        <input class="form-control" value="" name="amount" type="number" placeholder="amount" id="depositValue" #depositValue>
                             </label>
             </div>
+            <div class="col-md-3">
+                <label> Interest Rate %
+                        <input class="form-control" style="color: white" name="rate" maxlength="2" type="text" value="18" placeholder="Last Name" id="interestRate" #interestRate>
+                            </label>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-3">
                 <label> Period ( Months )
                         <input class="form-control" value="60" style="color: white" name="period" type="email" type="number" placeholder="Number of months" id="period" #period>
@@ -58,7 +65,7 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <button class="btn btn-lg btn-primary" (click)="updateRepayment(price.value, depositPercentage.value, interestRate.value, period.value )">Calculate</button>
+                <button class="btn btn-lg btn-primary" (click)="updateRepayment(price.value, depositPercentage.value, depositValue.value, interestRate.value, period.value )">Calculate</button>
             </div>
             <div class="col-md-3">
                 <label> Loan Amount ( ZAR )
@@ -71,6 +78,7 @@
                             </label>
             </div>
         </div>
+        <h5>Info: If a Deposit Amount is supplied, the deposit percentage will no longer effect the calculation.</h5>
     </ba-card>
 </div>
 

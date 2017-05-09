@@ -132,3 +132,28 @@ input[type=checkbox] {
   -webkit-transition-delay: 0.35s;
   transition-delay: 0.35s;
 }
+
+.img-fluid {
+  border-radius: 10px;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #8BD22F;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+}
+.carousel-indicators .active {
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: #00ABFF;
+}

@@ -22,6 +22,8 @@ export class EnquiryComponent {
   weeksArray: JSON; // populates grid
   appState: string;
   activeKey: string;
+  showImages_thirteen: Boolean = false; showImages_forteen: Boolean = false;
+  showImages_fifteen: Boolean = false; showImages_sixteen: Boolean = false;
 
   constructor(private firebaseService: FirebaseService, private http: Http) {
 
@@ -39,7 +41,10 @@ export class EnquiryComponent {
 
   selectProperty(property) {
     this.changeState('selected', property.$key);
-    console.log(property.$key);
+
+    let propertyKey = property.$key;
+    this.showPropertyImages(propertyKey);
+
     let selectedPropertyN: string = property.property_name;
     this.firebaseService.getProperty(property.$key)
       .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
@@ -59,6 +64,48 @@ export class EnquiryComponent {
       this.activeKey = key;
     }
     this.appState = state;
+  }
+
+  showPropertyImages(key) {
+    switch (key) {
+      case '-Kj7VrceATh2Ane1YX6t': this.showImages_thirteen = true;
+      this.showImages_forteen = false; this.showImages_fifteen = false;
+      this.showImages_sixteen = false;
+        break;
+      case '-Kj7X_pRkkp0b_cXyg4P': this.showImages_thirteen = true;
+      this.showImages_forteen = false; this.showImages_fifteen = false;
+      this.showImages_sixteen = false;
+        break;
+
+      case '-Kj7VwdX8wtrV0XLIZrb': this.showImages_forteen = true;
+      this.showImages_thirteen = false; this.showImages_fifteen = false;
+      this.showImages_sixteen = false;
+      break;
+      case '-Kj7XhAkDDCxYb97Elm1': this.showImages_forteen = true;
+      this.showImages_thirteen = false; this.showImages_fifteen = false;
+      this.showImages_sixteen = false;
+      break;
+
+      case '-Kj7W29HdOMdfqGFItPa': this.showImages_fifteen = true;
+      this.showImages_thirteen = false; this.showImages_forteen = false;
+      this.showImages_sixteen = false;
+      break;
+      case '-Kj7Xnv0QO61nTy9Ht1H': this.showImages_fifteen = true;
+      this.showImages_thirteen = false; this.showImages_forteen = false;
+      this.showImages_sixteen = false;
+      break;
+
+      case '-Kj7WFNiPlGan7b-siwO': this.showImages_sixteen = true;
+      this.showImages_thirteen = false; this.showImages_forteen = false;
+      this.showImages_fifteen = false;
+      break;
+      case '-Kj7XthetAD8MYOofq0O': this.showImages_sixteen = true;
+      this.showImages_thirteen = false; this.showImages_forteen = false;
+      this.showImages_fifteen = false;
+      break;
+        default:
+         break;
+    }
   }
 
   addWeek() {
