@@ -309,9 +309,12 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <h5 id="extraInfo"></h5>
                 </div>
             </div>
+        </ba-card>
+        <ba-card> 
+            <h3>Property Description</h3>
+            <h5 id="extraInfo" style="color: #23237B; line-height: 150%; text-align:center;"></h5>
         </ba-card>
         <ba-card baCardClass="with-scroll">
             <h3>Available Timeshare Weeks </h3>
@@ -334,8 +337,8 @@
                         <td>{{week.season}}</td>
                         <td>{{week.module}}</td>
                         <td>R{{week.price}}</td>
-                        <td>{{week.arrival_date}}</td>
-                        <td>{{week.departure_date}}</td>
+                        <td>{{week.a_date}}</td>
+                        <td>{{week.d_date}}</td>
                         <td class="availColumn">
                             <!--<button class="btn btn-success">Availability: {{week.availability}}</button>-->
                             <button type="" id="availButton" class="btn btn-success" data-id="{{week.week}}" data-toggle="modal" data-target="#myModal">{{week.availability}}</button>

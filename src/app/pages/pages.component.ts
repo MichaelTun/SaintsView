@@ -5,7 +5,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styles: [],
   template: require('./pages.component.html')
 })
-export class Pages {
+export class Pages {   
   notEnquiryFramePage: boolean = false;
   constructor() {
     let location = window.location.href;

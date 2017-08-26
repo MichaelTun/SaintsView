@@ -16,21 +16,48 @@ export class FirebaseService {
   }
 
   getProperties() {
-      this.properties = this._af.database.list('/properties') as
-        FirebaseListObservable<Property[]>;
+    this.properties = this._af.database.list('/properties') as
+      FirebaseListObservable<Property[]>;
     return this.properties;
   }
 
-  addProperty(newProperty){
+  addProperty(newProperty) {
     return this.properties.push(newProperty);
   }
 
-    getProperty(propertytIndex: string) {
-        return this.db.object('/properties/' + propertytIndex);
-    }
+  getProperty(propertytIndex: string) {
+    return this.db.object('/properties/' + propertytIndex);
+  }
 
-    updateProperty(key, updProperty) {
+  updateProperty(key, updProperty) {
     return this.properties.update(key, updProperty);
+  }
+
+  updatePropertyByWeek(key, weekNum, updWeek) {
+    let arrayIndex = weekNum - 1;
+    // let propertiesData = this._af.database.list('/properties/' + key + '/weeks/' + arrayIndex);
+    // propertiesData.forEach(element => {
+    //   console.log(element);
+    // });
+    return this.db.object('/properties/' + key + '/weeks/' + arrayIndex).update(updWeek);
+    // console.log('key :' + key);
+    // console.log('week :' + weekNum);
+    // console.log(updWeek);
+
+    // console.log(propertiesData);
+  }
+
+  updatePropertyDetails(key, propDetails) {
+    // let propertiesData = this._af.database.list('/properties/' + key + '/weeks/' + arrayIndex);
+    // propertiesData.forEach(element => {
+    //   console.log(element);
+    // });
+    return this.db.object('/properties/' + key).update(propDetails);
+    // console.log('key :' + key);
+    // console.log('week :' + weekNum);
+    // console.log(updWeek);
+
+    // console.log(propertiesData);
   }
 
   deleteProperty(key) {
@@ -38,8 +65,8 @@ export class FirebaseService {
   }
 
   getEnquiries() {
-      this.enquiries = this._af.database.list('/enquiries') as
-        FirebaseListObservable<Enquiry[]>;
+    this.enquiries = this._af.database.list('/enquiries') as
+      FirebaseListObservable<Enquiry[]>;
     return this.enquiries;
   }
 

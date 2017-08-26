@@ -149,7 +149,7 @@ export class EnquiryFrameComponent {
   public sendMail(name: string, surname: string, email: string, selectedweeks: string,
                   week: string, phonenumber: number, message: string) {
     let selectedProperty = document.getElementById('selectedPropertyName');
-    if (email && week) {
+    if (email) {
       let newEnquiry = {
         to: 'info@saintsview.co.za',
         from: email,

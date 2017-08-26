@@ -58,14 +58,14 @@ export class PropertyComponent implements OnInit {
     activeModule47: String; activeModule48: String; activeModule49: String; activeModule50: String;
     activeModule51: String; activeModule52: String;
     // Active Price
-    activePrice1: Number; activePrice2: Number;  activePrice3: Number; activePrice4: Number;
+    activePrice1: Number; activePrice2: Number; activePrice3: Number; activePrice4: Number;
     activePrice5: Number; activePrice6: Number; activePrice7: Number; activePrice8: Number;
-    activePrice9: Number; activePrice10: Number; activePrice11: Number;  activePrice12: Number;
+    activePrice9: Number; activePrice10: Number; activePrice11: Number; activePrice12: Number;
     activePrice13: Number; activePrice14: Number; activePrice15: Number; activePrice16: Number;
     activePrice17: Number; activePrice18: Number; activePrice19: Number; activePrice20: Number;
     activePrice21: Number; activePrice22: Number; activePrice23: Number; activePrice24: Number;
     activePrice25: Number; activePrice26: Number; activePrice27: Number; activePrice28: Number;
-    activePrice29: Number;  activePrice30: Number; activePrice31: Number; activePrice32: Number;
+    activePrice29: Number; activePrice30: Number; activePrice31: Number; activePrice32: Number;
     activePrice33: Number; activePrice34: Number; activePrice35: Number; activePrice36: Number;
     activePrice37: Number; activePrice38: Number; activePrice39: Number; activePrice40: Number;
     activePrice41: Number; activePrice42: Number; activePrice43: Number; activePrice44: Number;
@@ -180,16 +180,16 @@ export class PropertyComponent implements OnInit {
     activeTerms44: string; activeTerms45: string; activeTerms46: string; activeTerms47: string; activeTerms48: string;
     activeTerms49: string; activeTerms50: string; activeTerms51: string; activeTerms52: string;
 
-        ngOnInit() {
+    ngOnInit() {
         // firebase
         this._firebaseService.getProperties().subscribe(properties => {
             this.properties = properties;
         });
     }
 
-    goToWeek(h){
-    document.getElementById(h).scrollIntoView();
-    }​
+    goToWeek(h) {
+        document.getElementById(h).scrollIntoView();
+    }
 
     changeState(state, key) {
         if (key) {
@@ -212,464 +212,1520 @@ export class PropertyComponent implements OnInit {
         this.activePropertyName = property.property_name;
         this.activePropertySize = property.property_size;
         this.activeExtraInfo = property.extra_info;
+
         // Week 1
         this.activeSeason1 = property.weeks[0].season; this.activeModule1 = property.weeks[0].module;
         this.activePrice1 = property.weeks[0].price; this.activeAvail1 = property.weeks[0].availability;
-        this.activeFirstName1 = property.weeks[0].owner_name; this.activeLastName1 = property.weeks[0].owner_last_name;
+        this.activeFirstName1 = property.weeks[0].fname; this.activeLastName1 = property.weeks[0].sname;
         this.activeEmail1 = property.weeks[0].email; this.activeSoldPrice1 = property.weeks[0].sold_price;
-        this.activePhoneNumber1 = property.weeks[0].phone_number;
+        this.activePhoneNumber1 = property.weeks[0].tel_no;
         this.activePaymentT1 = property.weeks[0].payment_type;
         this.activeTerms1 = property.weeks[0].terms;
         // Week 2
         this.activeSeason2 = property.weeks[1].season; this.activeModule2 = property.weeks[1].module;
         this.activePrice2 = property.weeks[1].price; this.activeAvail2 = property.weeks[1].availability;
-        this.activeFirstName2 = property.weeks[1].owner_name; this.activeLastName2 = property.weeks[1].owner_last_name;
+        this.activeFirstName2 = property.weeks[1].fname; this.activeLastName2 = property.weeks[1].sname;
         this.activeEmail2 = property.weeks[1].email; this.activeSoldPrice2 = property.weeks[1].sold_price;
-        this.activePhoneNumber2 = property.weeks[1].phone_number;
+        this.activePhoneNumber2 = property.weeks[1].tel_no;
         this.activePaymentT2 = property.weeks[1].payment_type;
         this.activeTerms2 = property.weeks[1].terms;
         // Week 3
         this.activeSeason3 = property.weeks[2].season; this.activeModule3 = property.weeks[2].module;
         this.activePrice3 = property.weeks[2].price; this.activeAvail3 = property.weeks[2].availability;
-        this.activeFirstName3 = property.weeks[2].owner_name; this.activeLastName3 = property.weeks[2].owner_last_name;
+        this.activeFirstName3 = property.weeks[2].fname; this.activeLastName3 = property.weeks[2].sname;
         this.activeEmail3 = property.weeks[2].email; this.activeSoldPrice3 = property.weeks[2].sold_price;
-        this.activePhoneNumber3 = property.weeks[2].phone_number;
+        this.activePhoneNumber3 = property.weeks[2].tel_no;
         this.activePaymentT3 = property.weeks[2].payment_type;
         this.activeTerms3 = property.weeks[2].terms;
         // Week 4
         this.activeSeason4 = property.weeks[3].season; this.activeModule4 = property.weeks[3].module;
         this.activePrice4 = property.weeks[3].price; this.activeAvail4 = property.weeks[3].availability;
-        this.activeFirstName4 = property.weeks[3].owner_name; this.activeLastName4 = property.weeks[3].owner_last_name;
+        this.activeFirstName4 = property.weeks[3].fname; this.activeLastName4 = property.weeks[3].sname;
         this.activeEmail4 = property.weeks[3].email; this.activeSoldPrice4 = property.weeks[3].sold_price;
-        this.activePhoneNumber4 = property.weeks[3].phone_number;
+        this.activePhoneNumber4 = property.weeks[3].tel_no;
         this.activePaymentT4 = property.weeks[3].payment_type;
         this.activeTerms4 = property.weeks[3].terms;
 
         this.activeSeason5 = property.weeks[4].season; this.activeModule5 = property.weeks[4].module;
         this.activePrice5 = property.weeks[4].price; this.activeAvail5 = property.weeks[4].availability;
-        this.activeFirstName5 = property.weeks[4].owner_name; this.activeLastName5 = property.weeks[4].owner_last_name;
+        this.activeFirstName5 = property.weeks[4].fname; this.activeLastName5 = property.weeks[4].sname;
         this.activeEmail5 = property.weeks[4].email; this.activeSoldPrice5 = property.weeks[4].sold_price;
-        this.activePhoneNumber5 = property.weeks[4].phone_number;
+        this.activePhoneNumber5 = property.weeks[4].tel_no;
         this.activePaymentT5 = property.weeks[4].payment_type;
         this.activeTerms5 = property.weeks[4].terms;
 
         this.activeSeason6 = property.weeks[5].season; this.activeModule6 = property.weeks[5].module;
         this.activePrice6 = property.weeks[5].price; this.activeAvail6 = property.weeks[5].availability;
-        this.activeFirstName6 = property.weeks[5].owner_name; this.activeLastName6 = property.weeks[5].owner_last_name;
+        this.activeFirstName6 = property.weeks[5].fname; this.activeLastName6 = property.weeks[5].sname;
         this.activeEmail6 = property.weeks[5].email; this.activeSoldPrice6 = property.weeks[5].sold_price;
-        this.activePhoneNumber6 = property.weeks[5].phone_number;
+        this.activePhoneNumber6 = property.weeks[5].tel_no;
         this.activePaymentT6 = property.weeks[5].payment_type;
         this.activeTerms6 = property.weeks[5].terms;
 
         this.activeSeason7 = property.weeks[6].season; this.activeModule7 = property.weeks[6].module;
         this.activePrice7 = property.weeks[6].price; this.activeAvail7 = property.weeks[6].availability;
-        this.activeFirstName7 = property.weeks[6].owner_name; this.activeLastName7 = property.weeks[6].owner_last_name;
+        this.activeFirstName7 = property.weeks[6].fname; this.activeLastName7 = property.weeks[6].sname;
         this.activeEmail7 = property.weeks[6].email; this.activeSoldPrice7 = property.weeks[6].sold_price;
-        this.activePhoneNumber7 = property.weeks[6].phone_number;
+        this.activePhoneNumber7 = property.weeks[6].tel_no;
         this.activePaymentT7 = property.weeks[6].payment_type;
         this.activeTerms7 = property.weeks[6].terms;
 
         this.activeSeason8 = property.weeks[7].season; this.activeModule8 = property.weeks[7].module;
         this.activePrice8 = property.weeks[7].price; this.activeAvail8 = property.weeks[7].availability;
-        this.activeFirstName8 = property.weeks[7].owner_name; this.activeLastName8 = property.weeks[7].owner_last_name;
+        this.activeFirstName8 = property.weeks[7].fname; this.activeLastName8 = property.weeks[7].sname;
         this.activeEmail8 = property.weeks[7].email; this.activeSoldPrice8 = property.weeks[7].sold_price;
-        this.activePhoneNumber8 = property.weeks[7].phone_number;
+        this.activePhoneNumber8 = property.weeks[7].tel_no;
         this.activePaymentT8 = property.weeks[7].payment_type;
         this.activeTerms8 = property.weeks[7].terms;
 
         this.activeSeason9 = property.weeks[8].season; this.activeModule9 = property.weeks[8].module;
         this.activePrice9 = property.weeks[8].price; this.activeAvail9 = property.weeks[8].availability;
-        this.activeFirstName9 = property.weeks[8].owner_name; this.activeLastName9 = property.weeks[8].owner_last_name;
+        this.activeFirstName9 = property.weeks[8].fname; this.activeLastName9 = property.weeks[8].sname;
         this.activeEmail9 = property.weeks[8].email; this.activeSoldPrice9 = property.weeks[8].sold_price;
-        this.activePhoneNumber9 = property.weeks[8].phone_number;
+        this.activePhoneNumber9 = property.weeks[8].tel_no;
         this.activePaymentT9 = property.weeks[8].payment_type;
-         this.activeTerms9 = property.weeks[8].terms;
+        this.activeTerms9 = property.weeks[8].terms;
 
         this.activeSeason10 = property.weeks[9].season; this.activeModule10 = property.weeks[9].module;
         this.activePrice10 = property.weeks[9].price; this.activeAvail10 = property.weeks[9].availability;
-        this.activeFirstName10 = property.weeks[9].owner_name;this.activeLastName10 = property.weeks[9].owner_last_name;
+        this.activeFirstName10 = property.weeks[9].fname; this.activeLastName10 = property.weeks[9].sname;
         this.activeEmail10 = property.weeks[9].email; this.activeSoldPrice10 = property.weeks[9].sold_price;
-        this.activePhoneNumber10 = property.weeks[9].phone_number;
+        this.activePhoneNumber10 = property.weeks[9].tel_no;
         this.activePaymentT10 = property.weeks[9].payment_type;
         this.activeTerms10 = property.weeks[9].terms;
 
         this.activeSeason11 = property.weeks[10].season; this.activeModule11 = property.weeks[10].module;
         this.activePrice11 = property.weeks[10].price; this.activeAvail11 = property.weeks[10].availability;
-        this.activeFirstName11=property.weeks[10].owner_name;this.activeLastName11 = property.weeks[10].owner_last_name;
+        this.activeFirstName11 = property.weeks[10].fname; this.activeLastName11 = property.weeks[10].sname;
         this.activeEmail11 = property.weeks[10].email; this.activeSoldPrice11 = property.weeks[10].sold_price;
-        this.activePhoneNumber11 = property.weeks[10].phone_number;
+        this.activePhoneNumber11 = property.weeks[10].tel_no;
         this.activePaymentT11 = property.weeks[10].payment_type;
         this.activeTerms11 = property.weeks[10].terms;
 
         this.activeSeason12 = property.weeks[11].season; this.activeModule12 = property.weeks[11].module;
         this.activePrice12 = property.weeks[11].price; this.activeAvail12 = property.weeks[11].availability;
-        this.activeFirstName12 = property.weeks[1].owner_name;
-        this.activeLastName12 = property.weeks[11].owner_last_name;
+        this.activeFirstName12 = property.weeks[11].fname;
+        this.activeLastName12 = property.weeks[11].sname;
         this.activeEmail12 = property.weeks[11].email; this.activeSoldPrice12 = property.weeks[11].sold_price;
-        this.activePhoneNumber12 = property.weeks[11].phone_number;
-        this.activePaymentT12 = property.weeks[11].payment_type; 
+        this.activePhoneNumber12 = property.weeks[11].tel_no;
+        this.activePaymentT12 = property.weeks[11].payment_type;
         this.activeTerms12 = property.weeks[11].terms;
 
         this.activeSeason13 = property.weeks[12].season; this.activeModule13 = property.weeks[12].module;
         this.activePrice13 = property.weeks[12].price; this.activeAvail13 = property.weeks[12].availability;
-        this.activeFirstName13 = property.weeks[12].owner_name;
-        this.activeLastName13 = property.weeks[12].owner_last_name;
+        this.activeFirstName13 = property.weeks[12].fname;
+        this.activeLastName13 = property.weeks[12].sname;
         this.activeEmail13 = property.weeks[12].email; this.activeSoldPrice13 = property.weeks[12].sold_price;
-        this.activePhoneNumber13 = property.weeks[12].phone_number;
-        this.activePaymentT13 = property.weeks[12].payment_type; 
+        this.activePhoneNumber13 = property.weeks[12].tel_no;
+        this.activePaymentT13 = property.weeks[12].payment_type;
         this.activeTerms13 = property.weeks[12].terms;
 
         this.activeSeason14 = property.weeks[13].season; this.activeModule14 = property.weeks[13].module;
         this.activePrice14 = property.weeks[13].price; this.activeAvail14 = property.weeks[13].availability;
-        this.activeFirstName14 = property.weeks[13].owner_name;
-        this.activeLastName14 = property.weeks[13].owner_last_name;
+        this.activeFirstName14 = property.weeks[13].fname;
+        this.activeLastName14 = property.weeks[13].sname;
         this.activeEmail14 = property.weeks[13].email; this.activeSoldPrice14 = property.weeks[13].sold_price;
-        this.activePhoneNumber14 = property.weeks[13].phone_number;
-        this.activePaymentT14 = property.weeks[13].payment_type; 
+        this.activePhoneNumber14 = property.weeks[13].tel_no;
+        this.activePaymentT14 = property.weeks[13].payment_type;
         this.activeTerms14 = property.weeks[13].terms;
 
         this.activeSeason15 = property.weeks[14].season; this.activeModule15 = property.weeks[14].module;
         this.activePrice15 = property.weeks[14].price; this.activeAvail15 = property.weeks[14].availability;
-        this.activeFirstName15 = property.weeks[14].owner_name;
-        this.activeLastName15 = property.weeks[14].owner_last_name;
+        this.activeFirstName15 = property.weeks[14].fname;
+        this.activeLastName15 = property.weeks[14].sname;
         this.activeEmail15 = property.weeks[14].email; this.activeSoldPrice15 = property.weeks[14].sold_price;
-        this.activePhoneNumber15 = property.weeks[14].phone_number;
-        this.activePaymentT15 = property.weeks[14].payment_type; 
+        this.activePhoneNumber15 = property.weeks[14].tel_no;
+        this.activePaymentT15 = property.weeks[14].payment_type;
         this.activeTerms15 = property.weeks[14].terms;
 
         this.activeSeason16 = property.weeks[15].season; this.activeModule16 = property.weeks[15].module;
         this.activePrice16 = property.weeks[15].price; this.activeAvail16 = property.weeks[15].availability;
-        this.activeFirstName16 = property.weeks[15].owner_name;
-        this.activeLastName16 = property.weeks[15].owner_last_name;
+        this.activeFirstName16 = property.weeks[15].fname;
+        this.activeLastName16 = property.weeks[15].sname;
         this.activeEmail16 = property.weeks[15].email; this.activeSoldPrice16 = property.weeks[15].sold_price;
-        this.activePhoneNumber16 = property.weeks[15].phone_number;
-        this.activePaymentT16 = property.weeks[15].payment_type; 
+        this.activePhoneNumber16 = property.weeks[15].tel_no;
+        this.activePaymentT16 = property.weeks[15].payment_type;
         this.activeTerms16 = property.weeks[15].terms;
 
         this.activeSeason17 = property.weeks[16].season; this.activeModule17 = property.weeks[16].module;
         this.activePrice17 = property.weeks[16].price; this.activeAvail17 = property.weeks[16].availability;
-        this.activeFirstName17 = property.weeks[16].owner_name;
-        this.activeLastName17 = property.weeks[16].owner_last_name;
+        this.activeFirstName17 = property.weeks[16].fname;
+        this.activeLastName17 = property.weeks[16].sname;
         this.activeEmail17 = property.weeks[16].email; this.activeSoldPrice17 = property.weeks[16].sold_price;
-        this.activePhoneNumber17 = property.weeks[16].phone_number;
-        this.activePaymentT17 = property.weeks[16].payment_type; 
+        this.activePhoneNumber17 = property.weeks[16].tel_no;
+        this.activePaymentT17 = property.weeks[16].payment_type;
         this.activeTerms17 = property.weeks[16].terms;
 
         this.activeSeason18 = property.weeks[17].season; this.activeModule18 = property.weeks[17].module;
         this.activePrice18 = property.weeks[17].price; this.activeAvail18 = property.weeks[17].availability;
-        this.activeFirstName18 = property.weeks[17].owner_name;
-        this.activeLastName18 = property.weeks[17].owner_last_name;
+        this.activeFirstName18 = property.weeks[17].fname;
+        this.activeLastName18 = property.weeks[17].sname;
         this.activeEmail18 = property.weeks[17].email; this.activeSoldPrice18 = property.weeks[17].sold_price;
-        this.activePhoneNumber18 = property.weeks[17].phone_number;
-        this.activePaymentT18 = property.weeks[17].payment_type; 
+        this.activePhoneNumber18 = property.weeks[17].tel_no;
+        this.activePaymentT18 = property.weeks[17].payment_type;
         this.activeTerms18 = property.weeks[17].terms;
 
         this.activeSeason19 = property.weeks[18].season; this.activeModule19 = property.weeks[18].module;
         this.activePrice19 = property.weeks[18].price; this.activeAvail19 = property.weeks[18].availability;
-        this.activeFirstName19 = property.weeks[18].owner_name;
-        this.activeLastName19 = property.weeks[18].owner_last_name;
+        this.activeFirstName19 = property.weeks[18].fname;
+        this.activeLastName19 = property.weeks[18].sname;
         this.activeEmail19 = property.weeks[18].email; this.activeSoldPrice19 = property.weeks[18].sold_price;
-        this.activePhoneNumber19 = property.weeks[18].phone_number;
-        this.activePaymentT19 = property.weeks[18].payment_type; 
+        this.activePhoneNumber19 = property.weeks[18].tel_no;
+        this.activePaymentT19 = property.weeks[18].payment_type;
         this.activeTerms19 = property.weeks[18].terms;
 
         this.activeSeason20 = property.weeks[19].season; this.activeModule20 = property.weeks[19].module;
         this.activePrice20 = property.weeks[19].price; this.activeAvail20 = property.weeks[19].availability;
-        this.activeFirstName20 = property.weeks[19].owner_name;
-        this.activeLastName20 = property.weeks[19].owner_last_name;
+        this.activeFirstName20 = property.weeks[19].fname;
+        this.activeLastName20 = property.weeks[19].sname;
         this.activeEmail20 = property.weeks[19].email; this.activeSoldPrice20 = property.weeks[19].sold_price;
-        this.activePhoneNumber20 = property.weeks[19].phone_number;
-        this.activePaymentT20 = property.weeks[19].payment_type; 
+        this.activePhoneNumber20 = property.weeks[19].tel_no;
+        this.activePaymentT20 = property.weeks[19].payment_type;
         this.activeTerms20 = property.weeks[19].terms;
 
         this.activeSeason21 = property.weeks[20].season; this.activeModule21 = property.weeks[20].module;
         this.activePrice21 = property.weeks[20].price; this.activeAvail21 = property.weeks[20].availability;
-        this.activeFirstName21 = property.weeks[20].owner_name;
-        this.activeLastName21 = property.weeks[20].owner_last_name;
+        this.activeFirstName21 = property.weeks[20].fname;
+        this.activeLastName21 = property.weeks[20].sname;
         this.activeEmail21 = property.weeks[20].email; this.activeSoldPrice21 = property.weeks[20].sold_price;
-        this.activePhoneNumber21 = property.weeks[20].phone_number;
-        this.activePaymentT21 = property.weeks[20].payment_type; 
+        this.activePhoneNumber21 = property.weeks[20].tel_no;
+        this.activePaymentT21 = property.weeks[20].payment_type;
         this.activeTerms21 = property.weeks[20].terms;
 
         this.activeSeason22 = property.weeks[21].season; this.activeModule22 = property.weeks[21].module;
         this.activePrice22 = property.weeks[21].price; this.activeAvail22 = property.weeks[21].availability;
-        this.activeFirstName22 = property.weeks[21].owner_name;
-        this.activeLastName22 = property.weeks[21].owner_last_name;
+        this.activeFirstName22 = property.weeks[21].fname;
+        this.activeLastName22 = property.weeks[21].sname;
         this.activeEmail22 = property.weeks[21].email; this.activeSoldPrice22 = property.weeks[21].sold_price;
-        this.activePhoneNumber22 = property.weeks[21].phone_number;
-        this.activePaymentT22 = property.weeks[21].payment_type; 
+        this.activePhoneNumber22 = property.weeks[21].tel_no;
+        this.activePaymentT22 = property.weeks[21].payment_type;
         this.activeTerms22 = property.weeks[21].terms;
 
         this.activeSeason23 = property.weeks[22].season; this.activeModule23 = property.weeks[22].module;
         this.activePrice23 = property.weeks[22].price; this.activeAvail23 = property.weeks[22].availability;
-        this.activeFirstName23 = property.weeks[22].owner_name;
-        this.activeLastName23 = property.weeks[22].owner_last_name;
+        this.activeFirstName23 = property.weeks[22].fname;
+        this.activeLastName23 = property.weeks[22].sname;
         this.activeEmail23 = property.weeks[22].email; this.activeSoldPrice23 = property.weeks[22].sold_price;
-        this.activePhoneNumber23 = property.weeks[22].phone_number;
-        this.activePaymentT23 = property.weeks[22].payment_type; 
+        this.activePhoneNumber23 = property.weeks[22].tel_no;
+        this.activePaymentT23 = property.weeks[22].payment_type;
         this.activeTerms23 = property.weeks[22].terms;
 
         this.activeSeason24 = property.weeks[23].season; this.activeModule24 = property.weeks[23].module;
         this.activePrice24 = property.weeks[23].price; this.activeAvail24 = property.weeks[23].availability;
-        this.activeFirstName24 = property.weeks[23].owner_name;
-        this.activeLastName24 = property.weeks[23].owner_last_name;
+        this.activeFirstName24 = property.weeks[23].fname;
+        this.activeLastName24 = property.weeks[23].sname;
         this.activeEmail24 = property.weeks[23].email; this.activeSoldPrice24 = property.weeks[23].sold_price;
-        this.activePhoneNumber24 = property.weeks[23].phone_number;
+        this.activePhoneNumber24 = property.weeks[23].tel_no;
         this.activePaymentT24 = property.weeks[23].payment_type;
         this.activeTerms24 = property.weeks[23].terms;
 
         this.activeSeason25 = property.weeks[24].season; this.activeModule25 = property.weeks[24].module;
         this.activePrice25 = property.weeks[24].price; this.activeAvail25 = property.weeks[24].availability;
-        this.activeFirstName25 = property.weeks[24].owner_name;
-        this.activeLastName25 = property.weeks[24].owner_last_name;
+        this.activeFirstName25 = property.weeks[24].fname;
+        this.activeLastName25 = property.weeks[24].sname;
         this.activeEmail25 = property.weeks[24].email; this.activeSoldPrice25 = property.weeks[24].sold_price;
-        this.activePhoneNumber25 = property.weeks[24].phone_number;
-        this.activePaymentT25 = property.weeks[24].payment_type; 
+        this.activePhoneNumber25 = property.weeks[24].tel_no;
+        this.activePaymentT25 = property.weeks[24].payment_type;
         this.activeTerms25 = property.weeks[24].terms;
 
         this.activeSeason26 = property.weeks[25].season; this.activeModule26 = property.weeks[25].module;
         this.activePrice26 = property.weeks[25].price; this.activeAvail26 = property.weeks[25].availability;
-        this.activeFirstName26 = property.weeks[25].owner_name;
-        this.activeLastName26 = property.weeks[25].owner_last_name;
+        this.activeFirstName26 = property.weeks[25].fname;
+        this.activeLastName26 = property.weeks[25].sname;
         this.activeEmail26 = property.weeks[25].email; this.activeSoldPrice26 = property.weeks[25].sold_price;
-        this.activePhoneNumber26 = property.weeks[25].phone_number;
-        this.activePaymentT26 = property.weeks[25].payment_type; 
+        this.activePhoneNumber26 = property.weeks[25].tel_no;
+        this.activePaymentT26 = property.weeks[25].payment_type;
         this.activeTerms26 = property.weeks[25].terms;
 
         this.activeSeason27 = property.weeks[26].season; this.activeModule27 = property.weeks[26].module;
         this.activePrice27 = property.weeks[26].price; this.activeAvail27 = property.weeks[26].availability;
-        this.activeFirstName27 = property.weeks[26].owner_name;
-        this.activeLastName27 = property.weeks[26].owner_last_name;
+        this.activeFirstName27 = property.weeks[26].fname;
+        this.activeLastName27 = property.weeks[26].sname;
         this.activeEmail27 = property.weeks[26].email; this.activeSoldPrice27 = property.weeks[26].sold_price;
-        this.activePhoneNumber27 = property.weeks[26].phone_number;
-        this.activePaymentT27 = property.weeks[26].payment_type; 
+        this.activePhoneNumber27 = property.weeks[26].tel_no;
+        this.activePaymentT27 = property.weeks[26].payment_type;
         this.activeTerms27 = property.weeks[26].terms;
 
         this.activeSeason28 = property.weeks[27].season; this.activeModule28 = property.weeks[27].module;
         this.activePrice28 = property.weeks[27].price; this.activeAvail28 = property.weeks[27].availability;
-        this.activeFirstName28 = property.weeks[27].owner_name;
-        this.activeLastName28 = property.weeks[27].owner_last_name;
+        this.activeFirstName28 = property.weeks[27].fname;
+        this.activeLastName28 = property.weeks[27].sname;
         this.activeEmail28 = property.weeks[27].email; this.activeSoldPrice28 = property.weeks[27].sold_price;
-        this.activePhoneNumber28 = property.weeks[27].phone_number;
-        this.activePaymentT28 = property.weeks[27].payment_type; 
+        this.activePhoneNumber28 = property.weeks[27].tel_no;
+        this.activePaymentT28 = property.weeks[27].payment_type;
         this.activeTerms28 = property.weeks[27].terms;
 
         this.activeSeason29 = property.weeks[28].season; this.activeModule29 = property.weeks[28].module;
         this.activePrice29 = property.weeks[28].price; this.activeAvail29 = property.weeks[28].availability;
-        this.activeFirstName29 = property.weeks[28].owner_name;
-        this.activeLastName29 = property.weeks[28].owner_last_name;
+        this.activeFirstName29 = property.weeks[28].fname;
+        this.activeLastName29 = property.weeks[28].sname;
         this.activeEmail29 = property.weeks[28].email; this.activeSoldPrice29 = property.weeks[28].sold_price;
-        this.activePhoneNumber29 = property.weeks[28].phone_number;
-        this.activePaymentT29 = property.weeks[28].payment_type; 
+        this.activePhoneNumber29 = property.weeks[28].tel_no;
+        this.activePaymentT29 = property.weeks[28].payment_type;
         this.activeTerms29 = property.weeks[28].terms;
 
         this.activeSeason30 = property.weeks[29].season; this.activeModule30 = property.weeks[29].module;
         this.activePrice30 = property.weeks[29].price; this.activeAvail30 = property.weeks[29].availability;
-        this.activeFirstName30 = property.weeks[29].owner_name;
-        this.activeLastName30 = property.weeks[29].owner_last_name;
+        this.activeFirstName30 = property.weeks[29].fname;
+        this.activeLastName30 = property.weeks[29].sname;
         this.activeEmail30 = property.weeks[29].email; this.activeSoldPrice30 = property.weeks[29].sold_price;
-        this.activePhoneNumber30 = property.weeks[29].phone_number;
+        this.activePhoneNumber30 = property.weeks[29].tel_no;
         this.activePaymentT30 = property.weeks[29].payment_type;
         this.activeTerms30 = property.weeks[29].terms;
 
         this.activeSeason31 = property.weeks[30].season; this.activeModule31 = property.weeks[30].module;
         this.activePrice31 = property.weeks[30].price; this.activeAvail31 = property.weeks[30].availability;
-        this.activeFirstName31 = property.weeks[30].owner_name;
-        this.activeLastName31 = property.weeks[30].owner_last_name;
+        this.activeFirstName31 = property.weeks[30].fname;
+        this.activeLastName31 = property.weeks[30].sname;
         this.activeEmail31 = property.weeks[30].email; this.activeSoldPrice31 = property.weeks[30].sold_price;
-        this.activePhoneNumber31 = property.weeks[30].phone_number;
+        this.activePhoneNumber31 = property.weeks[30].tel_no;
         this.activePaymentT31 = property.weeks[30].payment_type;
         this.activeTerms31 = property.weeks[30].terms;
 
         this.activeSeason32 = property.weeks[31].season; this.activeModule32 = property.weeks[31].module;
         this.activePrice32 = property.weeks[31].price; this.activeAvail32 = property.weeks[31].availability;
-        this.activeFirstName32 = property.weeks[31].owner_name;
-        this.activeLastName32 = property.weeks[31].owner_last_name;
+        this.activeFirstName32 = property.weeks[31].fname;
+        this.activeLastName32 = property.weeks[31].sname;
         this.activeEmail32 = property.weeks[31].email; this.activeSoldPrice32 = property.weeks[31].sold_price;
-        this.activePhoneNumber32 = property.weeks[31].phone_number;
+        this.activePhoneNumber32 = property.weeks[31].tel_no;
         this.activePaymentT32 = property.weeks[31].payment_type;
         this.activeTerms32 = property.weeks[31].terms;
 
         this.activeSeason33 = property.weeks[32].season; this.activeModule33 = property.weeks[32].module;
         this.activePrice33 = property.weeks[32].price; this.activeAvail33 = property.weeks[32].availability;
-        this.activeFirstName33 = property.weeks[32].owner_name;
-        this.activeLastName33 = property.weeks[32].owner_last_name;
+        this.activeFirstName33 = property.weeks[32].fname;
+        this.activeLastName33 = property.weeks[32].sname;
         this.activeEmail33 = property.weeks[32].email; this.activeSoldPrice33 = property.weeks[32].sold_price;
-        this.activePhoneNumber33 = property.weeks[32].phone_number;
-        this.activePaymentT33 = property.weeks[32].payment_type; 
+        this.activePhoneNumber33 = property.weeks[32].tel_no;
+        this.activePaymentT33 = property.weeks[32].payment_type;
         this.activeTerms33 = property.weeks[32].terms;
 
         this.activeSeason34 = property.weeks[33].season; this.activeModule34 = property.weeks[33].module;
         this.activePrice34 = property.weeks[33].price; this.activeAvail34 = property.weeks[33].availability;
-        this.activeFirstName34 = property.weeks[33].owner_name;
-        this.activeLastName34 = property.weeks[33].owner_last_name;
+        this.activeFirstName34 = property.weeks[33].fname;
+        this.activeLastName34 = property.weeks[33].sname;
         this.activeEmail34 = property.weeks[33].email; this.activeSoldPrice34 = property.weeks[33].sold_price;
-        this.activePhoneNumber34 = property.weeks[33].phone_number;
-        this.activePaymentT34 = property.weeks[33].payment_type; 
+        this.activePhoneNumber34 = property.weeks[33].tel_no;
+        this.activePaymentT34 = property.weeks[33].payment_type;
         this.activeTerms34 = property.weeks[33].terms;
 
         this.activeSeason35 = property.weeks[34].season; this.activeModule35 = property.weeks[34].module;
         this.activePrice35 = property.weeks[34].price; this.activeAvail35 = property.weeks[34].availability;
-        this.activeFirstName35 = property.weeks[34].owner_name;
-        this.activeLastName35 = property.weeks[34].owner_last_name;
+        this.activeFirstName35 = property.weeks[34].fname;
+        this.activeLastName35 = property.weeks[34].sname;
         this.activeEmail35 = property.weeks[34].email; this.activeSoldPrice35 = property.weeks[34].sold_price;
-        this.activePhoneNumber35 = property.weeks[34].phone_number;
-        this.activePaymentT35 = property.weeks[34].payment_type; 
+        this.activePhoneNumber35 = property.weeks[34].tel_no;
+        this.activePaymentT35 = property.weeks[34].payment_type;
         this.activeTerms35 = property.weeks[34].terms;
 
         this.activeSeason36 = property.weeks[35].season; this.activeModule36 = property.weeks[35].module;
         this.activePrice36 = property.weeks[35].price; this.activeAvail36 = property.weeks[35].availability;
-        this.activeFirstName36 = property.weeks[35].owner_name;
-        this.activeLastName36 = property.weeks[35].owner_last_name;
+        this.activeFirstName36 = property.weeks[35].fname;
+        this.activeLastName36 = property.weeks[35].sname;
         this.activeEmail36 = property.weeks[35].email; this.activeSoldPrice36 = property.weeks[35].sold_price;
-        this.activePhoneNumber36 = property.weeks[35].phone_number;
-        this.activePaymentT36 = property.weeks[35].payment_type; 
+        this.activePhoneNumber36 = property.weeks[35].tel_no;
+        this.activePaymentT36 = property.weeks[35].payment_type;
         this.activeTerms36 = property.weeks[35].terms;
 
         this.activeSeason37 = property.weeks[36].season; this.activeModule37 = property.weeks[36].module;
         this.activePrice37 = property.weeks[36].price; this.activeAvail37 = property.weeks[36].availability;
-        this.activeFirstName37 = property.weeks[36].owner_name;
-        this.activeLastName37 = property.weeks[36].owner_last_name;
+        this.activeFirstName37 = property.weeks[36].fname;
+        this.activeLastName37 = property.weeks[36].sname;
         this.activeEmail37 = property.weeks[36].email; this.activeSoldPrice37 = property.weeks[36].sold_price;
-        this.activePhoneNumber37 = property.weeks[36].phone_number;
-        this.activePaymentT37 = property.weeks[36].payment_type; 
+        this.activePhoneNumber37 = property.weeks[36].tel_no;
+        this.activePaymentT37 = property.weeks[36].payment_type;
         this.activeTerms37 = property.weeks[36].terms;
 
         this.activeSeason38 = property.weeks[37].season; this.activeModule38 = property.weeks[37].module;
         this.activePrice38 = property.weeks[37].price; this.activeAvail38 = property.weeks[37].availability;
-        this.activeFirstName38 = property.weeks[37].owner_name;
-        this.activeLastName38 = property.weeks[37].owner_last_name;
+        this.activeFirstName38 = property.weeks[37].fname;
+        this.activeLastName38 = property.weeks[37].sname;
         this.activeEmail38 = property.weeks[37].email; this.activeSoldPrice38 = property.weeks[37].sold_price;
-        this.activePhoneNumber38 = property.weeks[37].phone_number;
-        this.activePaymentT38 = property.weeks[37].payment_type; 
+        this.activePhoneNumber38 = property.weeks[37].tel_no;
+        this.activePaymentT38 = property.weeks[37].payment_type;
         this.activeTerms38 = property.weeks[37].terms;
 
         this.activeSeason39 = property.weeks[38].season; this.activeModule39 = property.weeks[38].module;
         this.activePrice39 = property.weeks[38].price; this.activeAvail39 = property.weeks[38].availability;
-        this.activeFirstName39 = property.weeks[38].owner_name;
-        this.activeLastName39 = property.weeks[38].owner_last_name;
+        this.activeFirstName39 = property.weeks[38].fname;
+        this.activeLastName39 = property.weeks[38].sname;
         this.activeEmail39 = property.weeks[38].email; this.activeSoldPrice39 = property.weeks[38].sold_price;
-        this.activePhoneNumber39 = property.weeks[38].phone_number;
-        this.activePaymentT39 = property.weeks[38].payment_type; 
+        this.activePhoneNumber39 = property.weeks[38].tel_no;
+        this.activePaymentT39 = property.weeks[38].payment_type;
         this.activeTerms39 = property.weeks[38].terms;
 
         this.activeSeason40 = property.weeks[39].season; this.activeModule40 = property.weeks[39].module;
         this.activePrice40 = property.weeks[39].price; this.activeAvail40 = property.weeks[39].availability;
-        this.activeFirstName40 = property.weeks[39].owner_name;
-         this.activeLastName40 = property.weeks[39].owner_last_name;
+        this.activeFirstName40 = property.weeks[39].fname;
+        this.activeLastName40 = property.weeks[39].sname;
         this.activeEmail40 = property.weeks[39].email; this.activeSoldPrice40 = property.weeks[39].sold_price;
-        this.activePhoneNumber40 = property.weeks[39].phone_number;
-        this.activePaymentT40 = property.weeks[39].payment_type; 
+        this.activePhoneNumber40 = property.weeks[39].tel_no;
+        this.activePaymentT40 = property.weeks[39].payment_type;
         this.activeTerms40 = property.weeks[39].terms;
 
         this.activeSeason41 = property.weeks[40].season; this.activeModule41 = property.weeks[40].module;
         this.activePrice41 = property.weeks[40].price; this.activeAvail41 = property.weeks[40].availability;
-        this.activeFirstName41 = property.weeks[40].owner_name;
-        this.activeLastName41 = property.weeks[40].owner_last_name;
+        this.activeFirstName41 = property.weeks[40].fname;
+        this.activeLastName41 = property.weeks[40].sname;
         this.activeEmail41 = property.weeks[40].email; this.activeSoldPrice41 = property.weeks[40].sold_price;
-        this.activePhoneNumber41 = property.weeks[40].phone_number;
-        this.activePaymentT41 = property.weeks[40].payment_type; 
+        this.activePhoneNumber41 = property.weeks[40].tel_no;
+        this.activePaymentT41 = property.weeks[40].payment_type;
         this.activeTerms41 = property.weeks[40].terms;
 
         this.activeSeason42 = property.weeks[41].season; this.activeModule42 = property.weeks[41].module;
         this.activePrice42 = property.weeks[41].price; this.activeAvail42 = property.weeks[41].availability;
-        this.activeFirstName42 = property.weeks[41].owner_name;
-        this.activeLastName42 = property.weeks[41].owner_last_name;
+        this.activeFirstName42 = property.weeks[41].fname;
+        this.activeLastName42 = property.weeks[41].sname;
         this.activeEmail42 = property.weeks[41].email; this.activeSoldPrice42 = property.weeks[41].sold_price;
-        this.activePhoneNumber42 = property.weeks[41].phone_number;
-        this.activePaymentT42 = property.weeks[41].payment_type; 
+        this.activePhoneNumber42 = property.weeks[41].tel_no;
+        this.activePaymentT42 = property.weeks[41].payment_type;
         this.activeTerms42 = property.weeks[41].terms;
 
         this.activeSeason43 = property.weeks[42].season; this.activeModule43 = property.weeks[42].module;
         this.activePrice43 = property.weeks[42].price; this.activeAvail43 = property.weeks[42].availability;
-        this.activeFirstName43 = property.weeks[42].owner_name;
-        this.activeLastName43 = property.weeks[42].owner_last_name;
+        this.activeFirstName43 = property.weeks[42].fname;
+        this.activeLastName43 = property.weeks[42].sname;
         this.activeEmail43 = property.weeks[42].email; this.activeSoldPrice43 = property.weeks[42].sold_price;
-        this.activePhoneNumber43 = property.weeks[42].phone_number;
-        this.activePaymentT43 = property.weeks[42].payment_type; 
+        this.activePhoneNumber43 = property.weeks[42].tel_no;
+        this.activePaymentT43 = property.weeks[42].payment_type;
         this.activeTerms43 = property.weeks[42].terms;
 
         this.activeSeason44 = property.weeks[43].season; this.activeModule44 = property.weeks[43].module;
         this.activePrice44 = property.weeks[43].price; this.activeAvail44 = property.weeks[43].availability;
-        this.activeFirstName44 = property.weeks[43].owner_name;
-        this.activeLastName44 = property.weeks[43].owner_last_name;
+        this.activeFirstName44 = property.weeks[43].fname;
+        this.activeLastName44 = property.weeks[43].sname;
         this.activeEmail44 = property.weeks[43].email; this.activeSoldPrice44 = property.weeks[43].sold_price;
-        this.activePhoneNumber44 = property.weeks[43].phone_number;
-        this.activePaymentT44 = property.weeks[43].payment_type; 
+        this.activePhoneNumber44 = property.weeks[43].tel_no;
+        this.activePaymentT44 = property.weeks[43].payment_type;
         this.activeTerms44 = property.weeks[43].terms;
 
         this.activeSeason45 = property.weeks[44].season; this.activeModule45 = property.weeks[44].module;
         this.activePrice45 = property.weeks[44].price; this.activeAvail45 = property.weeks[44].availability;
-        this.activeFirstName45 = property.weeks[44].owner_name;
-        this.activeLastName45 = property.weeks[44].owner_last_name;
+        this.activeFirstName45 = property.weeks[44].fname;
+        this.activeLastName45 = property.weeks[44].sname;
         this.activeEmail45 = property.weeks[44].email; this.activeSoldPrice45 = property.weeks[44].sold_price;
-        this.activePhoneNumber45 = property.weeks[44].phone_number;
-        this.activePaymentT45 = property.weeks[44].payment_type; 
+        this.activePhoneNumber45 = property.weeks[44].tel_no;
+        this.activePaymentT45 = property.weeks[44].payment_type;
         this.activeTerms45 = property.weeks[44].terms;
 
         this.activeSeason46 = property.weeks[45].season; this.activeModule46 = property.weeks[45].module;
         this.activePrice46 = property.weeks[45].price; this.activeAvail46 = property.weeks[45].availability;
-        this.activeFirstName46 = property.weeks[45].owner_name;
-        this.activeLastName46 = property.weeks[45].owner_last_name;
+        this.activeFirstName46 = property.weeks[45].fname;
+        this.activeLastName46 = property.weeks[45].sname;
         this.activeEmail46 = property.weeks[45].email; this.activeSoldPrice46 = property.weeks[45].sold_price;
-        this.activePhoneNumber46 = property.weeks[45].phone_number;
-        this.activePaymentT46 = property.weeks[45].payment_type; 
+        this.activePhoneNumber46 = property.weeks[45].tel_no;
+        this.activePaymentT46 = property.weeks[45].payment_type;
         this.activeTerms46 = property.weeks[45].terms;
 
         this.activeSeason47 = property.weeks[46].season; this.activeModule47 = property.weeks[46].module;
         this.activePrice47 = property.weeks[46].price; this.activeAvail47 = property.weeks[46].availability;
-        this.activeFirstName47 = property.weeks[46].owner_name;
-        this.activeLastName47 = property.weeks[46].owner_last_name;
+        this.activeFirstName47 = property.weeks[46].fname;
+        this.activeLastName47 = property.weeks[46].sname;
         this.activeEmail47 = property.weeks[46].email; this.activeSoldPrice47 = property.weeks[46].sold_price;
-        this.activePhoneNumber47 = property.weeks[46].phone_number;
+        this.activePhoneNumber47 = property.weeks[46].tel_no;
         this.activePaymentT47 = property.weeks[46].payment_type;
         this.activeTerms47 = property.weeks[46].terms;
 
         this.activeSeason48 = property.weeks[47].season; this.activeModule48 = property.weeks[47].module;
         this.activePrice48 = property.weeks[47].price; this.activeAvail48 = property.weeks[47].availability;
-        this.activeFirstName48 = property.weeks[47].owner_name;
-        this.activeLastName48 = property.weeks[47].owner_last_name;
+        this.activeFirstName48 = property.weeks[47].fname;
+        this.activeLastName48 = property.weeks[47].sname;
         this.activeEmail48 = property.weeks[47].email; this.activeSoldPrice48 = property.weeks[47].sold_price;
-        this.activePhoneNumber48 = property.weeks[47].phone_number;
-        this.activePaymentT48 = property.weeks[47].payment_type; 
+        this.activePhoneNumber48 = property.weeks[47].tel_no;
+        this.activePaymentT48 = property.weeks[47].payment_type;
         this.activeTerms48 = property.weeks[47].terms;
 
         this.activeSeason49 = property.weeks[48].season; this.activeModule49 = property.weeks[48].module;
         this.activePrice49 = property.weeks[48].price; this.activeAvail49 = property.weeks[48].availability;
-        this.activeFirstName49 = property.weeks[48].owner_name;
-        this.activeLastName49 = property.weeks[48].owner_last_name;
+        this.activeFirstName49 = property.weeks[48].fname;
+        this.activeLastName49 = property.weeks[48].sname;
         this.activeEmail49 = property.weeks[48].email; this.activeSoldPrice49 = property.weeks[48].sold_price;
-        this.activePhoneNumber49 = property.weeks[48].phone_number;
+        this.activePhoneNumber49 = property.weeks[48].tel_no;
         this.activePaymentT49 = property.weeks[48].payment_type;
         this.activeTerms49 = property.weeks[48].terms;
 
         this.activeSeason50 = property.weeks[49].season; this.activeModule50 = property.weeks[49].module;
         this.activePrice50 = property.weeks[49].price; this.activeAvail50 = property.weeks[49].availability;
-        this.activeFirstName50 = property.weeks[49].owner_name;
-        this.activeLastName50 = property.weeks[49].owner_last_name;
+        this.activeFirstName50 = property.weeks[49].fname;
+        this.activeLastName50 = property.weeks[49].sname;
         this.activeEmail50 = property.weeks[49].email; this.activeSoldPrice50 = property.weeks[49].sold_price;
-        this.activePhoneNumber50 = property.weeks[49].phone_number;
+        this.activePhoneNumber50 = property.weeks[49].tel_no;
         this.activePaymentT50 = property.weeks[49].payment_type;
         this.activeTerms50 = property.weeks[49].terms;
 
         this.activeSeason51 = property.weeks[50].season; this.activeModule51 = property.weeks[50].module;
         this.activePrice51 = property.weeks[50].price; this.activeAvail51 = property.weeks[50].availability;
-        this.activeFirstName51 = property.weeks[50].owner_name;
-        this.activeLastName51 = property.weeks[50].owner_last_name;
+        this.activeFirstName51 = property.weeks[50].fname;
+        this.activeLastName51 = property.weeks[50].sname;
         this.activeEmail51 = property.weeks[50].email; this.activeSoldPrice51 = property.weeks[50].sold_price;
-        this.activePhoneNumber51 = property.weeks[50].phone_number;
+        this.activePhoneNumber51 = property.weeks[50].tel_no;
         this.activePaymentT51 = property.weeks[50].payment_type;
         this.activeTerms51 = property.weeks[50].terms;
 
         this.activeSeason52 = property.weeks[51].season; this.activeModule52 = property.weeks[51].module;
         this.activePrice52 = property.weeks[51].price; this.activeAvail52 = property.weeks[51].availability;
-        this.activeFirstName52 = property.weeks[51].owner_name;
-        this.activeLastName52 = property.weeks[51].owner_last_name;
+        this.activeFirstName52 = property.weeks[51].fname;
+        this.activeLastName52 = property.weeks[51].sname;
         this.activeEmail52 = property.weeks[51].email; this.activeSoldPrice52 = property.weeks[51].sold_price;
-        this.activePhoneNumber52 = property.weeks[51].phone_number;
+        this.activePhoneNumber52 = property.weeks[51].tel_no;
         this.activePaymentT52 = property.weeks[51].payment_type;
         this.activeTerms52 = property.weeks[51].terms;
 
+    }
+
+    updatePropertyDetails() {
+        let propDetails: Object = {
+            property_name: this.activePropertyName,
+            property_size: this.activePropertySize,
+            extra_info: this.activeExtraInfo
+        }
+
+        this._firebaseService.updatePropertyDetails(this.activeKey, propDetails);
+    }
+
+    updateWeek1() {
+        let updWeek: Object = {
+            week: 1,
+            season: this.activeSeason1,
+            module: this.activeModule1,
+            a_date: "13/01/2017",
+            d_date: "20/01/2017",
+            price: this.activePrice1,
+            availability: this.activeAvail1,
+            fname: this.activeFirstName1,
+            sname: this.activeLastName1,
+            tel_no: this.activePhoneNumber1,
+            email: this.activeEmail1,
+            sold_price: this.activeSoldPrice1,
+            payment_type: this.activePaymentT1,
+            terms: this.activeTerms1
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 1, updWeek);
+    }
+
+    updateWeek2() {
+        let updWeek: Object = {
+            week: 2,
+            season: this.activeSeason2,
+            module: this.activeModule2,
+            a_date: "20/01/2017",
+            d_date: "27/01/2017",
+            price: this.activePrice2,
+            availability: this.activeAvail2,
+            fname: this.activeFirstName2,
+            sname: this.activeLastName2,
+            tel_no: this.activePhoneNumber2,
+            email: this.activeEmail2,
+            sold_price: this.activeSoldPrice2,
+            payment_type: this.activePaymentT2,
+            terms: this.activeTerms2
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 2, updWeek);
+    }
+
+    updateWeek3() {
+        let updWeek: Object = {
+            week: 3,
+            season: this.activeSeason3,
+            module: this.activeModule3,
+            a_date: "27/01/2017",
+            d_date: "03/02/2017",
+            price: this.activePrice3,
+            availability: this.activeAvail3,
+            fname: this.activeFirstName3,
+            sname: this.activeLastName3,
+            tel_no: this.activePhoneNumber3,
+            email: this.activeEmail3,
+            sold_price: this.activeSoldPrice3,
+            payment_type: this.activePaymentT3,
+            terms: this.activeTerms3
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 3, updWeek);
+    }
+
+    updateWeek4() {
+        let updWeek: Object = {
+            week: 4,
+            season: this.activeSeason4,
+            module: this.activeModule4,
+            a_date: "03/02/2017",
+            d_date: "10/02/2017",
+            price: this.activePrice4,
+            availability: this.activeAvail4,
+            fname: this.activeFirstName4,
+            sname: this.activeLastName4,
+            tel_no: this.activePhoneNumber4,
+            email: this.activeEmail4,
+            sold_price: this.activeSoldPrice4,
+            payment_type: this.activePaymentT4,
+            terms: this.activeTerms4
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 4, updWeek);
+    }
+
+    updateWeek5() {
+        let updWeek: Object = {
+            week: 5,
+            season: this.activeSeason4,
+            module: this.activeModule4,
+            a_date: "03/02/2017",
+            d_date: "10/02/2017",
+            price: this.activePrice4,
+            availability: this.activeAvail4,
+            fname: this.activeFirstName4,
+            sname: this.activeLastName4,
+            tel_no: this.activePhoneNumber4,
+            email: this.activeEmail4,
+            sold_price: this.activeSoldPrice4,
+            payment_type: this.activePaymentT4,
+            terms: this.activeTerms4
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 5, updWeek);
+    }
+    updateWeek6() {
+        let updWeek: Object = {
+            week: 6,
+            season: this.activeSeason6,
+            module: this.activeModule6,
+            a_date: "17/02/2017",
+            d_date: "24/02/2017",
+            price: this.activePrice6,
+            availability: this.activeAvail6,
+            fname: this.activeFirstName6,
+            sname: this.activeLastName6,
+            tel_no: this.activePhoneNumber6,
+            email: this.activeEmail6,
+            sold_price: this.activeSoldPrice6,
+            payment_type: this.activePaymentT6,
+            terms: this.activeTerms6
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 6, updWeek);
+    }
+    updateWeek7() {
+        let updWeek: Object = {
+            week: 7,
+            season: this.activeSeason7,
+            module: this.activeModule7,
+            a_date: "24/03/2017",
+            d_date: "03/03/2017",
+            price: this.activePrice7,
+            availability: this.activeAvail7,
+            fname: this.activeFirstName7,
+            sname: this.activeLastName7,
+            tel_no: this.activePhoneNumber7,
+            email: this.activeEmail7,
+            sold_price: this.activeSoldPrice7,
+            payment_type: this.activePaymentT7,
+            terms: this.activeTerms7
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 7, updWeek);
+    }
+    updateWeek8() {
+        let updWeek: Object = {
+            week: 8,
+            season: this.activeSeason8,
+            module: this.activeModule8,
+            a_date: "03/03/2017",
+            d_date: "10/03/2017",
+            price: this.activePrice8,
+            availability: this.activeAvail8,
+            fname: this.activeFirstName8,
+            sname: this.activeLastName8,
+            tel_no: this.activePhoneNumber8,
+            email: this.activeEmail8,
+            sold_price: this.activeSoldPrice8,
+            payment_type: this.activePaymentT8,
+            terms: this.activeTerms8
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 8, updWeek);
+    }
+    updateWeek9() {
+        let updWeek: Object = {
+            week: 9,
+            season: this.activeSeason9,
+            module: this.activeModule9,
+            a_date: "10/03/2017",
+            d_date: "17/03/2017",
+            price: this.activePrice9,
+            availability: this.activeAvail9,
+            fname: this.activeFirstName9,
+            sname: this.activeLastName9,
+            tel_no: this.activePhoneNumber9,
+            email: this.activeEmail9,
+            sold_price: this.activeSoldPrice9,
+            payment_type: this.activePaymentT9,
+            terms: this.activeTerms9
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 9, updWeek);
+    }
+    updateWeek10() {
+        let updWeek: Object = {
+            week: 10,
+            season: this.activeSeason10,
+            module: this.activeModule10,
+            a_date: "17/03/2017",
+            d_date: "24/03/2017",
+            price: this.activePrice10,
+            availability: this.activeAvail10,
+            fname: this.activeFirstName10,
+            sname: this.activeLastName10,
+            tel_no: this.activePhoneNumber10,
+            email: this.activeEmail10,
+            sold_price: this.activeSoldPrice10,
+            payment_type: this.activePaymentT10,
+            terms: this.activeTerms10
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 10, updWeek);
+    }
+    updateWeek11() {
+        let updWeek: Object = {
+            week: 11,
+            season: this.activeSeason11,
+            module: this.activeModule11,
+            a_date: "24/03/2017",
+            d_date: "31/03/2017",
+            price: this.activePrice11,
+            availability: this.activeAvail11,
+            fname: this.activeFirstName11,
+            sname: this.activeLastName11,
+            tel_no: this.activePhoneNumber11,
+            email: this.activeEmail11,
+            sold_price: this.activeSoldPrice11,
+            payment_type: this.activePaymentT11,
+            terms: this.activeTerms11
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 11, updWeek);
+    }
+    updateWeek12() {
+        let updWeek: Object = {
+            week: 12,
+            season: this.activeSeason12,
+            module: this.activeModule12,
+            a_date: "31/03/2017",
+            d_date: "07/04/2017",
+            price: this.activePrice12,
+            availability: this.activeAvail12,
+            fname: this.activeFirstName12,
+            sname: this.activeLastName12,
+            tel_no: this.activePhoneNumber12,
+            email: this.activeEmail12,
+            sold_price: this.activeSoldPrice12,
+            payment_type: this.activePaymentT12,
+            terms: this.activeTerms12
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 12, updWeek);
+    }
+    updateWeek13() {
+        let updWeek: Object = {
+            week: 13,
+            season: this.activeSeason13,
+            module: this.activeModule13,
+            a_date: "07/04/2017",
+            d_date: "14/04/2017",
+            price: this.activePrice13,
+            availability: this.activeAvail13,
+            fname: this.activeFirstName13,
+            sname: this.activeLastName13,
+            tel_no: this.activePhoneNumber13,
+            email: this.activeEmail13,
+            sold_price: this.activeSoldPrice13,
+            payment_type: this.activePaymentT13,
+            terms: this.activeTerms13
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 13, updWeek);
+    }
+    updateWeek14() {
+        let updWeek: Object = {
+            week: 14,
+            season: this.activeSeason14,
+            module: this.activeModule14,
+            a_date: "14/04/2017",
+            d_date: "21/04/2017",
+            price: this.activePrice14,
+            availability: this.activeAvail14,
+            fname: this.activeFirstName14,
+            sname: this.activeLastName14,
+            tel_no: this.activePhoneNumber14,
+            email: this.activeEmail14,
+            sold_price: this.activeSoldPrice14,
+            payment_type: this.activePaymentT14,
+            terms: this.activeTerms14
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 14, updWeek);
+    }
+    updateWeek15() {
+        let updWeek: Object = {
+            week: 15,
+            season: this.activeSeason15,
+            module: this.activeModule15,
+            a_date: "21/04/2017",
+            d_date: "28/04/2017",
+            price: this.activePrice15,
+            availability: this.activeAvail15,
+            fname: this.activeFirstName15,
+            sname: this.activeLastName15,
+            tel_no: this.activePhoneNumber15,
+            email: this.activeEmail15,
+            sold_price: this.activeSoldPrice15,
+            payment_type: this.activePaymentT15,
+            terms: this.activeTerms15
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 15, updWeek);
+    }
+    updateWeek16() {
+        let updWeek: Object = {
+            week: 16,
+            season: this.activeSeason16,
+            module: this.activeModule16,
+            a_date: "28/04/2017",
+            d_date: "05/05/2017",
+            price: this.activePrice16,
+            availability: this.activeAvail16,
+            fname: this.activeFirstName16,
+            sname: this.activeLastName16,
+            tel_no: this.activePhoneNumber16,
+            email: this.activeEmail16,
+            sold_price: this.activeSoldPrice16,
+            payment_type: this.activePaymentT16,
+            terms: this.activeTerms16
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 16, updWeek);
+    }
+    updateWeek17() {
+        let updWeek: Object = {
+            week: 17,
+            season: this.activeSeason17,
+            module: this.activeModule17,
+            a_date: "05/05/2017",
+            d_date: "12/05/2017",
+            price: this.activePrice17,
+            availability: this.activeAvail17,
+            fname: this.activeFirstName17,
+            sname: this.activeLastName17,
+            tel_no: this.activePhoneNumber17,
+            email: this.activeEmail17,
+            sold_price: this.activeSoldPrice17,
+            payment_type: this.activePaymentT17,
+            terms: this.activeTerms17
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 17, updWeek);
+    }
+    updateWeek18() {
+        let updWeek: Object = {
+            week: 18,
+            season: this.activeSeason18,
+            module: this.activeModule18,
+            a_date: "12/05/2017",
+            d_date: "19/05/2017",
+            price: this.activePrice18,
+            availability: this.activeAvail18,
+            fname: this.activeFirstName18,
+            sname: this.activeLastName18,
+            tel_no: this.activePhoneNumber18,
+            email: this.activeEmail18,
+            sold_price: this.activeSoldPrice18,
+            payment_type: this.activePaymentT18,
+            terms: this.activeTerms18
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 18, updWeek);
+    }
+    updateWeek19() {
+        let updWeek: Object = {
+            week: 19,
+            season: this.activeSeason19,
+            module: this.activeModule19,
+            a_date: "19/05/2017",
+            d_date: "26/05/2017",
+            price: this.activePrice19,
+            availability: this.activeAvail19,
+            fname: this.activeFirstName19,
+            sname: this.activeLastName19,
+            tel_no: this.activePhoneNumber19,
+            email: this.activeEmail19,
+            sold_price: this.activeSoldPrice19,
+            payment_type: this.activePaymentT19,
+            terms: this.activeTerms19
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 19, updWeek);
+    }
+    updateWeek20() {
+        let updWeek: Object = {
+            week: 20,
+            season: this.activeSeason20,
+            module: this.activeModule20,
+            a_date: "26/05/2017",
+            d_date: "02/06/2017",
+            price: this.activePrice20,
+            availability: this.activeAvail20,
+            fname: this.activeFirstName20,
+            sname: this.activeLastName20,
+            tel_no: this.activePhoneNumber20,
+            email: this.activeEmail20,
+            sold_price: this.activeSoldPrice20,
+            payment_type: this.activePaymentT20,
+            terms: this.activeTerms20
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 20, updWeek);
+    }
+    updateWeek21() {
+        let updWeek: Object = {
+            week: 21,
+            season: this.activeSeason21,
+            module: this.activeModule21,
+            a_date: "02/06/2017",
+            d_date: "09/06/2017",
+            price: this.activePrice21,
+            availability: this.activeAvail21,
+            fname: this.activeFirstName21,
+            sname: this.activeLastName21,
+            tel_no: this.activePhoneNumber21,
+            email: this.activeEmail21,
+            sold_price: this.activeSoldPrice21,
+            payment_type: this.activePaymentT21,
+            terms: this.activeTerms21
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 21, updWeek);
+    }
+    updateWeek22() {
+        let updWeek: Object = {
+            week: 22,
+            season: this.activeSeason22,
+            module: this.activeModule22,
+            a_date: "09/06/2017",
+            d_date: "16/06/2017",
+            price: this.activePrice22,
+            availability: this.activeAvail22,
+            fname: this.activeFirstName22,
+            sname: this.activeLastName22,
+            tel_no: this.activePhoneNumber22,
+            email: this.activeEmail22,
+            sold_price: this.activeSoldPrice22,
+            payment_type: this.activePaymentT22,
+            terms: this.activeTerms22
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 22, updWeek);
+    }
+    updateWeek23() {
+        let updWeek: Object = {
+            week: 23,
+            season: this.activeSeason23,
+            module: this.activeModule23,
+            a_date: "16/06/2017",
+            d_date: "23/06/2017",
+            price: this.activePrice23,
+            availability: this.activeAvail23,
+            fname: this.activeFirstName23,
+            sname: this.activeLastName23,
+            tel_no: this.activePhoneNumber23,
+            email: this.activeEmail23,
+            sold_price: this.activeSoldPrice23,
+            payment_type: this.activePaymentT23,
+            terms: this.activeTerms23
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 23, updWeek);
+    }
+    updateWeek24() {
+        let updWeek: Object = {
+            week: 24,
+            season: this.activeSeason24,
+            module: this.activeModule24,
+            a_date: "23/06/2017",
+            d_date: "30/06/2017",
+            price: this.activePrice24,
+            availability: this.activeAvail24,
+            fname: this.activeFirstName24,
+            sname: this.activeLastName24,
+            tel_no: this.activePhoneNumber24,
+            email: this.activeEmail24,
+            sold_price: this.activeSoldPrice24,
+            payment_type: this.activePaymentT24,
+            terms: this.activeTerms24
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 24, updWeek);
+    }
+    updateWeek25() {
+        let updWeek: Object = {
+            week: 25,
+            season: this.activeSeason25,
+            module: this.activeModule25,
+            a_date: "30/06/2017",
+            d_date: "07/07/2017",
+            price: this.activePrice25,
+            availability: this.activeAvail25,
+            fname: this.activeFirstName25,
+            sname: this.activeLastName25,
+            tel_no: this.activePhoneNumber25,
+            email: this.activeEmail25,
+            sold_price: this.activeSoldPrice25,
+            payment_type: this.activePaymentT25,
+            terms: this.activeTerms25
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 25, updWeek);
+    }
+    updateWeek26() {
+        let updWeek: Object = {
+            week: 26,
+            season: this.activeSeason26,
+            module: this.activeModule26,
+            a_date: "07/07/2017",
+            d_date: "14/07/2017",
+            price: this.activePrice26,
+            availability: this.activeAvail26,
+            fname: this.activeFirstName26,
+            sname: this.activeLastName26,
+            tel_no: this.activePhoneNumber26,
+            email: this.activeEmail26,
+            sold_price: this.activeSoldPrice26,
+            payment_type: this.activePaymentT26,
+            terms: this.activeTerms26
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 26, updWeek);
+    }
+    updateWeek27() {
+        let updWeek: Object = {
+            week: 27,
+            season: this.activeSeason27,
+            module: this.activeModule27,
+            a_date: "14/07/2017",
+            d_date: "21/07/2017",
+            price: this.activePrice27,
+            availability: this.activeAvail27,
+            fname: this.activeFirstName27,
+            sname: this.activeLastName27,
+            tel_no: this.activePhoneNumber27,
+            email: this.activeEmail27,
+            sold_price: this.activeSoldPrice27,
+            payment_type: this.activePaymentT27,
+            terms: this.activeTerms27
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 27, updWeek);
+    }
+    updateWeek28() {
+        let updWeek: Object = {
+            week: 28,
+            season: this.activeSeason28,
+            module: this.activeModule28,
+            a_date: "21/07/2017",
+            d_date: "28/07/2017",
+            price: this.activePrice28,
+            availability: this.activeAvail28,
+            fname: this.activeFirstName28,
+            sname: this.activeLastName28,
+            tel_no: this.activePhoneNumber28,
+            email: this.activeEmail28,
+            sold_price: this.activeSoldPrice28,
+            payment_type: this.activePaymentT28,
+            terms: this.activeTerms28
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 28, updWeek);
+    }
+    updateWeek29() {
+        let updWeek: Object = {
+            week: 29,
+            season: this.activeSeason29,
+            module: this.activeModule29,
+            a_date: "28/07/2017",
+            d_date: "04/08/2017",
+            price: this.activePrice29,
+            availability: this.activeAvail29,
+            fname: this.activeFirstName29,
+            sname: this.activeLastName29,
+            tel_no: this.activePhoneNumber29,
+            email: this.activeEmail29,
+            sold_price: this.activeSoldPrice29,
+            payment_type: this.activePaymentT29,
+            terms: this.activeTerms29
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 29, updWeek);
+    }
+    updateWeek30() {
+        let updWeek: Object = {
+            week: 30,
+            season: this.activeSeason30,
+            module: this.activeModule30,
+            a_date: "04/08/2017",
+            d_date: "11/08/2017",
+            price: this.activePrice30,
+            availability: this.activeAvail30,
+            fname: this.activeFirstName30,
+            sname: this.activeLastName30,
+            tel_no: this.activePhoneNumber30,
+            email: this.activeEmail30,
+            sold_price: this.activeSoldPrice30,
+            payment_type: this.activePaymentT30,
+            terms: this.activeTerms30
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 30, updWeek);
+    }
+    updateWeek31() {
+        let updWeek: Object = {
+            week: 31,
+            season: this.activeSeason31,
+            module: this.activeModule31,
+            a_date: "11/08/2017",
+            d_date: "18/08/2017",
+            price: this.activePrice31,
+            availability: this.activeAvail31,
+            fname: this.activeFirstName31,
+            sname: this.activeLastName31,
+            tel_no: this.activePhoneNumber31,
+            email: this.activeEmail31,
+            sold_price: this.activeSoldPrice31,
+            payment_type: this.activePaymentT31,
+            terms: this.activeTerms31
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 31, updWeek);
+    }
+    updateWeek32() {
+        let updWeek: Object = {
+            week: 32,
+            season: this.activeSeason32,
+            module: this.activeModule32,
+            a_date: "18/08/2017",
+            d_date: "28/08/2017",
+            price: this.activePrice32,
+            availability: this.activeAvail32,
+            fname: this.activeFirstName32,
+            sname: this.activeLastName32,
+            tel_no: this.activePhoneNumber32,
+            email: this.activeEmail32,
+            sold_price: this.activeSoldPrice32,
+            payment_type: this.activePaymentT32,
+            terms: this.activeTerms32
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 32, updWeek);
+    }
+    updateWeek33() {
+        let updWeek: Object = {
+            week: 33,
+            season: this.activeSeason33,
+            module: this.activeModule33,
+            a_date: "28/08/2017",
+            d_date: "01/09/2017",
+            price: this.activePrice33,
+            availability: this.activeAvail33,
+            fname: this.activeFirstName33,
+            sname: this.activeLastName33,
+            tel_no: this.activePhoneNumber33,
+            email: this.activeEmail33,
+            sold_price: this.activeSoldPrice33,
+            payment_type: this.activePaymentT33,
+            terms: this.activeTerms33
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 33, updWeek);
+    }
+    updateWeek34() {
+        let updWeek: Object = {
+            week: 34,
+            season: this.activeSeason34,
+            module: this.activeModule34,
+            a_date: "01/09/2017",
+            d_date: "08/09/2017",
+            price: this.activePrice34,
+            availability: this.activeAvail34,
+            fname: this.activeFirstName34,
+            sname: this.activeLastName34,
+            tel_no: this.activePhoneNumber34,
+            email: this.activeEmail34,
+            sold_price: this.activeSoldPrice34,
+            payment_type: this.activePaymentT34,
+            terms: this.activeTerms34
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 34, updWeek);
+    }
+    updateWeek35() {
+        let updWeek: Object = {
+            week: 35,
+            season: this.activeSeason35,
+            module: this.activeModule35,
+            a_date: "08/09/2017",
+            d_date: "15/09/2017",
+            price: this.activePrice35,
+            availability: this.activeAvail35,
+            fname: this.activeFirstName35,
+            sname: this.activeLastName35,
+            tel_no: this.activePhoneNumber35,
+            email: this.activeEmail35,
+            sold_price: this.activeSoldPrice35,
+            payment_type: this.activePaymentT35,
+            terms: this.activeTerms35
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 35, updWeek);
+    }
+    updateWeek36() {
+        let updWeek: Object = {
+            week: 36,
+            season: this.activeSeason36,
+            module: this.activeModule36,
+            a_date: "15/09/2017",
+            d_date: "22/09/2017",
+            price: this.activePrice36,
+            availability: this.activeAvail36,
+            fname: this.activeFirstName36,
+            sname: this.activeLastName36,
+            tel_no: this.activePhoneNumber36,
+            email: this.activeEmail36,
+            sold_price: this.activeSoldPrice36,
+            payment_type: this.activePaymentT36,
+            terms: this.activeTerms36
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 36, updWeek);
+    }
+    updateWeek37() {
+        let updWeek: Object = {
+            week: 37,
+            season: this.activeSeason37,
+            module: this.activeModule37,
+            a_date: "22/09/2017",
+            d_date: "29/09/2017",
+            price: this.activePrice37,
+            availability: this.activeAvail37,
+            fname: this.activeFirstName37,
+            sname: this.activeLastName37,
+            tel_no: this.activePhoneNumber37,
+            email: this.activeEmail37,
+            sold_price: this.activeSoldPrice37,
+            payment_type: this.activePaymentT37,
+            terms: this.activeTerms37
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 37, updWeek);
+    }
+    updateWeek38() {
+        let updWeek: Object = {
+            week: 38,
+            season: this.activeSeason38,
+            module: this.activeModule38,
+            a_date: "29/09/2017",
+            d_date: "06/10/2017",
+            price: this.activePrice38,
+            availability: this.activeAvail38,
+            fname: this.activeFirstName38,
+            sname: this.activeLastName38,
+            tel_no: this.activePhoneNumber38,
+            email: this.activeEmail38,
+            sold_price: this.activeSoldPrice38,
+            payment_type: this.activePaymentT38,
+            terms: this.activeTerms38
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 38, updWeek);
+    }
+    updateWeek39() {
+        let updWeek: Object = {
+            week: 39,
+            season: this.activeSeason39,
+            module: this.activeModule39,
+            a_date: "06/10/2017",
+            d_date: "13/10/2017",
+            price: this.activePrice39,
+            availability: this.activeAvail39,
+            fname: this.activeFirstName39,
+            sname: this.activeLastName39,
+            tel_no: this.activePhoneNumber39,
+            email: this.activeEmail39,
+            sold_price: this.activeSoldPrice39,
+            payment_type: this.activePaymentT39,
+            terms: this.activeTerms39
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 39, updWeek);
+    }
+    updateWeek40() {
+        let updWeek: Object = {
+            week: 40,
+            season: this.activeSeason40,
+            module: this.activeModule40,
+            a_date: "13/10/2017",
+            d_date: "20/10/2017",
+            price: this.activePrice40,
+            availability: this.activeAvail40,
+            fname: this.activeFirstName40,
+            sname: this.activeLastName40,
+            tel_no: this.activePhoneNumber40,
+            email: this.activeEmail40,
+            sold_price: this.activeSoldPrice40,
+            payment_type: this.activePaymentT40,
+            terms: this.activeTerms40
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 40, updWeek);
+    }
+    updateWeek41() {
+        let updWeek: Object = {
+            week: 41,
+            season: this.activeSeason41,
+            module: this.activeModule41,
+            a_date: "20/10/2017",
+            d_date: "27/10/2017",
+            price: this.activePrice41,
+            availability: this.activeAvail41,
+            fname: this.activeFirstName41,
+            sname: this.activeLastName41,
+            tel_no: this.activePhoneNumber41,
+            email: this.activeEmail41,
+            sold_price: this.activeSoldPrice41,
+            payment_type: this.activePaymentT41,
+            terms: this.activeTerms41
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 41, updWeek);
+    }
+    updateWeek42() {
+        let updWeek: Object = {
+            week: 42,
+            season: this.activeSeason42,
+            module: this.activeModule42,
+            a_date: "27/10/2017",
+            d_date: "03/11/2017",
+            price: this.activePrice42,
+            availability: this.activeAvail42,
+            fname: this.activeFirstName42,
+            sname: this.activeLastName42,
+            tel_no: this.activePhoneNumber42,
+            email: this.activeEmail42,
+            sold_price: this.activeSoldPrice42,
+            payment_type: this.activePaymentT42,
+            terms: this.activeTerms42
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 42, updWeek);
+    }
+    updateWeek43() {
+        let updWeek: Object = {
+            week: 43,
+            season: this.activeSeason43,
+            module: this.activeModule43,
+            a_date: "03/11/2017",
+            d_date: "10/11/2017",
+            price: this.activePrice43,
+            availability: this.activeAvail43,
+            fname: this.activeFirstName43,
+            sname: this.activeLastName43,
+            tel_no: this.activePhoneNumber43,
+            email: this.activeEmail43,
+            sold_price: this.activeSoldPrice43,
+            payment_type: this.activePaymentT43,
+            terms: this.activeTerms43
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 43, updWeek);
+    }
+    updateWeek44() {
+        let updWeek: Object = {
+            week: 44,
+            season: this.activeSeason44,
+            module: this.activeModule44,
+            a_date: "10/11/2017",
+            d_date: "17/11/2017",
+            price: this.activePrice44,
+            availability: this.activeAvail44,
+            fname: this.activeFirstName44,
+            sname: this.activeLastName44,
+            tel_no: this.activePhoneNumber44,
+            email: this.activeEmail44,
+            sold_price: this.activeSoldPrice44,
+            payment_type: this.activePaymentT44,
+            terms: this.activeTerms44
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 44, updWeek);
+    }
+    updateWeek45() {
+        let updWeek: Object = {
+            week: 45,
+            season: this.activeSeason45,
+            module: this.activeModule45,
+            a_date: "17/11/2017",
+            d_date: "24/11/2017",
+            price: this.activePrice45,
+            availability: this.activeAvail45,
+            fname: this.activeFirstName45,
+            sname: this.activeLastName45,
+            tel_no: this.activePhoneNumber45,
+            email: this.activeEmail45,
+            sold_price: this.activeSoldPrice45,
+            payment_type: this.activePaymentT45,
+            terms: this.activeTerms45
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 45, updWeek);
+    }
+    updateWeek46() {
+        let updWeek: Object = {
+            week: 46,
+            season: this.activeSeason46,
+            module: this.activeModule46,
+            a_date: '24/11/2017',
+            d_date: "01/12/2017",
+            price: this.activePrice46,
+            availability: this.activeAvail46,
+            fname: this.activeFirstName46,
+            sname: this.activeLastName46,
+            tel_no: this.activePhoneNumber46,
+            email: this.activeEmail46,
+            sold_price: this.activeSoldPrice46,
+            payment_type: this.activePaymentT46,
+            terms: this.activeTerms46
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 46, updWeek);
+    }
+    updateWeek47() {
+        let updWeek: Object = {
+            week: 47,
+            season: this.activeSeason47,
+            module: this.activeModule47,
+            a_date: "01/12/2017",
+            d_date: "08/12/2017",
+            price: this.activePrice47,
+            availability: this.activeAvail47,
+            fname: this.activeFirstName47,
+            sname: this.activeLastName47,
+            tel_no: this.activePhoneNumber47,
+            email: this.activeEmail47,
+            sold_price: this.activeSoldPrice47,
+            payment_type: this.activePaymentT47,
+            terms: this.activeTerms47
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 47, updWeek);
+    }
+    updateWeek48() {
+        let updWeek: Object = {
+            week: 48,
+            season: this.activeSeason48,
+            module: this.activeModule48,
+            a_date: "08/12/2017",
+            d_date: "15/12/2017",
+            price: this.activePrice48,
+            availability: this.activeAvail48,
+            fname: this.activeFirstName48,
+            sname: this.activeLastName48,
+            tel_no: this.activePhoneNumber48,
+            email: this.activeEmail48,
+            sold_price: this.activeSoldPrice48,
+            payment_type: this.activePaymentT48,
+            terms: this.activeTerms48
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 48, updWeek);
+    }
+    updateWeek49() {
+        let updWeek: Object = {
+            week: 49,
+            season: this.activeSeason49,
+            module: this.activeModule49,
+            a_date: "15/12/2017",
+            d_date: "22/12/2017",
+            price: this.activePrice49,
+            availability: this.activeAvail49,
+            fname: this.activeFirstName49,
+            sname: this.activeLastName49,
+            tel_no: this.activePhoneNumber49,
+            email: this.activeEmail49,
+            sold_price: this.activeSoldPrice49,
+            payment_type: this.activePaymentT49,
+            terms: this.activeTerms49
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 49, updWeek);
+    }
+    updateWeek50() {
+        let updWeek: Object = {
+            week: 50,
+            season: this.activeSeason50,
+            module: this.activeModule50,
+            a_date: "22/12/2017",
+            d_date: "29/12/2017",
+            price: this.activePrice50,
+            availability: this.activeAvail50,
+            fname: this.activeFirstName50,
+            sname: this.activeLastName50,
+            tel_no: this.activePhoneNumber50,
+            email: this.activeEmail50,
+            sold_price: this.activeSoldPrice50,
+            payment_type: this.activePaymentT50,
+            terms: this.activeTerms50
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 50, updWeek);
+    }
+    updateWeek51() {
+        let updWeek: Object = {
+            week: 51,
+            season: this.activeSeason51,
+            module: this.activeModule51,
+            a_date: "29/12/2017",
+            d_date: "05/01/2018",
+            price: this.activePrice51,
+            availability: this.activeAvail51,
+            fname: this.activeFirstName51,
+            sname: this.activeLastName51,
+            tel_no: this.activePhoneNumber51,
+            email: this.activeEmail51,
+            sold_price: this.activeSoldPrice51,
+            payment_type: this.activePaymentT51,
+            terms: this.activeTerms51
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 51, updWeek);
+    }
+    updateWeek52() {
+        let updWeek: Object = {
+            week: 52,
+            season: this.activeSeason52,
+            module: this.activeModule52,
+            a_date: "05/01/2018",
+            d_date: "12/01/2018",
+            price: this.activePrice52,
+            availability: this.activeAvail52,
+            fname: this.activeFirstName52,
+            sname: this.activeLastName52,
+            tel_no: this.activePhoneNumber52,
+            email: this.activeEmail52,
+            sold_price: this.activeSoldPrice52,
+            payment_type: this.activePaymentT52,
+            terms: this.activeTerms52
+        };
+
+        this._firebaseService.updatePropertyByWeek(this.activeKey, 52, updWeek);
     }
 
     updateProperty() {
@@ -683,13 +1739,13 @@ export class PropertyComponent implements OnInit {
                     week: 1,
                     season: this.activeSeason1,
                     module: this.activeModule1,
-                    arrival_date: "13/01/2017",
-                    departure_date: "20/01/2017",
+                    a_date: "13/01/2017",
+                    d_date: "20/01/2017",
                     price: this.activePrice1,
                     availability: this.activeAvail1,
-                    owner_name: this.activeFirstName1,
-                    owner_last_name: this.activeLastName1,
-                    phone_number: this.activePhoneNumber1,
+                    fname: this.activeFirstName1,
+                    sname: this.activeLastName1,
+                    tel_no: this.activePhoneNumber1,
                     email: this.activeEmail1,
                     sold_price: this.activeSoldPrice1,
                     payment_type: this.activePaymentT1,
@@ -699,13 +1755,13 @@ export class PropertyComponent implements OnInit {
                     week: 2,
                     season: this.activeSeason2,
                     module: this.activeModule2,
-                    arrival_date: "20/01/2017",
-                    departure_date: "27/01/2017",
+                    a_date: "20/01/2017",
+                    d_date: "27/01/2017",
                     price: this.activePrice2,
                     availability: this.activeAvail2,
-                    owner_name: this.activeFirstName2,
-                    owner_last_name: this.activeLastName2,
-                    phone_number: this.activePhoneNumber2,
+                    fname: this.activeFirstName2,
+                    sname: this.activeLastName2,
+                    tel_no: this.activePhoneNumber2,
                     email: this.activeEmail2,
                     sold_price: this.activeSoldPrice2,
                     payment_type: this.activePaymentT2,
@@ -714,13 +1770,13 @@ export class PropertyComponent implements OnInit {
                     week: 3,
                     season: this.activeSeason3,
                     module: this.activeModule3,
-                    arrival_date: "27/01/2017",
-                    departure_date: "03/02/2017",
+                    a_date: "27/01/2017",
+                    d_date: "03/02/2017",
                     price: this.activePrice3,
                     availability: this.activeAvail3,
-                    owner_name: this.activeFirstName3,
-                    owner_last_name: this.activeLastName3,
-                    phone_number: this.activePhoneNumber3,
+                    fname: this.activeFirstName3,
+                    sname: this.activeLastName3,
+                    tel_no: this.activePhoneNumber3,
                     email: this.activeEmail3,
                     sold_price: this.activeSoldPrice3,
                     payment_type: this.activePaymentT3,
@@ -729,13 +1785,13 @@ export class PropertyComponent implements OnInit {
                     week: 4,
                     season: this.activeSeason4,
                     module: this.activeModule4,
-                    arrival_date: "03/02/2017",
-                    departure_date: "10/02/2017",
+                    a_date: "03/02/2017",
+                    d_date: "10/02/2017",
                     price: this.activePrice4,
                     availability: this.activeAvail4,
-                    owner_name: this.activeFirstName4,
-                    owner_last_name: this.activeLastName4,
-                    phone_number: this.activePhoneNumber4,
+                    fname: this.activeFirstName4,
+                    sname: this.activeLastName4,
+                    tel_no: this.activePhoneNumber4,
                     email: this.activeEmail4,
                     sold_price: this.activeSoldPrice4,
                     payment_type: this.activePaymentT4,
@@ -744,13 +1800,13 @@ export class PropertyComponent implements OnInit {
                     week: 5,
                     season: this.activeSeason5,
                     module: this.activeModule5,
-                    arrival_date: "10/02/2017",
-                    departure_date: "17/02/2017",
+                    a_date: "10/02/2017",
+                    d_date: "17/02/2017",
                     price: this.activePrice5,
                     availability: this.activeAvail5,
-                    owner_name: this.activeFirstName5,
-                    owner_last_name: this.activeLastName5,
-                    phone_number: this.activePhoneNumber5,
+                    fname: this.activeFirstName5,
+                    sname: this.activeLastName5,
+                    tel_no: this.activePhoneNumber5,
                     email: this.activeEmail5,
                     sold_price: this.activeSoldPrice5,
                     payment_type: this.activePaymentT5,
@@ -759,13 +1815,13 @@ export class PropertyComponent implements OnInit {
                     week: 6,
                     season: this.activeSeason6,
                     module: this.activeModule6,
-                    arrival_date: "17/02/2017",
-                    departure_date: "24/02/2017",
+                    a_date: "17/02/2017",
+                    d_date: "24/02/2017",
                     price: this.activePrice6,
                     availability: this.activeAvail6,
-                    owner_name: this.activeFirstName6,
-                    owner_last_name: this.activeLastName6,
-                    phone_number: this.activePhoneNumber6,
+                    fname: this.activeFirstName6,
+                    sname: this.activeLastName6,
+                    tel_no: this.activePhoneNumber6,
                     email: this.activeEmail6,
                     sold_price: this.activeSoldPrice6,
                     payment_type: this.activePaymentT6,
@@ -774,13 +1830,13 @@ export class PropertyComponent implements OnInit {
                     week: 7,
                     season: this.activeSeason7,
                     module: this.activeModule7,
-                    arrival_date: "24/03/2017",
-                    departure_date: "03/03/2017",
+                    a_date: "24/03/2017",
+                    d_date: "03/03/2017",
                     price: this.activePrice7,
                     availability: this.activeAvail7,
-                    owner_name: this.activeFirstName7,
-                    owner_last_name: this.activeLastName7,
-                    phone_number: this.activePhoneNumber7,
+                    fname: this.activeFirstName7,
+                    sname: this.activeLastName7,
+                    tel_no: this.activePhoneNumber7,
                     email: this.activeEmail7,
                     sold_price: this.activeSoldPrice7,
                     payment_type: this.activePaymentT7,
@@ -789,13 +1845,13 @@ export class PropertyComponent implements OnInit {
                     week: 8,
                     season: this.activeSeason8,
                     module: this.activeModule8,
-                    arrival_date: "03/03/2017",
-                    departure_date: "10/03/2017",
+                    a_date: "03/03/2017",
+                    d_date: "10/03/2017",
                     price: this.activePrice8,
                     availability: this.activeAvail8,
-                    owner_name: this.activeFirstName8,
-                    owner_last_name: this.activeLastName8,
-                    phone_number: this.activePhoneNumber8,
+                    fname: this.activeFirstName8,
+                    sname: this.activeLastName8,
+                    tel_no: this.activePhoneNumber8,
                     email: this.activeEmail8,
                     sold_price: this.activeSoldPrice8,
                     payment_type: this.activePaymentT8,
@@ -804,13 +1860,13 @@ export class PropertyComponent implements OnInit {
                     week: 9,
                     season: this.activeSeason9,
                     module: this.activeModule9,
-                    arrival_date: "10/03/2017",
-                    departure_date: "17/03/2017",
+                    a_date: "10/03/2017",
+                    d_date: "17/03/2017",
                     price: this.activePrice9,
                     availability: this.activeAvail9,
-                    owner_name: this.activeFirstName9,
-                    owner_last_name: this.activeLastName9,
-                    phone_number: this.activePhoneNumber9,
+                    fname: this.activeFirstName9,
+                    sname: this.activeLastName9,
+                    tel_no: this.activePhoneNumber9,
                     email: this.activeEmail9,
                     sold_price: this.activeSoldPrice9,
                     payment_type: this.activePaymentT9,
@@ -819,13 +1875,13 @@ export class PropertyComponent implements OnInit {
                     week: 10,
                     season: this.activeSeason10,
                     module: this.activeModule10,
-                    arrival_date: "17/03/2017",
-                    departure_date: "24/03/2017",
+                    a_date: "17/03/2017",
+                    d_date: "24/03/2017",
                     price: this.activePrice10,
                     availability: this.activeAvail10,
-                    owner_name: this.activeFirstName10,
-                    owner_last_name: this.activeLastName10,
-                    phone_number: this.activePhoneNumber10,
+                    fname: this.activeFirstName10,
+                    sname: this.activeLastName10,
+                    tel_no: this.activePhoneNumber10,
                     email: this.activeEmail10,
                     sold_price: this.activeSoldPrice10,
                     payment_type: this.activePaymentT10,
@@ -834,13 +1890,13 @@ export class PropertyComponent implements OnInit {
                     week: 11,
                     season: this.activeSeason11,
                     module: this.activeModule11,
-                    arrival_date: "24/03/2017",
-                    departure_date: "31/03/2017",
+                    a_date: "24/03/2017",
+                    d_date: "31/03/2017",
                     price: this.activePrice11,
                     availability: this.activeAvail11,
-                    owner_name: this.activeFirstName11,
-                    owner_last_name: this.activeLastName11,
-                    phone_number: this.activePhoneNumber11,
+                    fname: this.activeFirstName11,
+                    sname: this.activeLastName11,
+                    tel_no: this.activePhoneNumber11,
                     email: this.activeEmail11,
                     sold_price: this.activeSoldPrice11,
                     payment_type: this.activePaymentT11,
@@ -849,13 +1905,13 @@ export class PropertyComponent implements OnInit {
                     week: 12,
                     season: this.activeSeason12,
                     module: this.activeModule12,
-                    arrival_date: "31/03/2017",
-                    departure_date: "07/04/2017",
+                    a_date: "31/03/2017",
+                    d_date: "07/04/2017",
                     price: this.activePrice12,
                     availability: this.activeAvail12,
-                    owner_name: this.activeFirstName12,
-                    owner_last_name: this.activeLastName12,
-                    phone_number: this.activePhoneNumber12,
+                    fname: this.activeFirstName12,
+                    sname: this.activeLastName12,
+                    tel_no: this.activePhoneNumber12,
                     email: this.activeEmail12,
                     sold_price: this.activeSoldPrice12,
                     payment_type: this.activePaymentT12,
@@ -864,13 +1920,13 @@ export class PropertyComponent implements OnInit {
                     week: 13,
                     season: this.activeSeason13,
                     module: this.activeModule13,
-                    arrival_date: "07/04/2017",
-                    departure_date: "14/04/2017",
+                    a_date: "07/04/2017",
+                    d_date: "14/04/2017",
                     price: this.activePrice13,
                     availability: this.activeAvail13,
-                    owner_name: this.activeFirstName13,
-                    owner_last_name: this.activeLastName13,
-                    phone_number: this.activePhoneNumber13,
+                    fname: this.activeFirstName13,
+                    sname: this.activeLastName13,
+                    tel_no: this.activePhoneNumber13,
                     email: this.activeEmail13,
                     sold_price: this.activeSoldPrice13,
                     payment_type: this.activePaymentT13,
@@ -879,13 +1935,13 @@ export class PropertyComponent implements OnInit {
                     week: 14,
                     season: this.activeSeason14,
                     module: this.activeModule14,
-                    arrival_date: "14/04/2017",
-                    departure_date: "21/04/2017",
+                    a_date: "14/04/2017",
+                    d_date: "21/04/2017",
                     price: this.activePrice14,
                     availability: this.activeAvail14,
-                    owner_name: this.activeFirstName14,
-                    owner_last_name: this.activeLastName14,
-                    phone_number: this.activePhoneNumber14,
+                    fname: this.activeFirstName14,
+                    sname: this.activeLastName14,
+                    tel_no: this.activePhoneNumber14,
                     email: this.activeEmail14,
                     sold_price: this.activeSoldPrice14,
                     payment_type: this.activePaymentT14,
@@ -894,13 +1950,13 @@ export class PropertyComponent implements OnInit {
                     week: 15,
                     season: this.activeSeason15,
                     module: this.activeModule15,
-                    arrival_date: "21/04/2017",
-                    departure_date: "28/04/2017",
+                    a_date: "21/04/2017",
+                    d_date: "28/04/2017",
                     price: this.activePrice15,
                     availability: this.activeAvail15,
-                    owner_name: this.activeFirstName15,
-                    owner_last_name: this.activeLastName15,
-                    phone_number: this.activePhoneNumber15,
+                    fname: this.activeFirstName15,
+                    sname: this.activeLastName15,
+                    tel_no: this.activePhoneNumber15,
                     email: this.activeEmail15,
                     sold_price: this.activeSoldPrice15,
                     payment_type: this.activePaymentT15,
@@ -909,13 +1965,13 @@ export class PropertyComponent implements OnInit {
                     week: 16,
                     season: this.activeSeason16,
                     module: this.activeModule16,
-                    arrival_date: "28/04/2017",
-                    departure_date: "05/05/2017",
+                    a_date: "28/04/2017",
+                    d_date: "05/05/2017",
                     price: this.activePrice16,
                     availability: this.activeAvail16,
-                    owner_name: this.activeFirstName16,
-                    owner_last_name: this.activeLastName16,
-                    phone_number: this.activePhoneNumber16,
+                    fname: this.activeFirstName16,
+                    sname: this.activeLastName16,
+                    tel_no: this.activePhoneNumber16,
                     email: this.activeEmail16,
                     sold_price: this.activeSoldPrice16,
                     payment_type: this.activePaymentT16,
@@ -924,13 +1980,13 @@ export class PropertyComponent implements OnInit {
                     week: 17,
                     season: this.activeSeason17,
                     module: this.activeModule17,
-                    arrival_date: "05/05/2017",
-                    departure_date: "12/05/2017",
+                    a_date: "05/05/2017",
+                    d_date: "12/05/2017",
                     price: this.activePrice17,
                     availability: this.activeAvail17,
-                    owner_name: this.activeFirstName17,
-                    owner_last_name: this.activeLastName17,
-                    phone_number: this.activePhoneNumber17,
+                    fname: this.activeFirstName17,
+                    sname: this.activeLastName17,
+                    tel_no: this.activePhoneNumber17,
                     email: this.activeEmail17,
                     sold_price: this.activeSoldPrice17,
                     payment_type: this.activePaymentT17,
@@ -939,13 +1995,13 @@ export class PropertyComponent implements OnInit {
                     week: 18,
                     season: this.activeSeason18,
                     module: this.activeModule18,
-                    arrival_date: "12/05/2017",
-                    departure_date: "19/05/2017",
+                    a_date: "12/05/2017",
+                    d_date: "19/05/2017",
                     price: this.activePrice18,
                     availability: this.activeAvail18,
-                    owner_name: this.activeFirstName18,
-                    owner_last_name: this.activeLastName18,
-                    phone_number: this.activePhoneNumber18,
+                    fname: this.activeFirstName18,
+                    sname: this.activeLastName18,
+                    tel_no: this.activePhoneNumber18,
                     email: this.activeEmail18,
                     sold_price: this.activeSoldPrice18,
                     payment_type: this.activePaymentT18,
@@ -954,13 +2010,13 @@ export class PropertyComponent implements OnInit {
                     week: 19,
                     season: this.activeSeason19,
                     module: this.activeModule19,
-                    arrival_date: "19/05/2017",
-                    departure_date: "26/05/2017",
+                    a_date: "19/05/2017",
+                    d_date: "26/05/2017",
                     price: this.activePrice19,
                     availability: this.activeAvail19,
-                    owner_name: this.activeFirstName19,
-                    owner_last_name: this.activeLastName19,
-                    phone_number: this.activePhoneNumber19,
+                    fname: this.activeFirstName19,
+                    sname: this.activeLastName19,
+                    tel_no: this.activePhoneNumber19,
                     email: this.activeEmail19,
                     sold_price: this.activeSoldPrice19,
                     payment_type: this.activePaymentT19,
@@ -969,13 +2025,13 @@ export class PropertyComponent implements OnInit {
                     week: 20,
                     season: this.activeSeason20,
                     module: this.activeModule20,
-                    arrival_date: "26/05/2017",
-                    departure_date: "02/06/2017",
+                    a_date: "26/05/2017",
+                    d_date: "02/06/2017",
                     price: this.activePrice20,
                     availability: this.activeAvail20,
-                    owner_name: this.activeFirstName20,
-                    owner_last_name: this.activeLastName20,
-                    phone_number: this.activePhoneNumber20,
+                    fname: this.activeFirstName20,
+                    sname: this.activeLastName20,
+                    tel_no: this.activePhoneNumber20,
                     email: this.activeEmail20,
                     sold_price: this.activeSoldPrice20,
                     payment_type: this.activePaymentT20,
@@ -984,13 +2040,13 @@ export class PropertyComponent implements OnInit {
                     week: 21,
                     season: this.activeSeason21,
                     module: this.activeModule21,
-                    arrival_date: "02/06/2017",
-                    departure_date: "09/06/2017",
+                    a_date: "02/06/2017",
+                    d_date: "09/06/2017",
                     price: this.activePrice21,
                     availability: this.activeAvail21,
-                    owner_name: this.activeFirstName21,
-                    owner_last_name: this.activeLastName21,
-                    phone_number: this.activePhoneNumber21,
+                    fname: this.activeFirstName21,
+                    sname: this.activeLastName21,
+                    tel_no: this.activePhoneNumber21,
                     email: this.activeEmail21,
                     sold_price: this.activeSoldPrice21,
                     payment_type: this.activePaymentT21,
@@ -999,13 +2055,13 @@ export class PropertyComponent implements OnInit {
                     week: 22,
                     season: this.activeSeason22,
                     module: this.activeModule22,
-                    arrival_date: "09/06/2017",
-                    departure_date: "16/06/2017",
+                    a_date: "09/06/2017",
+                    d_date: "16/06/2017",
                     price: this.activePrice22,
                     availability: this.activeAvail22,
-                    owner_name: this.activeFirstName22,
-                    owner_last_name: this.activeLastName22,
-                    phone_number: this.activePhoneNumber22,
+                    fname: this.activeFirstName22,
+                    sname: this.activeLastName22,
+                    tel_no: this.activePhoneNumber22,
                     email: this.activeEmail22,
                     sold_price: this.activeSoldPrice22,
                     payment_type: this.activePaymentT22,
@@ -1014,13 +2070,13 @@ export class PropertyComponent implements OnInit {
                     week: 23,
                     season: this.activeSeason23,
                     module: this.activeModule23,
-                    arrival_date: "16/06/2017",
-                    departure_date: "23/06/2017",
+                    a_date: "16/06/2017",
+                    d_date: "23/06/2017",
                     price: this.activePrice23,
                     availability: this.activeAvail23,
-                    owner_name: this.activeFirstName23,
-                    owner_last_name: this.activeLastName23,
-                    phone_number: this.activePhoneNumber23,
+                    fname: this.activeFirstName23,
+                    sname: this.activeLastName23,
+                    tel_no: this.activePhoneNumber23,
                     email: this.activeEmail23,
                     sold_price: this.activeSoldPrice23,
                     payment_type: this.activePaymentT23,
@@ -1029,13 +2085,13 @@ export class PropertyComponent implements OnInit {
                     week: 24,
                     season: this.activeSeason24,
                     module: this.activeModule24,
-                    arrival_date: "23/06/2017",
-                    departure_date: "30/06/2017",
+                    a_date: "23/06/2017",
+                    d_date: "30/06/2017",
                     price: this.activePrice24,
                     availability: this.activeAvail24,
-                    owner_name: this.activeFirstName24,
-                    owner_last_name: this.activeLastName24,
-                    phone_number: this.activePhoneNumber24,
+                    fname: this.activeFirstName24,
+                    sname: this.activeLastName24,
+                    tel_no: this.activePhoneNumber24,
                     email: this.activeEmail24,
                     sold_price: this.activeSoldPrice24,
                     payment_type: this.activePaymentT24,
@@ -1044,13 +2100,13 @@ export class PropertyComponent implements OnInit {
                     week: 25,
                     season: this.activeSeason25,
                     module: this.activeModule25,
-                    arrival_date: "30/06/2017",
-                    departure_date: "07/07/2017",
+                    a_date: "30/06/2017",
+                    d_date: "07/07/2017",
                     price: this.activePrice25,
                     availability: this.activeAvail25,
-                    owner_name: this.activeFirstName25,
-                    owner_last_name: this.activeLastName25,
-                    phone_number: this.activePhoneNumber25,
+                    fname: this.activeFirstName25,
+                    sname: this.activeLastName25,
+                    tel_no: this.activePhoneNumber25,
                     email: this.activeEmail25,
                     sold_price: this.activeSoldPrice25,
                     payment_type: this.activePaymentT25,
@@ -1059,13 +2115,13 @@ export class PropertyComponent implements OnInit {
                     week: 26,
                     season: this.activeSeason26,
                     module: this.activeModule26,
-                    arrival_date: "07/07/2017",
-                    departure_date: "14/07/2017",
+                    a_date: "07/07/2017",
+                    d_date: "14/07/2017",
                     price: this.activePrice26,
                     availability: this.activeAvail26,
-                    owner_name: this.activeFirstName26,
-                    owner_last_name: this.activeLastName26,
-                    phone_number: this.activePhoneNumber26,
+                    fname: this.activeFirstName26,
+                    sname: this.activeLastName26,
+                    tel_no: this.activePhoneNumber26,
                     email: this.activeEmail26,
                     sold_price: this.activeSoldPrice26,
                     payment_type: this.activePaymentT26,
@@ -1074,13 +2130,13 @@ export class PropertyComponent implements OnInit {
                     week: 27,
                     season: this.activeSeason27,
                     module: this.activeModule27,
-                    arrival_date: "14/07/2017",
-                    departure_date: "21/07/2017",
+                    a_date: "14/07/2017",
+                    d_date: "21/07/2017",
                     price: this.activePrice27,
                     availability: this.activeAvail27,
-                    owner_name: this.activeFirstName27,
-                    owner_last_name: this.activeLastName27,
-                    phone_number: this.activePhoneNumber27,
+                    fname: this.activeFirstName27,
+                    sname: this.activeLastName27,
+                    tel_no: this.activePhoneNumber27,
                     email: this.activeEmail27,
                     sold_price: this.activeSoldPrice27,
                     payment_type: this.activePaymentT27,
@@ -1089,13 +2145,13 @@ export class PropertyComponent implements OnInit {
                     week: 28,
                     season: this.activeSeason28,
                     module: this.activeModule28,
-                    arrival_date: "21/07/2017",
-                    departure_date: "28/07/2017",
+                    a_date: "21/07/2017",
+                    d_date: "28/07/2017",
                     price: this.activePrice28,
                     availability: this.activeAvail28,
-                    owner_name: this.activeFirstName28,
-                    owner_last_name: this.activeLastName28,
-                    phone_number: this.activePhoneNumber28,
+                    fname: this.activeFirstName28,
+                    sname: this.activeLastName28,
+                    tel_no: this.activePhoneNumber28,
                     email: this.activeEmail28,
                     sold_price: this.activeSoldPrice28,
                     payment_type: this.activePaymentT28,
@@ -1104,13 +2160,13 @@ export class PropertyComponent implements OnInit {
                     week: 29,
                     season: this.activeSeason29,
                     module: this.activeModule29,
-                    arrival_date: "28/07/2017",
-                    departure_date: "04/08/2017",
+                    a_date: "28/07/2017",
+                    d_date: "04/08/2017",
                     price: this.activePrice29,
                     availability: this.activeAvail29,
-                    owner_name: this.activeFirstName29,
-                    owner_last_name: this.activeLastName29,
-                    phone_number: this.activePhoneNumber29,
+                    fname: this.activeFirstName29,
+                    sname: this.activeLastName29,
+                    tel_no: this.activePhoneNumber29,
                     email: this.activeEmail29,
                     sold_price: this.activeSoldPrice29,
                     payment_type: this.activePaymentT29,
@@ -1119,13 +2175,13 @@ export class PropertyComponent implements OnInit {
                     week: 30,
                     season: this.activeSeason30,
                     module: this.activeModule30,
-                    arrival_date: "04/08/2017",
-                    departure_date: "11/08/2017",
+                    a_date: "04/08/2017",
+                    d_date: "11/08/2017",
                     price: this.activePrice30,
                     availability: this.activeAvail30,
-                    owner_name: this.activeFirstName30,
-                    owner_last_name: this.activeLastName30,
-                    phone_number: this.activePhoneNumber30,
+                    fname: this.activeFirstName30,
+                    sname: this.activeLastName30,
+                    tel_no: this.activePhoneNumber30,
                     email: this.activeEmail30,
                     sold_price: this.activeSoldPrice30,
                     payment_type: this.activePaymentT30,
@@ -1134,13 +2190,13 @@ export class PropertyComponent implements OnInit {
                     week: 31,
                     season: this.activeSeason31,
                     module: this.activeModule31,
-                    arrival_date: "11/08/2017",
-                    departure_date: "18/08/2017",
+                    a_date: "11/08/2017",
+                    d_date: "18/08/2017",
                     price: this.activePrice31,
                     availability: this.activeAvail31,
-                    owner_name: this.activeFirstName31,
-                    owner_last_name: this.activeLastName31,
-                    phone_number: this.activePhoneNumber31,
+                    fname: this.activeFirstName31,
+                    sname: this.activeLastName31,
+                    tel_no: this.activePhoneNumber31,
                     email: this.activeEmail31,
                     sold_price: this.activeSoldPrice31,
                     payment_type: this.activePaymentT31,
@@ -1149,28 +2205,28 @@ export class PropertyComponent implements OnInit {
                     week: 32,
                     season: this.activeSeason32,
                     module: this.activeModule32,
-                    arrival_date: "18/08/2017",
-                    departure_date: "28/08/2017",
+                    a_date: "18/08/2017",
+                    d_date: "28/08/2017",
                     price: this.activePrice32,
                     availability: this.activeAvail32,
-                    owner_name: this.activeFirstName32,
-                    owner_last_name: this.activeLastName32,
-                    phone_number: this.activePhoneNumber32,
+                    fname: this.activeFirstName32,
+                    sname: this.activeLastName32,
+                    tel_no: this.activePhoneNumber32,
                     email: this.activeEmail32,
                     sold_price: this.activeSoldPrice32,
-                    payment_type: this.activePaymentT33,
-                    terms: this.activeTerms33
+                    payment_type: this.activePaymentT32,
+                    terms: this.activeTerms32
                 }, { // week33
                     week: 33,
                     season: this.activeSeason33,
                     module: this.activeModule33,
-                    arrival_date: "28/08/2017",
-                    departure_date: "01/09/2017",
+                    a_date: "28/08/2017",
+                    d_date: "01/09/2017",
                     price: this.activePrice33,
                     availability: this.activeAvail33,
-                    owner_name: this.activeFirstName33,
-                    owner_last_name: this.activeLastName33,
-                    phone_number: this.activePhoneNumber33,
+                    fname: this.activeFirstName33,
+                    sname: this.activeLastName33,
+                    tel_no: this.activePhoneNumber33,
                     email: this.activeEmail33,
                     sold_price: this.activeSoldPrice33,
                     payment_type: this.activePaymentT33,
@@ -1179,13 +2235,13 @@ export class PropertyComponent implements OnInit {
                     week: 34,
                     season: this.activeSeason34,
                     module: this.activeModule34,
-                    arrival_date: "01/09/2017",
-                    departure_date: "08/09/2017",
+                    a_date: "01/09/2017",
+                    d_date: "08/09/2017",
                     price: this.activePrice34,
                     availability: this.activeAvail34,
-                    owner_name: this.activeFirstName34,
-                    owner_last_name: this.activeLastName34,
-                    phone_number: this.activePhoneNumber34,
+                    fname: this.activeFirstName34,
+                    sname: this.activeLastName34,
+                    tel_no: this.activePhoneNumber34,
                     email: this.activeEmail34,
                     sold_price: this.activeSoldPrice34,
                     payment_type: this.activePaymentT34,
@@ -1194,13 +2250,13 @@ export class PropertyComponent implements OnInit {
                     week: 35,
                     season: this.activeSeason35,
                     module: this.activeModule35,
-                    arrival_date: "08/09/2017",
-                    departure_date: "15/09/2017",
+                    a_date: "08/09/2017",
+                    d_date: "15/09/2017",
                     price: this.activePrice35,
                     availability: this.activeAvail35,
-                    owner_name: this.activeFirstName35,
-                    owner_last_name: this.activeLastName35,
-                    phone_number: this.activePhoneNumber35,
+                    fname: this.activeFirstName35,
+                    sname: this.activeLastName35,
+                    tel_no: this.activePhoneNumber35,
                     email: this.activeEmail35,
                     sold_price: this.activeSoldPrice35,
                     payment_type: this.activePaymentT35,
@@ -1209,13 +2265,13 @@ export class PropertyComponent implements OnInit {
                     week: 36,
                     season: this.activeSeason36,
                     module: this.activeModule36,
-                    arrival_date: "15/09/2017",
-                    departure_date: "22/09/2017",
+                    a_date: "15/09/2017",
+                    d_date: "22/09/2017",
                     price: this.activePrice36,
                     availability: this.activeAvail36,
-                    owner_name: this.activeFirstName36,
-                    owner_last_name: this.activeLastName36,
-                    phone_number: this.activePhoneNumber36,
+                    fname: this.activeFirstName36,
+                    sname: this.activeLastName36,
+                    tel_no: this.activePhoneNumber36,
                     email: this.activeEmail36,
                     sold_price: this.activeSoldPrice36,
                     payment_type: this.activePaymentT36,
@@ -1224,13 +2280,13 @@ export class PropertyComponent implements OnInit {
                     week: 37,
                     season: this.activeSeason37,
                     module: this.activeModule37,
-                    arrival_date: "22/09/2017",
-                    departure_date: "29/09/2017",
+                    a_date: "22/09/2017",
+                    d_date: "29/09/2017",
                     price: this.activePrice37,
                     availability: this.activeAvail37,
-                    owner_name: this.activeFirstName37,
-                    owner_last_name: this.activeLastName37,
-                    phone_number: this.activePhoneNumber37,
+                    fname: this.activeFirstName37,
+                    sname: this.activeLastName37,
+                    tel_no: this.activePhoneNumber37,
                     email: this.activeEmail37,
                     sold_price: this.activeSoldPrice37,
                     payment_type: this.activePaymentT37,
@@ -1239,13 +2295,13 @@ export class PropertyComponent implements OnInit {
                     week: 38,
                     season: this.activeSeason38,
                     module: this.activeModule38,
-                    arrival_date: "29/09/2017",
-                    departure_date: "06/10/2017",
+                    a_date: "29/09/2017",
+                    d_date: "06/10/2017",
                     price: this.activePrice38,
                     availability: this.activeAvail38,
-                    owner_name: this.activeFirstName38,
-                    owner_last_name: this.activeLastName38,
-                    phone_number: this.activePhoneNumber38,
+                    fname: this.activeFirstName38,
+                    sname: this.activeLastName38,
+                    tel_no: this.activePhoneNumber38,
                     email: this.activeEmail38,
                     sold_price: this.activeSoldPrice38,
                     payment_type: this.activePaymentT38,
@@ -1254,13 +2310,13 @@ export class PropertyComponent implements OnInit {
                     week: 39,
                     season: this.activeSeason39,
                     module: this.activeModule39,
-                    arrival_date: "06/10/2017",
-                    departure_date: "13/10/2017",
+                    a_date: "06/10/2017",
+                    d_date: "13/10/2017",
                     price: this.activePrice39,
                     availability: this.activeAvail39,
-                    owner_name: this.activeFirstName39,
-                    owner_last_name: this.activeLastName39,
-                    phone_number: this.activePhoneNumber39,
+                    fname: this.activeFirstName39,
+                    sname: this.activeLastName39,
+                    tel_no: this.activePhoneNumber39,
                     email: this.activeEmail39,
                     sold_price: this.activeSoldPrice39,
                     payment_type: this.activePaymentT39,
@@ -1269,13 +2325,13 @@ export class PropertyComponent implements OnInit {
                     week: 40,
                     season: this.activeSeason40,
                     module: this.activeModule40,
-                    arrival_date: "13/10/2017",
-                    departure_date: "20/10/2017",
+                    a_date: "13/10/2017",
+                    d_date: "20/10/2017",
                     price: this.activePrice40,
                     availability: this.activeAvail40,
-                    owner_name: this.activeFirstName40,
-                    owner_last_name: this.activeLastName40,
-                    phone_number: this.activePhoneNumber40,
+                    fname: this.activeFirstName40,
+                    sname: this.activeLastName40,
+                    tel_no: this.activePhoneNumber40,
                     email: this.activeEmail40,
                     sold_price: this.activeSoldPrice40,
                     payment_type: this.activePaymentT40,
@@ -1284,13 +2340,13 @@ export class PropertyComponent implements OnInit {
                     week: 41,
                     season: this.activeSeason41,
                     module: this.activeModule41,
-                    arrival_date: "20/10/2017",
-                    departure_date: "27/10/2017",
+                    a_date: "20/10/2017",
+                    d_date: "27/10/2017",
                     price: this.activePrice41,
                     availability: this.activeAvail41,
-                    owner_name: this.activeFirstName41,
-                    owner_last_name: this.activeLastName41,
-                    phone_number: this.activePhoneNumber41,
+                    fname: this.activeFirstName41,
+                    sname: this.activeLastName41,
+                    tel_no: this.activePhoneNumber41,
                     email: this.activeEmail41,
                     sold_price: this.activeSoldPrice41,
                     payment_type: this.activePaymentT41,
@@ -1299,13 +2355,13 @@ export class PropertyComponent implements OnInit {
                     week: 42,
                     season: this.activeSeason42,
                     module: this.activeModule42,
-                    arrival_date: "27/10/2017",
-                    departure_date: "03/11/2017",
+                    a_date: "27/10/2017",
+                    d_date: "03/11/2017",
                     price: this.activePrice42,
                     availability: this.activeAvail42,
-                    owner_name: this.activeFirstName42,
-                    owner_last_name: this.activeLastName42,
-                    phone_number: this.activePhoneNumber42,
+                    fname: this.activeFirstName42,
+                    sname: this.activeLastName42,
+                    tel_no: this.activePhoneNumber42,
                     email: this.activeEmail42,
                     sold_price: this.activeSoldPrice42,
                     payment_type: this.activePaymentT42,
@@ -1314,13 +2370,13 @@ export class PropertyComponent implements OnInit {
                     week: 43,
                     season: this.activeSeason43,
                     module: this.activeModule43,
-                    arrival_date: "03/11/2017",
-                    departure_date: "10/11/2017",
+                    a_date: "03/11/2017",
+                    d_date: "10/11/2017",
                     price: this.activePrice43,
                     availability: this.activeAvail43,
-                    owner_name: this.activeFirstName43,
-                    owner_last_name: this.activeLastName43,
-                    phone_number: this.activePhoneNumber43,
+                    fname: this.activeFirstName43,
+                    sname: this.activeLastName43,
+                    tel_no: this.activePhoneNumber43,
                     email: this.activeEmail43,
                     sold_price: this.activeSoldPrice43,
                     payment_type: this.activePaymentT43,
@@ -1329,13 +2385,13 @@ export class PropertyComponent implements OnInit {
                     week: 44,
                     season: this.activeSeason44,
                     module: this.activeModule44,
-                    arrival_date: "10/11/2017",
-                    departure_date: "17/11/2017",
+                    a_date: "10/11/2017",
+                    d_date: "17/11/2017",
                     price: this.activePrice44,
                     availability: this.activeAvail44,
-                    owner_name: this.activeFirstName44,
-                    owner_last_name: this.activeLastName44,
-                    phone_number: this.activePhoneNumber44,
+                    fname: this.activeFirstName44,
+                    sname: this.activeLastName44,
+                    tel_no: this.activePhoneNumber44,
                     email: this.activeEmail44,
                     sold_price: this.activeSoldPrice44,
                     payment_type: this.activePaymentT44,
@@ -1344,13 +2400,13 @@ export class PropertyComponent implements OnInit {
                     week: 45,
                     season: this.activeSeason45,
                     module: this.activeModule45,
-                    arrival_date: "17/11/2017",
-                    departure_date: "24/11/2017",
+                    a_date: "17/11/2017",
+                    d_date: "24/11/2017",
                     price: this.activePrice45,
                     availability: this.activeAvail45,
-                    owner_name: this.activeFirstName45,
-                    owner_last_name: this.activeLastName45,
-                    phone_number: this.activePhoneNumber45,
+                    fname: this.activeFirstName45,
+                    sname: this.activeLastName45,
+                    tel_no: this.activePhoneNumber45,
                     email: this.activeEmail45,
                     sold_price: this.activeSoldPrice45,
                     payment_type: this.activePaymentT45,
@@ -1359,13 +2415,13 @@ export class PropertyComponent implements OnInit {
                     week: 46,
                     season: this.activeSeason46,
                     module: this.activeModule46,
-                    arrival_date: '24/11/2017',
-                    departure_date: "01/12/2017",
+                    a_date: '24/11/2017',
+                    d_date: "01/12/2017",
                     price: this.activePrice46,
                     availability: this.activeAvail46,
-                    owner_name: this.activeFirstName46,
-                    owner_last_name: this.activeLastName46,
-                    phone_number: this.activePhoneNumber46,
+                    fname: this.activeFirstName46,
+                    sname: this.activeLastName46,
+                    tel_no: this.activePhoneNumber46,
                     email: this.activeEmail46,
                     sold_price: this.activeSoldPrice46,
                     payment_type: this.activePaymentT46,
@@ -1374,13 +2430,13 @@ export class PropertyComponent implements OnInit {
                     week: 47,
                     season: this.activeSeason47,
                     module: this.activeModule47,
-                    arrival_date: "01/12/2017",
-                    departure_date: "08/12/2017",
+                    a_date: "01/12/2017",
+                    d_date: "08/12/2017",
                     price: this.activePrice47,
                     availability: this.activeAvail47,
-                    owner_name: this.activeFirstName47,
-                    owner_last_name: this.activeLastName47,
-                    phone_number: this.activePhoneNumber47,
+                    fname: this.activeFirstName47,
+                    sname: this.activeLastName47,
+                    tel_no: this.activePhoneNumber47,
                     email: this.activeEmail47,
                     sold_price: this.activeSoldPrice47,
                     payment_type: this.activePaymentT47,
@@ -1389,13 +2445,13 @@ export class PropertyComponent implements OnInit {
                     week: 48,
                     season: this.activeSeason48,
                     module: this.activeModule48,
-                    arrival_date: "08/12/2017",
-                    departure_date: "15/12/2017",
+                    a_date: "08/12/2017",
+                    d_date: "15/12/2017",
                     price: this.activePrice48,
                     availability: this.activeAvail48,
-                    owner_name: this.activeFirstName48,
-                    owner_last_name: this.activeLastName48,
-                    phone_number: this.activePhoneNumber48,
+                    fname: this.activeFirstName48,
+                    sname: this.activeLastName48,
+                    tel_no: this.activePhoneNumber48,
                     email: this.activeEmail48,
                     sold_price: this.activeSoldPrice48,
                     payment_type: this.activePaymentT48,
@@ -1404,13 +2460,13 @@ export class PropertyComponent implements OnInit {
                     week: 49,
                     season: this.activeSeason49,
                     module: this.activeModule49,
-                    arrival_date: "15/12/2017",
-                    departure_date: "22/12/2017",
+                    a_date: "15/12/2017",
+                    d_date: "22/12/2017",
                     price: this.activePrice49,
                     availability: this.activeAvail49,
-                    owner_name: this.activeFirstName49,
-                    owner_last_name: this.activeLastName49,
-                    phone_number: this.activePhoneNumber49,
+                    fname: this.activeFirstName49,
+                    sname: this.activeLastName49,
+                    tel_no: this.activePhoneNumber49,
                     email: this.activeEmail49,
                     sold_price: this.activeSoldPrice49,
                     payment_type: this.activePaymentT49,
@@ -1419,13 +2475,13 @@ export class PropertyComponent implements OnInit {
                     week: 50,
                     season: this.activeSeason50,
                     module: this.activeModule50,
-                    arrival_date: "22/12/2017",
-                    departure_date: "29/12/2017",
+                    a_date: "22/12/2017",
+                    d_date: "29/12/2017",
                     price: this.activePrice50,
                     availability: this.activeAvail50,
-                    owner_name: this.activeFirstName50,
-                    owner_last_name: this.activeLastName50,
-                    phone_number: this.activePhoneNumber50,
+                    fname: this.activeFirstName50,
+                    sname: this.activeLastName50,
+                    tel_no: this.activePhoneNumber50,
                     email: this.activeEmail50,
                     sold_price: this.activeSoldPrice50,
                     payment_type: this.activePaymentT50,
@@ -1434,13 +2490,13 @@ export class PropertyComponent implements OnInit {
                     week: 51,
                     season: this.activeSeason51,
                     module: this.activeModule51,
-                    arrival_date: "29/12/2017",
-                    departure_date: "05/01/2018",
+                    a_date: "29/12/2017",
+                    d_date: "05/01/2018",
                     price: this.activePrice51,
                     availability: this.activeAvail51,
-                    owner_name: this.activeFirstName51,
-                    owner_last_name: this.activeLastName51,
-                    phone_number: this.activePhoneNumber51,
+                    fname: this.activeFirstName51,
+                    sname: this.activeLastName51,
+                    tel_no: this.activePhoneNumber51,
                     email: this.activeEmail51,
                     sold_price: this.activeSoldPrice51,
                     payment_type: this.activePaymentT51,
@@ -1449,13 +2505,13 @@ export class PropertyComponent implements OnInit {
                     week: 52,
                     season: this.activeSeason52,
                     module: this.activeModule52,
-                    arrival_date: "05/01/2018",
-                    departure_date: "12/01/2018",
+                    a_date: "05/01/2018",
+                    d_date: "12/01/2018",
                     price: this.activePrice52,
                     availability: this.activeAvail52,
-                    owner_name: this.activeFirstName52,
-                    owner_last_name: this.activeLastName52,
-                    phone_number: this.activePhoneNumber52,
+                    fname: this.activeFirstName52,
+                    sname: this.activeLastName52,
+                    tel_no: this.activePhoneNumber52,
                     email: this.activeEmail52,
                     sold_price: this.activeSoldPrice52,
                     payment_type: this.activePaymentT52,

@@ -45,26 +45,8 @@
             <div class="col-md-12">
                 <h2 class="shadow-text">Edit Property</h2>
                 <br />
-                    <div class="row">
-                        <div class="col-md-2"><button style="color:black" class="btn btn-warning center-block shadow-text">Go To Week :</button></div>
-                        <div class="col-md-2">
-                            <button (click)="goToWeek('terms09')" class="btn btn-primary center-block shadow-text">Week 10</button>
-                        </div>
-                        <div class="col-md-2">
-                            <button (click)="goToWeek('terms19')" class="btn btn-primary center-block shadow-text">Week 20</button>
-                        </div>
-                        <div class="col-md-2">
-                            <button (click)="goToWeek('terms29')" class="btn btn-primary center-block shadow-text">Week 30</button>
-                        </div>
-                        <div class="col-md-2">
-                            <button (click)="goToWeek('terms39')" class="btn btn-primary center-block shadow-text">Week 40</button>
-                        </div>
-                        <div class="col-md-2">
-                            <button (click)="goToWeek('terms49')" class="btn btn-primary center-block shadow-text">Week 50</button>
-                        </div>
-                    </div>
-                <br>
-                <form (submit)="updateProperty()">
+            <!-- <form (submit)="updateProperty()"> -->
+                <form (submit)="updatePropertyDetails()">
                     <ba-card>
                         <div class="row">
                             <div class="col-md-4 form-group">
@@ -86,20 +68,39 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Property Details">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 1 -->
                     <div class="row">
                         <h2 class="shadow-text">Weekly Timeshare Values</h2>
-                        <!--<select>
-                            <option onclick="goToWeek(editSeason10)" value="volvo">Week 10</option>
-                            <option value="saab">Week 20</option>
-                            <option value="mercedes">Week 30</option>
-                            <option value="audi">Week 40</option>
-                            <option value="audi">Week 50</option>
-                        </select>-->
                         <br>
                     </div>
+                    <div class="row">
+                            <div class="col-md-2"><button style="color:black" class="btn btn-warning center-block shadow-text">Go To Week :</button></div>
+                            <div class="col-md-2">
+                                <button (click)="goToWeek('terms09')" class="btn btn-primary center-block shadow-text">Week 10</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button (click)="goToWeek('terms19')" class="btn btn-primary center-block shadow-text">Week 20</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button (click)="goToWeek('terms29')" class="btn btn-primary center-block shadow-text">Week 30</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button (click)="goToWeek('terms39')" class="btn btn-primary center-block shadow-text">Week 40</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button (click)="goToWeek('terms49')" class="btn btn-primary center-block shadow-text">Week 50</button>
+                            </div>
+                        </div>
+                    <br>
                     <!--<div *ngIf="weekState == 'ten'">-->
+                <form (submit)=updateWeek1()>
                     <ba-card>
                         <h3><span>Week 1</span></h3>
                         <div class="row">
@@ -179,8 +180,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 1">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 2 -->
+                <form (submit)=updateWeek2()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 2</span></h3>
@@ -262,8 +270,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12 center-block">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 2">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 3 -->
+                    <form (submit)=updateWeek3()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 3</span></h3>
@@ -345,8 +360,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12 center-block">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 3">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 4 -->
+                    <form (submit)=updateWeek4()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 4</span></h3>
@@ -428,8 +450,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 4">
+                                </div>
+                            </div>
                     </ba-card>
+                    </form>
                     <!-- Week 5 -->
+                    <form (submit)=updateWeek5()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 5</span></h3>
@@ -511,8 +540,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 5">
+                                </div>
+                            </div>
                     </ba-card>
+                    </form>
                     <!-- Week 6 -->
+                    <form (submit)=updateWeek6()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 6</span></h3>
@@ -594,8 +630,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 6">
+                                </div>
+                            </div>
                     </ba-card>
+                    </form>
                     <!-- Week 7 -->
+                <form (submit)=updateWeek7()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 7</span></h3>
@@ -677,8 +720,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 7">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 8 -->
+                <form (submit)=updateWeek8()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 8</span></h3>
@@ -760,8 +810,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 9">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 9 -->
+                    <form (submit)=updateWeek9()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 9</span></h3>
@@ -843,8 +900,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 9">
+                                </div>
+                            </div>
                     </ba-card>
+                    </form>
                     <!-- Week 10 -->
+                <form (submit)=updateWeek10()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 10</span></h3>
@@ -926,8 +990,15 @@
                                 </div>
                             </div>
                         </div>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 10">
+                                    </div>
+                                </div>
                     </ba-card>
+                </form>
                     <!-- Week 11 -->
+                <form (submit)=updateWeek11()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 11</span></h3>
@@ -1009,8 +1080,15 @@
                                 </div>
                             </div>
                         </div>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 11">
+                                    </div>
+                                </div>
                     </ba-card>
+                </form>
                     <!-- Week 12 -->
+                <form (submit)=updateWeek11()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 12</span></h3>
@@ -1092,8 +1170,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 12">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 13 -->
+                <form (submit)=updateWeek13()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 13</span></h3>
@@ -1175,8 +1260,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 13">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 14 -->
+                <form (submit)=updateWeek14()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 14</span></h3>
@@ -1258,8 +1350,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 14">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 15 -->
+                    <form (submit)=updateWeek15()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 15</span></h3>
@@ -1341,8 +1440,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 15">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 16 -->
+                <form (submit)=updateWeek16()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 16</span></h3>
@@ -1424,8 +1530,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 16">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 17 -->
+                <form (submit)=updateWeek17()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 17</span></h3>
@@ -1507,8 +1620,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 17">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 18 -->
+                <form (submit)=updateWeek18()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 18</span></h3>
@@ -1590,8 +1710,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 18">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 19 -->
+                    <form (submit)=updateWeek19()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 19</span></h3>
@@ -1673,8 +1800,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 19">
+                                </div>
+                            </div>
                     </ba-card>
+                    </form>
                     <!-- Week 20 -->
+                    <form (submit)=updateWeek20()>                            
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 20</span></h3>
@@ -1756,10 +1890,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 20">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!--</div>-->
                     <!-- Week 21 -->
                     <!--<div *ngIf="weekState == 'twenty'">-->
+                <form (submit)=updateWeek21()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 21</span></h3>
@@ -1841,8 +1982,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 21">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 22 -->
+                <form (submit)=updateWeek22()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 22</span></h3>
@@ -1924,8 +2072,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 22">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 23 -->
+                <form (submit)=updateWeek23()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 23</span></h3>
@@ -2007,8 +2162,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 23">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 24 -->
+                <form (submit)=updateWeek24()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 24</span></h3>
@@ -2090,8 +2252,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 24">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 25 -->
+                    <form (submit)=updateWeek25()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 25</span></h3>
@@ -2173,8 +2342,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 25">
+                                </div>
+                            </div>
                     </ba-card>
+                    </form>
                     <!-- Week 26 -->
+                <form (submit)=updateWeek26()>    
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 26</span></h3>
@@ -2256,8 +2432,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 26">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 27 -->
+                <form (submit)=updateWeek27()>     
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 27</span></h3>
@@ -2339,8 +2522,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 27">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 28 -->
+                <form (submit)=updateWeek28()>  
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 28</span></h3>
@@ -2422,8 +2612,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 28">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 29 -->
+                <form (submit)=updateWeek29()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 29</span></h3>
@@ -2505,8 +2702,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 29">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 30 -->
+                <form (submit)=updateWeek30()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 30</span></h3>
@@ -2588,8 +2792,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 30">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 31 -->
+                <form (submit)=updateWeek31()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 31</span></h3>
@@ -2671,8 +2882,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 31">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 32 -->
+                <form (submit)=updateWeek32()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 32</span></h3>
@@ -2754,8 +2972,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 32">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 33 -->
+                <form (submit)=updateWeek33()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 33</span></h3>
@@ -2837,8 +3062,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 33">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 34 -->
+                <form (submit)=updateWeek34()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 34</span></h3>
@@ -2920,8 +3152,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 34">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 35 -->
+                <form (submit)=updateWeek35()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 35</span></h3>
@@ -3003,8 +3242,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 35">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 36 -->
+                    <form (submit)=updateWeek36()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 36</span></h3>
@@ -3086,8 +3332,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 36">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 37 -->
+                <form (submit)=updateWeek37()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 37</span></h3>
@@ -3169,8 +3422,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 37">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 38 -->
+                <form (submit)=updateWeek38()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 38</span></h3>
@@ -3252,8 +3512,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 38">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 39 -->
+                <form (submit)=updateWeek39()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 39</span></h3>
@@ -3335,8 +3602,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 39">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 40 -->
+                <form (submit)=updateWeek40()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 40</span></h3>
@@ -3418,10 +3692,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 39">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!--</div>-->
                     <!-- Week 41 -->
                     <!--<div *ngIf="weekState == 'forty'">-->
+                <form (submit)=updateWeek41()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 41</span></h3>
@@ -3503,8 +3784,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 41">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 42 -->
+                <form (submit)=updateWeek42()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 42</span></h3>
@@ -3586,8 +3874,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 42">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 43 -->
+                    <form (submit)=updateWeek43()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 43</span></h3>
@@ -3669,8 +3964,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 43">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 44 -->
+                <form (submit)=updateWeek44()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 44</span></h3>
@@ -3752,8 +4054,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 44">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 45 -->
+                <form (submit)=updateWeek45()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 45</span></h3>
@@ -3835,8 +4144,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 45">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 46 -->
+                <form (submit)=updateWeek46()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 46</span></h3>
@@ -3918,8 +4234,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 46">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 47 -->
+                <form (submit)=updateWeek47()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 47</span></h3>
@@ -4001,8 +4324,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 47">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 48 -->
+                <form (submit)=updateWeek48()>                            
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 48</span></h3>
@@ -4084,8 +4414,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 48">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 49 -->
+                <form (submit)=updateWeek49()>                            
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 49</span></h3>
@@ -4167,8 +4504,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 49">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 50 -->
+                <form (submit)=updateWeek50()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 50</span></h3>
@@ -4250,8 +4594,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 50">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!-- Week 51 -->
+                <form (submit)=updateWeek51()>                            
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 51</span></h3>
@@ -4333,7 +4684,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 51">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
+                <form (submit)=updateWeek52()>                        
                     <!-- Week 52 -->
                     <ba-card>
                         <div class="row">
@@ -4416,16 +4774,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-12">
                                 <input type="submit" class="btn btn-success btn-lg" value="Submit">
                                 <button (click)="changeState('default')" class="btn btn-danger btn-lg">Cancel</button>
                             </div>
-                        </div>
+                        </div> -->
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 52">
+                                </div>
+                            </div>
                     </ba-card>
+                </form>
                     <!--</div>-->
                     <!--</ba-card>-->
-                </form>
+                <!-- </form> -->
             </div>
         </div>
         <!-- EDIT END -->
