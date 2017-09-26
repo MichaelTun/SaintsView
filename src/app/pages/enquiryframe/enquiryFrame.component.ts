@@ -23,8 +23,9 @@ export class EnquiryFrameComponent {
   appState: string;
   activeKey: string;
   showFirstUnit: Boolean;
-  showImages_thirteen: Boolean = false; showImages_forteen: Boolean = false;
-  showImages_fifteen: Boolean = false; showImages_sixteen: Boolean = false;
+  img1: string; img2: string; img3: string; img4: string; img5: string; img6: string;
+  img7: string; img8: string; img9: string; img10: string; img11: string; img12: string;
+  propertyInfo : string;
 
 
   constructor(private firebaseService: FirebaseService, private http: Http) {
@@ -49,11 +50,26 @@ export class EnquiryFrameComponent {
     this.changeState('selected', property.$key);
     let selectedPropertyN: string = property.property_name;
     let propertyInfo: string = property.extra_info;
+
+    this.img1 = property.images.postImg1;
+    this.img2 = property.images.postImg2;
+    console.log("imag2");
+    console.log(this.img2);
+    this.img3 = property.images.postImg3;
+    this.img4 = property.images.postImg4;
+    this.img5 = property.images.postImg5;
+    this.img6 = property.images.postImg6;
+    this.img7 = property.images.postImg7;
+    this.img8 = property.images.postImg8;
+    this.img9 = property.images.postImg9;
+    this.img10 = property.images.postImg10;
+    this.img11 = property.images.postImg11;
+    this.img12 = property.images.postImg12;
+
     this.firebaseService.getProperty(property.$key)
       .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
 
     let propertyKey = property.$key;
-    this.showPropertyImages(propertyKey);
 
     setTimeout(() => {
       this.weeksArray = this.selectedProperty.weeks;
@@ -64,48 +80,6 @@ export class EnquiryFrameComponent {
     // setTimeout(() => {
     //   $("#summaryTable td#availButton:contains('Sold')").addClass('btn btn-primary');
     // }, 2000);
-  }
-
-  showPropertyImages(key) {
-    switch (key) {
-      case '-Kj7VrceATh2Ane1YX6t': this.showImages_thirteen = true;
-      this.showImages_forteen = false; this.showImages_fifteen = false;
-      this.showImages_sixteen = false;
-        break;
-      case '-Kj7X_pRkkp0b_cXyg4P': this.showImages_thirteen = true;
-      this.showImages_forteen = false; this.showImages_fifteen = false;
-      this.showImages_sixteen = false;
-        break;
-
-      case '-Kj7VwdX8wtrV0XLIZrb': this.showImages_forteen = true;
-      this.showImages_thirteen = false; this.showImages_fifteen = false;
-      this.showImages_sixteen = false;
-      break;
-      case '-Kj7XhAkDDCxYb97Elm1': this.showImages_forteen = true;
-      this.showImages_thirteen = false; this.showImages_fifteen = false;
-      this.showImages_sixteen = false;
-      break;
-
-      case '-Kj7W29HdOMdfqGFItPa': this.showImages_fifteen = true;
-      this.showImages_thirteen = false; this.showImages_forteen = false;
-      this.showImages_sixteen = false;
-      break;
-      case '-Kj7Xnv0QO61nTy9Ht1H': this.showImages_fifteen = true;
-      this.showImages_thirteen = false; this.showImages_forteen = false;
-      this.showImages_sixteen = false;
-      break;
-
-      case '-Kj7WFNiPlGan7b-siwO': this.showImages_sixteen = true;
-      this.showImages_thirteen = false; this.showImages_forteen = false;
-      this.showImages_fifteen = false;
-      break;
-      case '-Kj7XthetAD8MYOofq0O': this.showImages_sixteen = true;
-      this.showImages_thirteen = false; this.showImages_forteen = false;
-      this.showImages_fifteen = false;
-      break;
-        default:
-         break;
-    }
   }
 
   changeState(state, key) {

@@ -4,7 +4,7 @@
             <button (click)="changeState('add')" class="btn btn-primary btn-lg center-block shadow-text">Add A Property</button>
         </div>
         <br>
-        <div class="row">
+        <div class="col-md-12">
             <div *ngIf="properties">
                 <ba-card baCardClass="with-scroll table-panel" title="Properties">
                     <div class="vertical-scroll">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <!-- ADD START -->
-        <div *ngIf="appState == 'add'" class="row">
+        <div *ngIf="appState == 'add'" class="col-md-12">
             <ba-card>
                 <weekValuesAddComponent></weekValuesAddComponent>
                 <button (click)="changeState('default')" class="btn btn-danger btn-lg">Cancel</button>
@@ -45,7 +45,7 @@
             <div class="col-md-12">
                 <h2 class="shadow-text">Edit Property</h2>
                 <br />
-            <!-- <form (submit)="updateProperty()"> -->
+                <!-- <form (submit)="updateProperty()"> -->
                 <form (submit)="updatePropertyDetails()">
                     <ba-card>
                         <div class="row">
@@ -69,37 +69,241 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Property Details">
-                                </div>
-                            </div>
-                    </ba-card>
-                </form>
-                    <!-- Week 1 -->
-                    <div class="row">
-                        <h2 class="shadow-text">Weekly Timeshare Values</h2>
-                        <br>
-                    </div>
-                    <div class="row">
-                            <div class="col-md-2"><button style="color:black" class="btn btn-warning center-block shadow-text">Go To Week :</button></div>
-                            <div class="col-md-2">
-                                <button (click)="goToWeek('terms09')" class="btn btn-primary center-block shadow-text">Week 10</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button (click)="goToWeek('terms19')" class="btn btn-primary center-block shadow-text">Week 20</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button (click)="goToWeek('terms29')" class="btn btn-primary center-block shadow-text">Week 30</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button (click)="goToWeek('terms39')" class="btn btn-primary center-block shadow-text">Week 40</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button (click)="goToWeek('terms49')" class="btn btn-primary center-block shadow-text">Week 50</button>
+                            <div class="col-md-12" style="margin-top: 20px">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Property Details">
                             </div>
                         </div>
+                    </ba-card>
+                </form>
+
+                <form (submit)="updateImages()">
+                    <ba-card>
+                        <!-- IMAGE UPLOADER -->
+                        <div class="row center-block">
+                            <h3>Select up to 12 images to be stored per upload.</h3>
+                            <!-- <a href="#" id="upload_widget_opener" (click)="CloudinaryWidget()"><button class="btn btn-primary">Upload multiple images</button></a> -->
+                        </div>
+
+                        <div class="row">
+                            <div class="clearfix"></div>
+                            <!--IMAGE 1-->
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem1" ng-model="fileElem1" name="fileElem1" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem1" class="btn btn-warning">Upload Image 1</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg1" name="postImg1" id="postImg1" value=""><br>
+                                        <img style="max-width:100%;border-radius:5px;" name="previewImg1" id="previewImg1" src="{{postImg1}}">
+                                    <div *ngIf="postImg1">
+                                        <a href="{{postImg1}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                            <!--IMAGE 3-->
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem2" ng-model="fileElem2" name="fileElem2" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem2" class="btn btn-warning">Upload Image 2</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg2" name="postImg2" id="postImg2" value=""><br>
+                                    <img style="max-width:100%; border-radius:5px;" name="previewImg2" id="previewImg2" src="{{postImg2}}">
+                                    <div *ngIf="postImg2">
+                                        <a href="{{postImg2}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                            <!--IMAGE 3-->
+
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem3" ng-model="fileElem3" name="fileElem3" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem3" class="btn btn-warning">Upload Image 3</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg3" name="postImg3" id="postImg3" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg3" id="previewImg3" src="{{postImg3}}">
+                                    <div *ngIf="postImg3">
+                                        <a href="{{postImg3}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="clearfix"></div>
+                            <!--IMAGE 4-->
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem4" ng-model="fileElem4" name="fileElem4" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem4" class="btn btn-warning">Upload Image 4</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg4" name="postImg4" id="postImg4" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg4" id="previewImg4" src="{{postImg4}}">
+                                    <div *ngIf="postImg4">
+                                        <a href="{{postImg4}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                            <!--IMAGE 5-->
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem5" ng-model="fileElem5" name="fileElem5" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem5" class="btn btn-warning">Upload Image 5</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg5" name="postImg5" id="postImg5" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg5" id="previewImg5" src="{{postImg5}}">
+                                    <div *ngIf="postImg5">
+                                        <a href="{{postImg5}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                            <!--IMAGE 6-->
+
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem6" ng-model="fileElem6" name="fileElem6" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem6" class="btn btn-warning">Upload Image 6</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg6" name="postImg6" id="postImg6" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg6" id="previewImg6" src="{{postImg6}}">
+                                    <div *ngIf="postImg6">
+                                        <a href="{{postImg6}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="clearfix"></div>
+                            <!--IMAGE 1-->
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem7" ng-model="fileElem7" name="fileElem7" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem7" class="btn btn-warning">Upload Image 7</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg7" name="postImg7" id="postImg7" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg7" id="previewImg7" src="{{postImg7}}">
+                                    <div *ngIf="postImg7">
+                                        <a href="{{postImg7}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                            <!--IMAGE 3-->
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem8" ng-model="fileElem8" name="fileElem8" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem8" class="btn btn-warning">Upload Image 8</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg8" name="postImg8" id="postImg8" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg8" id="previewImg8" src="{{postImg8}}">
+                                    <div *ngIf="postImg8">
+                                        <a href="{{postImg8}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                            <!--IMAGE 3-->
+
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem9" ng-model="fileElem9" name="fileElem9" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem9" class="btn btn-warning">Upload Image 9</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg9" name="postImg9" id="postImg9" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg9" id="previewImg9" src="{{postImg9}}">
+                                    <div *ngIf="postImg9">
+                                        <a href="{{postImg9}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="clearfix"></div>
+                            <!--IMAGE 1-->
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem10" ng-model="fileElem10" name="fileElem10" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem10" class="btn btn-warning">Upload Image 10</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg10" name="postImg10" id="postImg10" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg10" id="previewImg10" src="{{postImg10}}">
+                                    <div *ngIf="postImg10">
+                                        <a href="{{postImg10}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                            <!--IMAGE 11-->
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem11" ng-model="fileElem11" name="fileElem11" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem11" class="btn btn-warning">Upload Image 11</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg11" name="postImg11" id="postImg11
+                                                " value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg11" id="previewImg11" src="{{postImg11}}">
+                                    <div *ngIf="postImg11">
+                                        <a href="{{postImg11}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                            <!--IMAGE 12-->
+
+                            <div class="col-md-4">
+                                <ba-card style="text-align:center;">
+                                    <!-- *ngIf="postImg1" -->
+                                    <!-- <input type="file"  multiple accept="image/*" style="display:none" (onchange)="handleFiles(this.files)"> -->
+                                    <input type="file" id="fileElem12" [(ngModel)]="fileElem12" name="fileElem12" style="display:none" (change)="handleFiles($event)"><br>
+                                    <label for="fileElem12" class="btn btn-warning">Upload Image 12</label>
+                                    <input type="hidden" required="required" [(ngModel)]="postImg12" name="postImg12" id="postImg12" value=""><br>
+                                    <img style="max-width:100%;border-radius:5px;" name="previewImg12" id="previewImg12" src="{{postImg12}}">
+                                    <div *ngIf="postImg12">
+                                        <a href="{{postImg12}}" class="btn btn-primary download-b" download="">Download</a>
+                                    </div>
+                                </ba-card>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:center">
+                                <input type="submit" class="btn btn-success btn-lg center-block shadow-text" value="Save Images">
+                            </div>
+                        </div>
+                    </ba-card>
+                </form>
+                <!-- Week 1 -->
+                <div class="row">
+                    <h2 class="shadow-text">Weekly Timeshare Values</h2>
                     <br>
-                    <!--<div *ngIf="weekState == 'ten'">-->
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><button style="color:black" class="btn btn-warning center-block shadow-text">Go To Week :</button></div>
+                    <div class="col-md-2">
+                        <button (click)="goToWeek('terms09')" class="btn btn-primary center-block shadow-text">Week 10</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button (click)="goToWeek('terms19')" class="btn btn-primary center-block shadow-text">Week 20</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button (click)="goToWeek('terms29')" class="btn btn-primary center-block shadow-text">Week 30</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button (click)="goToWeek('terms39')" class="btn btn-primary center-block shadow-text">Week 40</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button (click)="goToWeek('terms49')" class="btn btn-primary center-block shadow-text">Week 50</button>
+                    </div>
+                </div>
+                <br>
+                <!--<div *ngIf="weekState == 'ten'">-->
                 <form (submit)=updateWeek1()>
                     <ba-card>
                         <h3><span>Week 1</span></h3>
@@ -180,14 +384,15 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 1">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 1">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 2 -->
+                <!-- Week 2 -->
                 <form (submit)=updateWeek2()>
                     <ba-card>
                         <div class="row">
@@ -271,14 +476,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12 center-block">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 2">
-                                </div>
+                            <div class="col-md-12 center-block">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 2">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 3 -->
-                    <form (submit)=updateWeek3()>
+                <!-- Week 3 -->
+                <form (submit)=updateWeek3()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 3</span></h3>
@@ -361,14 +566,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12 center-block">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 3">
-                                </div>
+                            <div class="col-md-12 center-block">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 3">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 4 -->
-                    <form (submit)=updateWeek4()>
+                <!-- Week 4 -->
+                <form (submit)=updateWeek4()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 4</span></h3>
@@ -451,14 +656,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 4">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 4">
                             </div>
+                        </div>
                     </ba-card>
-                    </form>
-                    <!-- Week 5 -->
-                    <form (submit)=updateWeek5()>
+                </form>
+                <!-- Week 5 -->
+                <form (submit)=updateWeek5()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 5</span></h3>
@@ -541,14 +746,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 5">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 5">
                             </div>
+                        </div>
                     </ba-card>
-                    </form>
-                    <!-- Week 6 -->
-                    <form (submit)=updateWeek6()>
+                </form>
+                <!-- Week 6 -->
+                <form (submit)=updateWeek6()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 6</span></h3>
@@ -631,13 +836,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 6">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 6">
                             </div>
+                        </div>
                     </ba-card>
-                    </form>
-                    <!-- Week 7 -->
+                </form>
+                <!-- Week 7 -->
                 <form (submit)=updateWeek7()>
                     <ba-card>
                         <div class="row">
@@ -721,13 +926,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 7">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 7">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 8 -->
+                <!-- Week 8 -->
                 <form (submit)=updateWeek8()>
                     <ba-card>
                         <div class="row">
@@ -811,14 +1016,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 9">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 9">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 9 -->
-                    <form (submit)=updateWeek9()>
+                <!-- Week 9 -->
+                <form (submit)=updateWeek9()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 9</span></h3>
@@ -901,13 +1106,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 9">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 9">
                             </div>
+                        </div>
                     </ba-card>
-                    </form>
-                    <!-- Week 10 -->
+                </form>
+                <!-- Week 10 -->
                 <form (submit)=updateWeek10()>
                     <ba-card>
                         <div class="row">
@@ -990,14 +1195,14 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="row">
-                                    <div class="col-md-12">
-                                        <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 10">
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 10">
+                            </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 11 -->
+                <!-- Week 11 -->
                 <form (submit)=updateWeek11()>
                     <ba-card>
                         <div class="row">
@@ -1080,14 +1285,14 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="row">
-                                    <div class="col-md-12">
-                                        <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 11">
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 11">
+                            </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 12 -->
+                <!-- Week 12 -->
                 <form (submit)=updateWeek11()>
                     <ba-card>
                         <div class="row">
@@ -1171,13 +1376,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 12">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 12">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 13 -->
+                <!-- Week 13 -->
                 <form (submit)=updateWeek13()>
                     <ba-card>
                         <div class="row">
@@ -1261,13 +1466,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 13">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 13">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 14 -->
+                <!-- Week 14 -->
                 <form (submit)=updateWeek14()>
                     <ba-card>
                         <div class="row">
@@ -1351,14 +1556,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 14">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 14">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 15 -->
-                    <form (submit)=updateWeek15()>
+                <!-- Week 15 -->
+                <form (submit)=updateWeek15()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 15</span></h3>
@@ -1441,13 +1646,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 15">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 15">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 16 -->
+                <!-- Week 16 -->
                 <form (submit)=updateWeek16()>
                     <ba-card>
                         <div class="row">
@@ -1531,13 +1736,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 16">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 16">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 17 -->
+                <!-- Week 17 -->
                 <form (submit)=updateWeek17()>
                     <ba-card>
                         <div class="row">
@@ -1621,13 +1826,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 17">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 17">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 18 -->
+                <!-- Week 18 -->
                 <form (submit)=updateWeek18()>
                     <ba-card>
                         <div class="row">
@@ -1711,14 +1916,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 18">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 18">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 19 -->
-                    <form (submit)=updateWeek19()>
+                <!-- Week 19 -->
+                <form (submit)=updateWeek19()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 19</span></h3>
@@ -1801,14 +2006,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 19">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 19">
                             </div>
+                        </div>
                     </ba-card>
-                    </form>
-                    <!-- Week 20 -->
-                    <form (submit)=updateWeek20()>                            
+                </form>
+                <!-- Week 20 -->
+                <form (submit)=updateWeek20()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 20</span></h3>
@@ -1891,15 +2096,15 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 20">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 20">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!--</div>-->
-                    <!-- Week 21 -->
-                    <!--<div *ngIf="weekState == 'twenty'">-->
+                <!--</div>-->
+                <!-- Week 21 -->
+                <!--<div *ngIf="weekState == 'twenty'">-->
                 <form (submit)=updateWeek21()>
                     <ba-card>
                         <div class="row">
@@ -1983,13 +2188,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 21">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 21">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 22 -->
+                <!-- Week 22 -->
                 <form (submit)=updateWeek22()>
                     <ba-card>
                         <div class="row">
@@ -2073,13 +2278,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 22">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 22">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 23 -->
+                <!-- Week 23 -->
                 <form (submit)=updateWeek23()>
                     <ba-card>
                         <div class="row">
@@ -2163,13 +2368,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 23">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 23">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 24 -->
+                <!-- Week 24 -->
                 <form (submit)=updateWeek24()>
                     <ba-card>
                         <div class="row">
@@ -2253,14 +2458,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 24">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 24">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 25 -->
-                    <form (submit)=updateWeek25()>
+                <!-- Week 25 -->
+                <form (submit)=updateWeek25()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 25</span></h3>
@@ -2343,14 +2548,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 25">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 25">
                             </div>
+                        </div>
                     </ba-card>
-                    </form>
-                    <!-- Week 26 -->
-                <form (submit)=updateWeek26()>    
+                </form>
+                <!-- Week 26 -->
+                <form (submit)=updateWeek26()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 26</span></h3>
@@ -2433,14 +2638,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 26">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 26">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 27 -->
-                <form (submit)=updateWeek27()>     
+                <!-- Week 27 -->
+                <form (submit)=updateWeek27()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 27</span></h3>
@@ -2523,14 +2728,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 27">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 27">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 28 -->
-                <form (submit)=updateWeek28()>  
+                <!-- Week 28 -->
+                <form (submit)=updateWeek28()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 28</span></h3>
@@ -2613,13 +2818,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 28">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 28">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 29 -->
+                <!-- Week 29 -->
                 <form (submit)=updateWeek29()>
                     <ba-card>
                         <div class="row">
@@ -2703,13 +2908,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 29">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 29">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 30 -->
+                <!-- Week 30 -->
                 <form (submit)=updateWeek30()>
                     <ba-card>
                         <div class="row">
@@ -2793,13 +2998,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 30">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 30">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 31 -->
+                <!-- Week 31 -->
                 <form (submit)=updateWeek31()>
                     <ba-card>
                         <div class="row">
@@ -2883,13 +3088,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 31">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 31">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 32 -->
+                <!-- Week 32 -->
                 <form (submit)=updateWeek32()>
                     <ba-card>
                         <div class="row">
@@ -2973,13 +3178,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 32">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 32">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 33 -->
+                <!-- Week 33 -->
                 <form (submit)=updateWeek33()>
                     <ba-card>
                         <div class="row">
@@ -3063,13 +3268,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 33">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 33">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 34 -->
+                <!-- Week 34 -->
                 <form (submit)=updateWeek34()>
                     <ba-card>
                         <div class="row">
@@ -3153,13 +3358,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 34">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 34">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 35 -->
+                <!-- Week 35 -->
                 <form (submit)=updateWeek35()>
                     <ba-card>
                         <div class="row">
@@ -3243,14 +3448,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 35">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 35">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 36 -->
-                    <form (submit)=updateWeek36()>
+                <!-- Week 36 -->
+                <form (submit)=updateWeek36()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 36</span></h3>
@@ -3333,13 +3538,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 36">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 36">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 37 -->
+                <!-- Week 37 -->
                 <form (submit)=updateWeek37()>
                     <ba-card>
                         <div class="row">
@@ -3423,13 +3628,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 37">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 37">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 38 -->
+                <!-- Week 38 -->
                 <form (submit)=updateWeek38()>
                     <ba-card>
                         <div class="row">
@@ -3513,13 +3718,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 38">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 38">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 39 -->
+                <!-- Week 39 -->
                 <form (submit)=updateWeek39()>
                     <ba-card>
                         <div class="row">
@@ -3603,13 +3808,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 39">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 39">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 40 -->
+                <!-- Week 40 -->
                 <form (submit)=updateWeek40()>
                     <ba-card>
                         <div class="row">
@@ -3693,15 +3898,15 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 39">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 39">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!--</div>-->
-                    <!-- Week 41 -->
-                    <!--<div *ngIf="weekState == 'forty'">-->
+                <!--</div>-->
+                <!-- Week 41 -->
+                <!--<div *ngIf="weekState == 'forty'">-->
                 <form (submit)=updateWeek41()>
                     <ba-card>
                         <div class="row">
@@ -3785,13 +3990,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 41">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 41">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 42 -->
+                <!-- Week 42 -->
                 <form (submit)=updateWeek42()>
                     <ba-card>
                         <div class="row">
@@ -3875,14 +4080,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 42">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 42">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 43 -->
-                    <form (submit)=updateWeek43()>
+                <!-- Week 43 -->
+                <form (submit)=updateWeek43()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 43</span></h3>
@@ -3965,13 +4170,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 43">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 43">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 44 -->
+                <!-- Week 44 -->
                 <form (submit)=updateWeek44()>
                     <ba-card>
                         <div class="row">
@@ -4055,13 +4260,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 44">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 44">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 45 -->
+                <!-- Week 45 -->
                 <form (submit)=updateWeek45()>
                     <ba-card>
                         <div class="row">
@@ -4145,13 +4350,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 45">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 45">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 46 -->
+                <!-- Week 46 -->
                 <form (submit)=updateWeek46()>
                     <ba-card>
                         <div class="row">
@@ -4235,13 +4440,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 46">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 46">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 47 -->
+                <!-- Week 47 -->
                 <form (submit)=updateWeek47()>
                     <ba-card>
                         <div class="row">
@@ -4325,14 +4530,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 47">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 47">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 48 -->
-                <form (submit)=updateWeek48()>                            
+                <!-- Week 48 -->
+                <form (submit)=updateWeek48()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 48</span></h3>
@@ -4415,14 +4620,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 48">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 48">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 49 -->
-                <form (submit)=updateWeek49()>                            
+                <!-- Week 49 -->
+                <form (submit)=updateWeek49()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 49</span></h3>
@@ -4505,13 +4710,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 49">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 49">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 50 -->
+                <!-- Week 50 -->
                 <form (submit)=updateWeek50()>
                     <ba-card>
                         <div class="row">
@@ -4595,14 +4800,14 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 50">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 50">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!-- Week 51 -->
-                <form (submit)=updateWeek51()>                            
+                <!-- Week 51 -->
+                <form (submit)=updateWeek51()>
                     <ba-card>
                         <div class="row">
                             <h3><span>Week 51</span></h3>
@@ -4685,13 +4890,13 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 51">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 51">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                <form (submit)=updateWeek52()>                        
+                <form (submit)=updateWeek52()>
                     <!-- Week 52 -->
                     <ba-card>
                         <div class="row">
@@ -4781,14 +4986,14 @@
                             </div>
                         </div> -->
                         <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 52">
-                                </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg center-block shadow-text" value="Save Week 52">
                             </div>
+                        </div>
                     </ba-card>
                 </form>
-                    <!--</div>-->
-                    <!--</ba-card>-->
+                <!--</div>-->
+                <!--</ba-card>-->
                 <!-- </form> -->
             </div>
         </div>

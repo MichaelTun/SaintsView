@@ -19,6 +19,7 @@ export class SalesComponent {
   weeksArray: JSON; // populates grid
   appState: string;
   activeKey: string;
+  selectedPropertyN
 
   constructor(private firebaseService: FirebaseService) {
 
@@ -34,18 +35,44 @@ export class SalesComponent {
 
   selectProperty(property) {
     this.changeState('selected', property.id);
-    let selectedPropertyN: string = property.property_name;
-    this.firebaseService.getProperty(property.$key)
-    .subscribe(selectedProperty => { this.selectedProperty = selectedProperty; });
+    this.selectedPropertyN = property.property_name;
+
+    this.weeksArray = property.weeks;
     setTimeout(() => {
-      this.weeksArray = this.selectedProperty.weeks;
-    document.getElementById('selectedPropertyName').innerHTML = selectedPropertyN;
-  }, 1700);
-  document.getElementById('repayAmount').scrollIntoView();
+      document.getElementById('selectedPropertyName').innerHTML = this.selectedPropertyN;
+    }, 1700);
+    document.getElementById('repayAmount').scrollIntoView();
 
     // setTimeout(() => {
     //   $("#summaryTable td.availCss:contains('Sold')").addClass('btn btn-success');
     // }, 2000);
+  }
+
+  tableToExcel(table) {
+    const dt = new Date();
+    const day = dt.getDate();
+    const month = dt.getMonth() + 1;
+    const year = dt.getFullYear();
+    const filename = this.selectedPropertyN;
+    const postfix = day + "." + month + "." + year + filename;
+
+    const uri = 'data:application/vnd.ms-excel;base64';
+    const template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+    const format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }); };
+    const base64 = function (s) { return window.btoa(decodeURIComponent(encodeURIComponent(s))); }
+    // creating a temporary HTML link element (they support setting file names)
+    let tableData = document.getElementById(table);
+    let ctx = { worksheet: name || 'Worksheet', table: tableData.innerHTML };
+    const testHtml = uri + base64(format(template, ctx));
+
+    let a = document.createElement('a');
+    // getting data from our div that contains the HTML table
+    let data_type = 'data:application/vnd.ms-excel';
+    a.href = data_type + ', ' + testHtml;
+    // setting the file name
+    a.download = postfix + '.xls';
+    // triggering the function
+    a.click();
   }
 
 
@@ -57,8 +84,8 @@ export class SalesComponent {
     this.appState = state;
   }
 
-updateRepayment(price, depositPercentage, depositValue, interest, period) {
-    if (depositPercentage < 20){
+  updateRepayment(price, depositPercentage, depositValue, interest, period) {
+    if (depositPercentage < 20) {
       depositPercentage = 20;
       $('#depositPercentage').val(depositPercentage);
     }

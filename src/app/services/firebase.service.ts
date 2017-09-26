@@ -35,11 +35,22 @@ export class FirebaseService {
 
   updatePropertyByWeek(key, weekNum, updWeek) {
     let arrayIndex = weekNum - 1;
+
+    return this.db.object('/properties/' + key + '/weeks/' + arrayIndex).update(updWeek);
+    // console.log('key :' + key);
+    // console.log('week :' + weekNum);
+    // console.log(updWeek);
+
+    // console.log(propertiesData);
+  }
+
+  updateImages(key, propImages) {
     // let propertiesData = this._af.database.list('/properties/' + key + '/weeks/' + arrayIndex);
     // propertiesData.forEach(element => {
     //   console.log(element);
+    console.log(propImages);
     // });
-    return this.db.object('/properties/' + key + '/weeks/' + arrayIndex).update(updWeek);
+    return this.db.object('/properties/' + key + '/images').update(propImages);
     // console.log('key :' + key);
     // console.log('week :' + weekNum);
     // console.log(updWeek);

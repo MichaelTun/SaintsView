@@ -180,6 +180,17 @@ export class PropertyComponent implements OnInit {
     activeTerms44: string; activeTerms45: string; activeTerms46: string; activeTerms47: string; activeTerms48: string;
     activeTerms49: string; activeTerms50: string; activeTerms51: string; activeTerms52: string;
 
+    postImg1: string; postImg2: string; postImg3: string; postImg4: string; postImg5: string; postImg6: string; postImg7: string; 
+    postImg8: string; postImg9: string; postImg10: string; postImg11: string; postImg12: string;
+
+    fileElem1: string; fileElem2: string; fileElem3: string; fileElem4: string; fileElem5: string; fileElem6: string; fileElem7: string;
+    fileElem8: string; fileElem9: string; fileElem10: string; fileElem11: string; fileElem12: string;
+    
+    previewImg1: any;
+
+    cloudName: string = 'just-property';
+    unsignedUploadPreset: string = 'qfpwnecp';
+
     ngOnInit() {
         // firebase
         this._firebaseService.getProperties().subscribe(properties => {
@@ -207,11 +218,93 @@ export class PropertyComponent implements OnInit {
             this.showWeekValues = 'true';
     }
 
+    // *********** Upload file to Cloudinary ******************** //
+    uploadFile(file, imageID) {
+        console.log(file);
+      var url = `https://api.cloudinary.com/v1_1/${this.cloudName}/upload`;
+      var xhr = new XMLHttpRequest();
+      var fd = new FormData();
+      xhr.open('POST', url, true);
+      xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+      console.log(imageID);
+    
+      xhr.onreadystatechange = function(e) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          // File uploaded successfully
+          var response = JSON.parse(xhr.responseText);
+          // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
+          var url = response.secure_url;
+          // Create a thumbnail of the uploaded image, with 150px width
+          var tokens = url.split('/');
+          //tokens.splice(-2, 0, 'w_150,c_scale');
+          var img = new Image(); // HTML5 Constructor
+          img.src = url//tokens.join('/');
+          img.alt = response.public_id;
+          //console.log(img.src);
+          //this.returnUrl = img.src;
+          document.getElementById(imageID).setAttribute('value', img.src);
+          var imageNum = imageID.substring(8,10);
+          console.log(imageNum);
+          switch (imageNum) {
+            case "1": document.getElementById("previewImg1").setAttribute('src', img.src); break;
+            case "2": document.getElementById("previewImg2").setAttribute('src', img.src); break;
+            case "3": document.getElementById("previewImg3").setAttribute('src', img.src); break;
+            case "4": document.getElementById("previewImg4").setAttribute('src', img.src); break;
+            case "5": document.getElementById("previewImg5").setAttribute('src', img.src); break;
+            case "6": document.getElementById("previewImg6").setAttribute('src', img.src); break;
+            case "7": document.getElementById("previewImg7").setAttribute('src', img.src); break;
+            case "8": document.getElementById("previewImg8").setAttribute('src', img.src); break;
+            case "9": document.getElementById("previewImg9").setAttribute('src', img.src); break;
+            case "10": document.getElementById("previewImg10").setAttribute('src', img.src); break;
+            case "11": document.getElementById("previewImg11").setAttribute('src', img.src); break;
+            case "12": document.getElementById("previewImg12").setAttribute('src', img.src); break;
+          }
+          //document.getElementById(imageID).setAttribute('value', img.src);
+          //document.getElementById('fileElem1' = img.src;
+          //document.getElementById('fileElem1').value = img;
+        }
+      };
+      //console.log(file);
+      fd.append('upload_preset', this.unsignedUploadPreset);
+      fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
+      fd.append('file', file);
+      xhr.send(fd);
+    }
+    
+    // *********** Handle selected files ******************** //
+    handleFiles(event) {
+        console.log("Handle Files: ");
+        console.log(event);
+        console.log(event.target.files);
+        var imageID = event.target.id;
+        var files = event.target.files;
+      for (var i = 0; i < files.length; i++) {
+        this.uploadFile(files[i], imageID); // call the function to upload the file
+      }
+    };
+
+    /////////////////////////////////////////////////
+    /////////////////////////////////////////////////
+
+
     showEdit(property) {
         this.changeState('edit', property.$key);
         this.activePropertyName = property.property_name;
         this.activePropertySize = property.property_size;
         this.activeExtraInfo = property.extra_info;
+        this.postImg1 = property.images.postImg1 ? property.images.postImg1 : "";
+        console.log(property.postImg1);
+        this.postImg2 = property.images.postImg2 ? property.images.postImg2: "";
+        this.postImg3 = property.images.postImg3 ? property.images.postImg3: "";
+        this.postImg4 = property.images.postImg4 ? property.images.postImg4: "";
+        this.postImg5 = property.images.postImg5 ? property.images.postImg5: "";
+        this.postImg6 = property.images.postImg6 ? property.images.postImg6: "";
+        this.postImg7 = property.images.postImg7 ? property.images.postImg7: "";
+        this.postImg8 = property.images.postImg8 ? property.images.postImg8: "";
+        this.postImg9 = property.images.postImg9 ? property.images.postImg9 : "";
+        this.postImg10 = property.images.postImg10 ? property.images.postImg10: "";
+        this.postImg11 = property.images.postImg11 ? property.images.postImg11: "";
+        this.postImg12 = property.images.postImg12 ? property.images.postImg12: "";
 
         // Week 1
         this.activeSeason1 = property.weeks[0].season; this.activeModule1 = property.weeks[0].module;
@@ -673,16 +766,70 @@ export class PropertyComponent implements OnInit {
 
     }
 
+    updateImages() {
+        this.fileElem1 = (<HTMLInputElement>document.getElementById("fileElem1")).getAttribute("value");
+        this.fileElem2 = (<HTMLInputElement>document.getElementById("fileElem2")).getAttribute("value");
+        this.fileElem3 = (<HTMLInputElement>document.getElementById("fileElem3")).getAttribute("value");
+        this.fileElem4 = (<HTMLInputElement>document.getElementById("fileElem4")).getAttribute("value");
+        this.fileElem5 = (<HTMLInputElement>document.getElementById("fileElem5")).getAttribute("value");
+        this.fileElem6 = (<HTMLInputElement>document.getElementById("fileElem6")).getAttribute("value");
+        this.fileElem7 = (<HTMLInputElement>document.getElementById("fileElem7")).getAttribute("value");
+        this.fileElem8 = (<HTMLInputElement>document.getElementById("fileElem8")).getAttribute("value");
+        this.fileElem9 = (<HTMLInputElement>document.getElementById("fileElem9")).getAttribute("value");
+        this.fileElem10 = (<HTMLInputElement>document.getElementById("fileElem10")).getAttribute("value");
+        this.fileElem11 = (<HTMLInputElement>document.getElementById("fileElem11")).getAttribute("value");
+        this.fileElem12 = (<HTMLInputElement>document.getElementById("fileElem12")).getAttribute("value");
+        let img1 = this.fileElem1 ? this.fileElem1 : this.postImg1;
+        let img2 = this.fileElem2 ? this.fileElem2 : this.postImg2;
+        let img3 = this.fileElem3 ? this.fileElem3 : this.postImg3;
+        let img4 = this.fileElem4 ? this.fileElem4 : this.postImg4;
+        let img5 = this.fileElem5 ? this.fileElem5 : this.postImg5;
+        let img6 = this.fileElem6 ? this.fileElem6 : this.postImg6;
+        let img7 = this.fileElem7 ? this.fileElem7 : this.postImg7;
+        let img8 = this.fileElem8 ? this.fileElem8 : this.postImg8;
+        let img9 = this.fileElem9 ? this.fileElem9 : this.postImg9;
+        let img10 = this.fileElem10 ? this.fileElem10 : this.postImg10;
+        let img11 = this.fileElem11 ? this.fileElem11 : this.postImg11;
+        let img12 = this.fileElem12 ? this.fileElem12 : this.postImg12;
+
+        img9 = img9 ? img9 : '';
+        img10 = img10 ? img10 : '';
+        img11 = img11 ? img11 : '';
+        img12 = img12 ? img12 : '';
+        console.log("image 1 :" + img1);
+        console.log("image 9 :" + img9);
+        console.log("image 10 :" + img10);
+        console.log(this.activeKey);
+
+        const images: Object = {
+            postImg1: img1,
+            postImg2: img2,
+            postImg3: img3,
+            postImg4: img4,
+            postImg5: img5,
+            postImg6: img6,
+            postImg7: img7,
+            postImg8: img8,
+            postImg9: img9,
+            postImg10: img10,
+            postImg11: img11,
+            postImg12: img12
+        };
+
+        this._firebaseService.updateImages(this.activeKey, images);
+        location.reload();
+    }
+
     updatePropertyDetails() {
-        let propDetails: Object = {
+
+        const propDetails: Object = {
             property_name: this.activePropertyName,
             property_size: this.activePropertySize,
             extra_info: this.activeExtraInfo
-        }
+        };
 
         this._firebaseService.updatePropertyDetails(this.activeKey, propDetails);
     }
-
     updateWeek1() {
         let updWeek: Object = {
             week: 1,
