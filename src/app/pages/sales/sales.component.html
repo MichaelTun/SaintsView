@@ -82,51 +82,97 @@
     </ba-card>
 </div>
 
+<div class="container">
+    <ba-card>
+        <h3>Reporting Summary</h3>
+        <br>
+        <div class="row">
+            <div>
+                <h4 class="text-center">Totals Accross all Units</h4>
+                <table #totals id="totals" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sold</th>
+                            <th>Available</th>
+                            <th>Deal Pending</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>{{totalSold}}</th>
+                            <th>{{totalAvailable}}</th>
+                            <th>{{totalDealPending}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </ba-card>
+</div>
+
 <div class="row" *ngIf="appState == 'selected'">
     <ba-card title="Timeshare 52 Week Plan" baCardClass="with-scroll">
         <h3 id="selectedPropertyName"></h3>
+        <div>
+            <ba-card>
+                <table #totals id="totals" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sold</th>
+                            <th>Available</th>
+                            <th>Deal Pending</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>{{totalSoldSelected}}</th>
+                            <th>{{totalAvailableSelected}}</th>
+                            <th>{{totalDealPendingSelected}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </ba-card>
+        </div>
         <div class="col-md-12" style="padding: 5px;">
             <button class="btn btn-primary" id="exportExcel" (click)="tableToExcel('summaryTable')">Excel</button>
             <button class="btn btn-error" id="print" (click)=Print()>Print</button>
         </div>
-        <table #summaryTable id="summaryTable" class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Week</th>
-                    <th>Season</th>
-                    <th>Module</th>
-                    <th>Price</th>
-                    <th>Arrival Date</th>
-                    <th>Departure Date</th>
-                    <th>Availability</th>
-                    <th>Owner First Name</th>
-                    <th>Owner Last Name</th>
-                    <th>Payment Type</th>
-                    <th>Sold Price</th>
-                    <th>Contact Number</th>
-                    <th>Supporting Docs</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let week of weeksArray">
-                    <th>{{week.week}}</th>
-                    <td>{{week.season}}</td>
-                    <td>{{week.module}}</td>
-                    <td>{{week.price}}</td>
-                    <td>{{week.a_date}}</td>
-                    <td>{{week.d_date}}</td>
-                    <td class="availColumn">
-                      <button type="" id="availButton" class="btn btn-success" data-id="{{week.week}}" data-toggle="modal" data-target="#myModal">{{week.availability}}</button>
-                    </td>
-                    <td>{{week.fname}}</td>
-                    <td>{{week.sname}}</td>
-                    <td>{{week.payment_type}}</td>
-                    <td>{{week.sold_price}}</td>
-                    <td>{{week.tel_no}}</td>
-                    <td><button type="" class="btn btn-primary" data-toggle="modal" data-id="{{week.week}}" data-target="#supportingDocs">Supporting Documents</button></td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="table_wrapper">
+            <table #summaryTable id="summaryTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Season</th>
+                        <th>Module</th>
+                        <th>Price</th>
+                        <th>Arrival Date</th>
+                        <th>Departure Date</th>
+                        <th>Availability</th>
+                        <th>Owner First Name</th>
+                        <th>Owner Last Name</th>
+                        <th>Payment Type</th>
+                        <th>Sold Price</th>
+                        <th>Contact Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let week of weeksArray">
+                        <th>{{week.week}}</th>
+                        <td>{{week.season}}</td>
+                        <td>{{week.module}}</td>
+                        <td>{{week.price}}</td>
+                        <td>{{week.a_date}}</td>
+                        <td>{{week.d_date}}</td>
+                        <td>{{week.availability}}</td>
+                        <td>{{week.fname}}</td>
+                        <td>{{week.sname}}</td>
+                        <td>{{week.payment_type}}</td>
+                        <td>{{week.sold_price}}</td>
+                        <td>{{week.tel_no}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </ba-card>
 </div>
 <availabilityModal></availabilityModal>

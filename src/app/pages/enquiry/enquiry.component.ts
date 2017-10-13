@@ -64,8 +64,8 @@ export class EnquiryComponent {
         , base64 = function(s) { return window.btoa(decodeURIComponent(encodeURIComponent(s))) }
         , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
             if (!table.nodeType) table = document.getElementById(table)
-            var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
-            window.location.href = uri + base64(format(template, ctx))
+            var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML};
+            window.location.href = uri + base64(format(template, ctx));
         }
 
 
